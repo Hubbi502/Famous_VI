@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import mascotImg from '../assets/img/IMG_7254.PNG';
 
 const bubbles = Array.from({ length: 18 }, (_, i) => ({
   id: i,
@@ -194,13 +195,17 @@ export default function Hero() {
               <div className="absolute w-56 h-56 rounded-full" style={{ background: 'radial-gradient(circle, rgba(232,76,30,0.2) 0%, transparent 70%)', filter: 'blur(24px)' }} />
 
               {/* Mascot container */}
-              <div className="relative float-anim" style={{ width: 280, height: 340 }}>
-                <MascotIllustration />
+              <div className="relative float-anim flex items-center justify-center" style={{ width: 320, height: 420 }}>
+                <img
+                  src={mascotImg}
+                  alt="FAMOUS VI Mascot"
+                  className="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.45)]"
+                />
               </div>
 
               {/* Floating badges */}
               <div
-                className="absolute top-4 -left-4 px-3 py-2 rounded-xl text-center"
+                className="absolute top-4 -left-4 px-3 py-2 rounded-xl text-center z-10"
                 style={{ background: 'rgba(7,18,32,0.85)', border: '1px solid rgba(232,76,30,0.4)', backdropFilter: 'blur(8px)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}
               >
                 <div className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>Hadiah Total</div>
@@ -208,7 +213,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="absolute bottom-12 -right-4 px-3 py-2 rounded-xl text-center"
+                className="absolute bottom-8 -right-4 px-3 py-2 rounded-xl text-center z-10"
                 style={{ background: 'rgba(7,18,32,0.85)', border: '1px solid rgba(42,196,216,0.35)', backdropFilter: 'blur(8px)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}
               >
                 <div className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>8 Cabang</div>
@@ -226,87 +231,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  );
-}
-
-function MascotIllustration() {
-  return (
-    <svg viewBox="0 0 280 340" fill="none" xmlns="http://www.w3.org/2000/svg" width="280" height="340" aria-label="FAMOUS VI Mascot - Fox karakter">
-      {/* Body */}
-      <ellipse cx="140" cy="210" rx="55" ry="70" fill="#E8905A" />
-      {/* Belly */}
-      <ellipse cx="140" cy="220" rx="32" ry="45" fill="#FDDBC8" />
-
-      {/* Jacket / Uniform */}
-      <path d="M95,190 Q100,175 140,170 Q180,175 185,190 L192,260 Q160,270 140,268 Q120,270 88,260Z" fill="#9DB8D8" />
-      <path d="M118,170 L140,200 L162,170 L155,168 L140,185 L125,168Z" fill="white" />
-      {/* Belt */}
-      <rect x="95" y="238" width="90" height="10" rx="5" fill="#2A3A50" />
-      <rect x="132" y="235" width="16" height="16" rx="4" fill="#4A5A70" />
-
-      {/* Sash diagonal */}
-      <path d="M110,175 L160,260" stroke="#2A3A50" strokeWidth="7" strokeLinecap="round" opacity="0.7" />
-
-      {/* Left arm */}
-      <ellipse cx="88" cy="215" rx="18" ry="40" fill="#E8905A" transform="rotate(-15 88 215)" />
-      {/* Right arm - raised */}
-      <ellipse cx="192" cy="185" rx="18" ry="42" fill="#9DB8D8" transform="rotate(30 192 185)" />
-      <ellipse cx="200" cy="155" rx="15" ry="16" fill="#E8905A" />
-
-      {/* Head */}
-      <ellipse cx="140" cy="115" rx="58" ry="55" fill="#E8905A" />
-      {/* Face / muzzle */}
-      <ellipse cx="140" cy="130" rx="34" ry="26" fill="#FDDBC8" />
-
-      {/* Ears */}
-      <path d="M98,78 L82,42 L118,65Z" fill="#E8905A" />
-      <path d="M99,77 L87,52 L113,67Z" fill="#FF9999" opacity="0.7" />
-      <path d="M182,78 L198,42 L162,65Z" fill="#E8905A" />
-      <path d="M181,77 L193,52 L167,67Z" fill="#FF9999" opacity="0.7" />
-
-      {/* Eyes */}
-      <circle cx="124" cy="118" r="7" fill="#2A1A0A" />
-      <circle cx="156" cy="118" r="7" fill="#2A1A0A" />
-      <circle cx="126" cy="116" r="2.5" fill="white" />
-      <circle cx="158" cy="116" r="2.5" fill="white" />
-
-      {/* Nose */}
-      <ellipse cx="140" cy="130" rx="5" ry="4" fill="#CC6666" />
-
-      {/* Mouth */}
-      <path d="M132,136 Q140,143 148,136" stroke="#CC6666" strokeWidth="2" fill="none" strokeLinecap="round" />
-
-      {/* Hat */}
-      <ellipse cx="148" cy="70" rx="42" ry="10" fill="#3A3A55" />
-      <rect x="120" y="26" width="56" height="46" rx="8" fill="#4A4A70" />
-      <rect x="122" y="28" width="52" height="6" rx="3" fill="#5A5A88" />
-      {/* Hat feather */}
-      <path d="M168,26 Q185,10 198,20 Q188,28 178,30Z" fill="white" opacity="0.85" />
-      <path d="M170,24 Q188,5 200,18" stroke="#9DB8D8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      {/* Hat badge */}
-      <circle cx="148" cy="48" rx="7" ry="7" fill="#2A3A8A" stroke="#6080C8" strokeWidth="1" />
-      <text x="148" y="52" textAnchor="middle" fontSize="8" fontWeight="900" fill="white" fontFamily="Inter,sans-serif">F</text>
-
-      {/* Epaulette */}
-      <ellipse cx="102" cy="180" rx="12" ry="6" fill="#C8A040" transform="rotate(-15 102 180)" />
-
-      {/* Legs */}
-      <rect x="112" y="264" width="24" height="40" rx="10" fill="#9DB8D8" />
-      <rect x="144" y="264" width="24" height="40" rx="10" fill="#9DB8D8" />
-      {/* Boots */}
-      <rect x="110" y="292" width="28" height="18" rx="8" fill="#2A3A50" />
-      <rect x="142" y="292" width="28" height="18" rx="8" fill="#2A3A50" />
-
-      {/* Tail */}
-      <path d="M190,240 Q220,220 225,250 Q230,280 200,275 Q185,268 185,255Z" fill="#E8905A" />
-      <path d="M200,265 Q215,258 218,270 Q212,278 203,274Z" fill="white" opacity="0.6" />
-
-      {/* Chest badge F */}
-      <circle cx="130" cy="192" r="8" fill="#1E6FBF" stroke="white" strokeWidth="1.5" />
-      <text x="130" y="196" textAnchor="middle" fontSize="9" fontWeight="900" fill="white" fontFamily="Inter,sans-serif">F</text>
-
-      {/* Shine on hat */}
-      <ellipse cx="135" cy="37" rx="10" ry="4" fill="rgba(255,255,255,0.15)" />
-    </svg>
   );
 }

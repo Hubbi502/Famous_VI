@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import famousLogo from '../assets/img/recovered_f_000ab4.png';
 
 const lombaItems = [
   { label: 'Futsal', href: '#competitions' },
@@ -204,27 +205,12 @@ export default function Navbar() {
 
 function FamousLogo() {
   return (
-    <div className="flex items-center gap-2">
-      <FamousKeyIcon />
-      <div className="flex flex-col leading-none">
-        <span className="text-lg font-black tracking-tight" style={{ color: 'white' }}>
-          FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US
-        </span>
-        <span className="text-xs font-bold tracking-widest" style={{ color: 'var(--color-cyan)' }}>VI · 2026</span>
-      </div>
+    <div className="flex items-center">
+      <img
+        src={famousLogo}
+        alt="FAMOUS VI"
+        className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 hover:scale-105"
+      />
     </div>
-  );
-}
-
-function FamousKeyIcon() {
-  return (
-    <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M16 2 C10 2 5 7 7 13 C9 18 14 20 16 20 L16 34 L12 34 L12 36 L20 36 L20 34 L18 34 L18 28 L20 28 L20 26 L18 26 L18 20 C20 20 26 17 25 11 C24 5 22 2 16 2Z" fill="var(--color-blue)" />
-      <path d="M14 4 C9 5 7 10 9 15 C11 19 15 20 16 20 C17 20 21 18 22 13 C23 8 20 4 14 4Z" fill="var(--color-blue-light)" />
-      <ellipse cx="14" cy="11" rx="4" ry="5" fill="white" opacity="0.85" />
-      <path d="M13 8 Q15 6 17 9 Q16 13 13 13 Q11 11 13 8Z" fill="var(--color-navy)" opacity="0.7" />
-      <path d="M6 4 C10 1 18 0 22 4 C26 7 27 12 25 11" stroke="var(--color-orange)" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <path d="M4 6 C8 2 20 -1 24 5" stroke="#FF6B3D" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-    </svg>
   );
 }
