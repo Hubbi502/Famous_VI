@@ -211,13 +211,15 @@ export default function Footer() {
               <div className="text-xs font-bold mb-1" style={{ color: 'var(--color-orange-light)' }}>Open Registration</div>
               <div className="text-sm font-black text-white">02 Sep – 10 Okt 2026</div>
               <a
-                href="#"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-2 text-xs font-bold px-3 py-1.5 rounded-lg transition-all duration-200"
                 style={{ backgroundColor: 'var(--color-orange)', color: 'white' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange-dark)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange)')}
               >
-                Daftar via Bitly →
+                Daftar Sekarang →
               </a>
             </div>
           </div>

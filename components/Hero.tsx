@@ -103,16 +103,16 @@ export default function Hero() {
           </g>
 
           {/* Shoreline water waves crashing on sand */}
-          <path d="M0,150 Q200,130 400,145 Q600,160 800,135 Q1000,110 1200,130 Q1320,145 1440,130 L1440,220 L0,220Z" fill="#38bdf8" opacity="0.8" />
-          <path d="M0,170 Q180,155 360,165 Q540,175 720,155 Q900,135 1080,150 Q1260,165 1440,150 L1440,220 L0,220Z" fill="#0284c7" opacity="0.6" />
-          {/* Wave Foam */}
-          <path d="M0,148 Q150,135 300,142 Q450,150 600,138 Q750,126 900,135 Q1050,144 1200,132 Q1350,120 1440,128" stroke="#ffffff" strokeWidth="4" fill="none" opacity="0.85" strokeLinecap="round" />
+          <path d="M0,150 Q200,130 400,145 Q600,160 800,135 Q1000,110 1200,130 Q1320,145 1440,130 L1440,220 L0,220Z" fill="#38bdf8" opacity="0.55" />
+          <path d="M0,170 Q180,155 360,165 Q540,175 720,155 Q900,135 1080,150 Q1260,165 1440,150 L1440,220 L0,220Z" fill="#0e7a9a" opacity="0.7" />
+          {/* Soft ocean surface overlay to blend into About */}
+          <path d="M0,160 Q360,145 720,158 Q1080,171 1440,155 L1440,220 L0,220Z" fill="#0e7a9a" opacity="0.9" />
 
           {/* Pebbles & Shells on beach */}
-          <ellipse cx="250" cy="180" rx="9" ry="5" fill="#fef08a" opacity="0.9" />
-          <ellipse cx="550" cy="175" rx="7" ry="4" fill="#f472b6" opacity="0.9" />
-          <ellipse cx="880" cy="182" rx="10" ry="5" fill="#ffffff" opacity="0.85" />
-          <ellipse cx="1180" cy="178" rx="8" ry="4" fill="#38bdf8" opacity="0.9" />
+          <ellipse cx="250" cy="175" rx="9" ry="5" fill="#fef08a" opacity="0.7" />
+          <ellipse cx="550" cy="170" rx="7" ry="4" fill="#f472b6" opacity="0.7" />
+          <ellipse cx="880" cy="177" rx="10" ry="5" fill="#ffffff" opacity="0.55" />
+          <ellipse cx="1180" cy="173" rx="8" ry="4" fill="#38bdf8" opacity="0.7" />
         </svg>
 
         {/* Crab scuttling on sand dune */}
