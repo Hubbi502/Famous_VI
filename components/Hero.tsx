@@ -33,6 +33,9 @@ export default function Hero() {
       {/* Sky gradient - bright daylight */}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #87CEEB 0%, #B0E8FF 25%, #E0F8FF 45%, #A8E8D8 60%, #5DC8B8 75%, #2AA8A0 85%, #1A8A90 100%)' }} />
 
+      {/* Navbar readability overlay — subtle dark at top so white text is legible */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ height: '120px', background: 'linear-gradient(180deg, rgba(0,20,50,0.45) 0%, transparent 100%)', zIndex: 2 }} />
+
       {/* Sun */}
       <div style={{ position: 'absolute', top: '8%', right: '15%', width: '90px', height: '90px', borderRadius: '50%', background: 'radial-gradient(circle, #FFF9C4 0%, #FFE082 40%, #FFB300 70%, transparent 100%)', boxShadow: '0 0 60px 20px rgba(255,200,50,0.35), 0 0 120px 50px rgba(255,200,50,0.15)', zIndex: 1 }} />
 

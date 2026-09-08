@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus, Phone } from 'lucide-react';
 import { Jellyfish, AnglerFish, Seahorse, Starfish, Seaweed, CoralBranch, Bubble } from './MarineBiota';
 
 const faqs = [
@@ -197,19 +197,19 @@ export default function FAQ() {
           className="mt-12 rounded-2xl p-8 text-center"
           style={{ background: 'linear-gradient(135deg, #071220 0%, #0a2a50 100%)' }}
         >
-          <h3 className="text-lg font-bold text-white mb-2">Masih punya pertanyaan?</h3>
-          <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <h3 className="poster-font text-lg font-bold text-white mb-2">Masih punya pertanyaan?</h3>
+          <p className="poster-font text-sm mb-6 text-white/70">
             Hubungi panitia FAMOUS VI dan kami siap membantu!
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="tel:081343059590"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
+              className="poster-font inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
               style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
             >
-              📞 Hubungi Kami
+              <Phone size={15} /> Hubungi Kami
             </a>
           </div>
         </div>

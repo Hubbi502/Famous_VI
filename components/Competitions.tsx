@@ -264,7 +264,7 @@ export default function Competitions() {
 
         {/* ── Header ── */}
         <div className="text-center mb-14">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#7EEEFF' }}>
+          <span className="poster-font inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#7EEEFF' }}>
             <span className="w-8 h-px bg-current opacity-60" />
             Cabang Lomba
             <span className="w-8 h-px bg-current opacity-60" />

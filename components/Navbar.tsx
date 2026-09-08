@@ -98,10 +98,10 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="poster-font text-xs font-black tracking-widest uppercase" style={{ color: scrolled ? '#38bdf8' : '#0369a1' }}>
+              <span className="poster-font text-xs font-black tracking-widest uppercase" style={{ color: scrolled ? '#38bdf8' : 'rgba(147,210,255,0.9)' }}>
                 SMAIT Al-Fityan
               </span>
-              <span className="poster-font text-base font-black tracking-tight text-white drop-shadow-sm" style={{ color: scrolled ? '#ffffff' : '#0284c7' }}>
+              <span className="poster-font text-base font-black tracking-tight drop-shadow-sm" style={{ color: scrolled ? '#ffffff' : '#ffffff' }}>
                 FAM<span style={{ color: '#E84C1E' }}>O</span>US 6.0
               </span>
             </div>
@@ -116,14 +116,15 @@ export default function Navbar() {
                 onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
                 className="poster-font px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 relative group"
                 style={{
-                  color: scrolled ? '#ffffff' : '#075985',
+                  color: '#ffffff',
+                  textShadow: scrolled ? 'none' : '0 1px 8px rgba(0,0,0,0.6)',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#38bdf8';
-                  e.currentTarget.style.backgroundColor = scrolled ? 'rgba(56,189,248,0.1)' : 'rgba(255,255,255,0.3)';
+                  e.currentTarget.style.backgroundColor = scrolled ? 'rgba(56,189,248,0.1)' : 'rgba(255,255,255,0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = scrolled ? '#ffffff' : '#075985';
+                  e.currentTarget.style.color = '#ffffff';
                   e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
@@ -163,9 +164,9 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2.5 rounded-xl transition-colors"
               style={{
-                backgroundColor: scrolled ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.4)',
-                color: scrolled ? '#ffffff' : '#0284c7',
-                border: '1px solid rgba(255,255,255,0.15)',
+                backgroundColor: scrolled ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.15)',
+                color: '#ffffff',
+                border: '1px solid rgba(255,255,255,0.25)',
               }}
               aria-label="Toggle Menu"
             >

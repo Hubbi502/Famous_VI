@@ -122,11 +122,11 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           
           {/* Brand column */}
-          <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-5">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-1 flex flex-col gap-4">
             <a
               href="#home"
               onClick={(e) => { e.preventDefault(); scrollTo('#home'); }}
@@ -141,21 +141,21 @@ export default function Footer() {
                 <span className="text-xs font-bold tracking-wider" style={{ color: 'var(--color-cyan)' }}>VI · 2026</span>
               </div>
             </a>
-            <p className="text-sm leading-relaxed text-white/85 font-medium">
-              Festival Al-Fityan Multi Open Sport — ajang kompetisi bergengsi Se-Pulau Jawa untuk generasi berprestasi.
+            <p className="text-xs leading-relaxed text-white/75 font-medium">
+              Festival Al-Fityan Multi Open Sport — kompetisi bergengsi Se-Pulau Jawa.
             </p>
-            <div className="flex gap-3 mt-1">
+            <div className="flex gap-2 mt-1">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200"
                   style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)' }}
                   onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.25)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; }}
                 >
-                  <Icon size={16} />
+                  <Icon size={15} />
                 </a>
               ))}
             </div>
@@ -167,10 +167,10 @@ export default function Footer() {
           {/* Lomba */}
           <FooterColumn title="Cabang Lomba" links={footerLinks.lomba} scrollTo={scrollTo} />
 
-          {/* Kontak */}
-          <div className="flex flex-col gap-5">
-            <h3 className="poster-font text-base font-black text-white">Kontak Panitia</h3>
-            <div className="flex flex-col gap-3">
+          {/* Kontak + CTA */}
+          <div className="flex flex-col gap-3">
+            <h3 className="poster-font text-sm font-black text-white">Kontak Panitia</h3>
+            <div className="flex flex-col gap-2">
               {[
                 { name: 'Diza', phone: '081343059590' },
                 { name: 'Hendra', phone: '081400842090' },
@@ -179,30 +179,27 @@ export default function Footer() {
                 <a
                   key={cp.name}
                   href={`tel:${cp.phone}`}
-                  className="flex items-center gap-2 text-sm text-white/85 font-medium transition-colors duration-150"
+                  className="flex items-center gap-2 text-xs text-white/80 font-medium transition-colors duration-150"
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.85)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
                 >
-                  <Phone size={13} className="text-orange-400 flex-shrink-0" />
-                  <span>{cp.phone} <span className="text-white/60">({cp.name})</span></span>
+                  <Phone size={11} className="text-orange-400 flex-shrink-0" />
+                  <span>{cp.phone} <span className="text-white/50">({cp.name})</span></span>
                 </a>
               ))}
-
-              <div className="flex items-start gap-2 text-sm text-white/85 font-medium mt-1">
-                <MapPin size={13} className="text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span>SMAIT Al-Fityan Boarding School,<br />Bogor, Jawa Barat</span>
+              <div className="flex items-start gap-2 text-xs text-white/70 font-medium mt-1">
+                <MapPin size={11} className="text-cyan-400 flex-shrink-0 mt-0.5" />
+                <span>SMAIT Al-Fityan Boarding School, Bogor</span>
               </div>
             </div>
-
-            {/* Registration CTA */}
-            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.16)', border: '1px solid rgba(232,76,30,0.35)' }}>
-              <div className="poster-font text-xs font-bold mb-1 text-orange-400 uppercase tracking-wider">Open Registration</div>
-              <div className="poster-font text-base font-black text-white">02 Sep – 10 Okt 2026</div>
+            {/* CTA */}
+            <div className="mt-1 p-3 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.16)', border: '1px solid rgba(232,76,30,0.35)' }}>
+              <div className="poster-font text-xs font-black text-white mb-0.5">02 Sep – 10 Okt 2026</div>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="poster-font inline-block mt-2 text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
+                className="poster-font inline-block mt-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all duration-200"
                 style={{ backgroundColor: 'var(--color-orange)', color: 'white' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange-dark)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange)')}
@@ -561,9 +558,9 @@ interface FooterColumnProps {
 
 function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="poster-font text-base font-black text-white">{title}</h3>
-      <div className="flex flex-col gap-2.5">
+    <div className="flex flex-col gap-3">
+      <h3 className="poster-font text-sm font-black text-white">{title}</h3>
+      <div className="flex flex-col gap-2">
         {links.map((link) => (
           <a
             key={link.label}
@@ -574,9 +571,9 @@ function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
                 scrollTo(link.href);
               }
             }}
-            className="text-sm text-white/80 transition-colors duration-150 font-medium"
+            className="text-xs text-white/75 transition-colors duration-150 font-medium"
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
           >
             {link.label}
           </a>
