@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { X, Download, ExternalLink, BookOpen } from 'lucide-react';
 
 const competitions = [
   {
@@ -14,9 +15,11 @@ const competitions = [
       'Kategori: Individu (Putra & Putri)',
       'Materi: Juz 29 & 30',
       'Sistem: Tahfizh + Tanya Jawab',
+      'Peserta membawa Al-Qur\'an sendiri',
     ],
     tags: ['Agama', 'Individu', 'Hafalan'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf_VLEuhalLzw707v1DjeT9fNA2o8EjXO8UKpYZu7hf22GkFA/viewform?usp=publish-editor',
+    guidebookUrl: '#',
     accent: '#00838F',
     bg: 'linear-gradient(135deg, #004D40 0%, #00838F 100%)',
     lightBg: 'rgba(0,131,143,0.08)',
@@ -35,9 +38,11 @@ const competitions = [
       'Bahasa: Arab, Inggris & Indonesia',
       'Durasi: Maks. 7 menit',
       'Kategori: Individu Campuran',
+      'Tema ditentukan saat Technical Meeting',
     ],
     tags: ['Agama', 'Trilingual', 'Dakwah'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/X2UvG7MDSZuGFb4e9',
+    guidebookUrl: '#',
     accent: '#1565C0',
     bg: 'linear-gradient(135deg, #0D3470 0%, #1565C0 100%)',
     lightBg: 'rgba(21,101,192,0.08)',
@@ -55,10 +60,12 @@ const competitions = [
     details: [
       'Bahasa: English Only',
       'Durasi: 5–7 menit',
-      'Tema: Ditentukan saat kompetisi',
+      'Tema: Ditentukan saat Technical Meeting',
+      'Penilaian: Konten, Pronounciasi & Kepercayaan Diri',
     ],
     tags: ['Bahasa', 'Individu', 'English'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/zQ1yQj9ohQ6AjCzw8',
+    guidebookUrl: '#',
     accent: '#2E7D32',
     bg: 'linear-gradient(135deg, #1B4A1E 0%, #2E7D32 100%)',
     lightBg: 'rgba(46,125,50,0.08)',
@@ -76,10 +83,12 @@ const competitions = [
     details: [
       'Bahasa: English',
       'Durasi: 5–7 menit',
-      'Boleh gunakan properti sederhana',
+      'Boleh menggunakan properti sederhana',
+      'Penilaian: Ekspresi, Intonasi & Kreativitas',
     ],
     tags: ['Seni', 'Individu', 'Kreativitas'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/m1CMd9cYAaMZ5TCC9',
+    guidebookUrl: '#',
     accent: '#E65100',
     bg: 'linear-gradient(135deg, #7c2d00 0%, #E65100 100%)',
     lightBg: 'rgba(230,81,0,0.08)',
@@ -95,12 +104,14 @@ const competitions = [
     price: 'Rp 250.000',
     description: 'Lomba Ketangkasan Baris-Berbaris yang menguji kedisiplinan, kekompakan gerakan, dan ketepatan aba-aba seluruh anggota tim.',
     details: [
-      'Tim: 8–12 peserta + 1 Danton',
+      'Tim: 8–12 peserta + 1 Komandan Regu',
       'Jenis: Peraturan & Variasi',
       'Kategori: Putra & Putri',
+      'Penilaian: Keseragaman, Ketepatan & Kekompakan',
     ],
     tags: ['Tim', 'Disiplin', 'Baris'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScqEkrs6PKZYIhIPKxREakuZgV2T7m2c4jJztjbz6URhcFW5g/viewform?usp=publish-editor',
+    guidebookUrl: '#',
     accent: '#1E6FBF',
     bg: 'linear-gradient(135deg, #0a2a50 0%, #1E6FBF 100%)',
     lightBg: 'rgba(30,111,191,0.08)',
@@ -117,11 +128,13 @@ const competitions = [
     description: 'Lomba futsal beregu putra antar sekolah SMP/MTs sederajat Se-Pulau Jawa. Tunjukkan skill individu dan kerjasama tim terbaikmu di lapangan!',
     details: [
       'Kategori: Putra',
-      'Tim: 5 pemain + max. 5 cadangan',
+      'Tim: 5 pemain + maks. 5 cadangan',
       'Peraturan FIFA Futsal',
+      'Penilaian: Fair play, Sportsmanship & Gol',
     ],
     tags: ['Tim', 'Olahraga', 'Putra'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/ki54VHFdEccopHjd8',
+    guidebookUrl: '#',
     accent: '#E84C1E',
     bg: 'linear-gradient(135deg, #7B1D1D 0%, #C43A10 100%)',
     lightBg: 'rgba(232,76,30,0.08)',
@@ -138,11 +151,13 @@ const competitions = [
     description: 'Lomba panahan tingkat SMP/MTs yang menguji konsentrasi, ketepatan, dan pengendalian diri. Menggunakan alat panahan standar dengan jarak yang telah ditentukan panitia.',
     details: [
       'Kategori: Putri',
-      'Jarak: Disesuaikan tingkat',
-      'Alat disediakan panitia',
+      'Jarak: Disesuaikan tingkat SMP',
+      'Alat dapat dipinjam dari panitia',
+      'Penilaian: Akurasi & Konsistensi',
     ],
     tags: ['Putri', 'Panahan', 'Individu'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/1vuKHNcZkApnL4dR8',
+    guidebookUrl: '#',
     accent: '#7B3F9E',
     bg: 'linear-gradient(135deg, #4a1d6e 0%, #7B3F9E 100%)',
     lightBg: 'rgba(123,63,158,0.08)',
@@ -158,12 +173,14 @@ const competitions = [
     price: 'Rp 55.000',
     description: 'Lomba desain poster digital menggunakan perangkat lunak desain. Ekspresikan kreativitas, estetika visual, dan kemampuan komunikasi grafis dalam satu karya terbaik.',
     details: [
-      'Software: Bebas (Canva, PS, AI, dll)',
-      'Format: PNG/JPG, min. 300dpi',
-      'Tema: Ditentukan panitia',
+      'Software: Bebas (Canva, Photoshop, AI, dll)',
+      'Format output: PNG/JPG, min. 300 dpi',
+      'Tema: Ditentukan saat Technical Meeting',
+      'Penilaian: Kreativitas, Estetika & Pesan',
     ],
     tags: ['Seni', 'Digital', 'Desain'],
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform',
+    registerUrl: 'https://forms.gle/PrJ9HtrrLBG8tSz88',
+    guidebookUrl: '#',
     accent: '#AD1457',
     bg: 'linear-gradient(135deg, #6A0A35 0%, #AD1457 100%)',
     lightBg: 'rgba(173,20,87,0.08)',
@@ -171,7 +188,11 @@ const competitions = [
   },
 ];
 
+type Competition = typeof competitions[0];
+
 export default function Competitions() {
+  const [selectedComp, setSelectedComp] = useState<Competition | null>(null);
+
   return (
     <section id="competitions" className="py-20 lg:py-28" style={{ backgroundColor: 'var(--color-bg-light)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,7 +217,7 @@ export default function Competitions() {
         {/* Desktop Grid */}
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {competitions.map((comp) => (
-            <CompetitionCard key={comp.id} comp={comp} />
+            <CompetitionCard key={comp.id} comp={comp} onOpenDetail={() => setSelectedComp(comp)} />
           ))}
         </div>
 
@@ -204,7 +225,7 @@ export default function Competitions() {
         <div className="sm:hidden comp-scroll flex gap-4 overflow-x-auto pb-4 -mx-4 px-4">
           {competitions.map((comp) => (
             <div key={comp.id} className="flex-shrink-0 w-64">
-              <CompetitionCard comp={comp} />
+              <CompetitionCard comp={comp} onOpenDetail={() => setSelectedComp(comp)} />
             </div>
           ))}
         </div>
@@ -212,32 +233,29 @@ export default function Competitions() {
         {/* CTA */}
         <div className="mt-14 text-center">
           <div className="inline-flex flex-col items-center gap-2">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-xl text-base font-bold transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white', boxShadow: '0 6px 24px rgba(232,76,30,0.35)' }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(232,76,30,0.45)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 6px 24px rgba(232,76,30,0.35)'; }}
-            >
-              🏆 Daftar Sekarang
-            </a>
-            <span className="text-sm" style={{ color: 'var(--color-muted)' }}>Open Registration: 02 Sep – 10 Okt 2026</span>
+            <span className="text-sm font-semibold" style={{ color: 'var(--color-muted)' }}>
+              Pilih cabang lomba di atas untuk mendaftar
+            </span>
+            <span className="text-xs" style={{ color: 'var(--color-muted)' }}>Open Registration: 02 Sep – 10 Okt 2026</span>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedComp && (
+        <CompetitionModal comp={selectedComp} onClose={() => setSelectedComp(null)} />
+      )}
     </section>
   );
 }
 
+/* ─── Card ─── */
 interface CompetitionCardProps {
-  comp: typeof competitions[0];
+  comp: Competition;
+  onOpenDetail: () => void;
 }
 
-function CompetitionCard({ comp }: CompetitionCardProps) {
-  const [expanded, setExpanded] = useState(false);
-
+function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
   return (
     <article
       className="card-hover rounded-2xl overflow-hidden flex flex-col"
@@ -252,7 +270,6 @@ function CompetitionCard({ comp }: CompetitionCardProps) {
         className="relative flex items-center justify-center"
         style={{ height: '120px', background: comp.bg }}
       >
-        {/* Emoji bubble */}
         <div
           className="w-20 h-20 rounded-full flex items-center justify-center"
           style={{
@@ -278,7 +295,7 @@ function CompetitionCard({ comp }: CompetitionCardProps) {
           className="absolute bottom-3 left-3 px-2 py-0.5 rounded-md text-xs font-bold"
           style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: 'white', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.3)' }}
         >
-          {comp.price}/tim
+          {comp.price}
         </div>
       </div>
 
@@ -288,27 +305,17 @@ function CompetitionCard({ comp }: CompetitionCardProps) {
           <h3 className="text-base font-black leading-tight" style={{ color: 'var(--color-navy)' }}>
             {comp.name}
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: comp.accent, fontWeight: 600 }}>
-            {comp.fullName !== comp.name ? comp.fullName : ''}
-          </p>
+          {comp.fullName !== comp.name && (
+            <p className="text-xs mt-0.5 font-semibold" style={{ color: comp.accent }}>
+              {comp.fullName}
+            </p>
+          )}
         </div>
         <p className="text-xs leading-relaxed flex-1" style={{ color: 'var(--color-muted)' }}>
           {comp.description}
         </p>
 
-        {/* Details (collapsible) */}
-        {expanded && (
-          <ul className="text-xs space-y-1 mt-1">
-            {comp.details.map((d, i) => (
-              <li key={i} className="flex items-start gap-1.5">
-                <span style={{ color: comp.accent }} className="mt-0.5">✓</span>
-                <span style={{ color: 'var(--color-navy)' }}>{d}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <div className="flex flex-wrap gap-1.5 mt-1">
+        <div className="flex flex-wrap gap-1.5">
           {comp.tags.map((tag) => (
             <span
               key={tag}
@@ -321,7 +328,7 @@ function CompetitionCard({ comp }: CompetitionCardProps) {
         </div>
 
         {/* Action buttons */}
-        <div className="flex flex-col gap-2 mt-2">
+        <div className="flex flex-col gap-2 mt-1">
           <a
             href={comp.registerUrl}
             target="_blank"
@@ -329,20 +336,196 @@ function CompetitionCard({ comp }: CompetitionCardProps) {
             id={`register-${comp.id}`}
             className="w-full text-center py-2 rounded-lg text-xs font-bold transition-all duration-150"
             style={{ background: comp.bg, color: 'white', boxShadow: `0 4px 12px ${comp.border}` }}
-            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = ''; }}
           >
             Daftar Sekarang →
           </a>
           <button
-            onClick={() => setExpanded(!expanded)}
-            className="w-full text-center py-1.5 rounded-lg text-xs font-semibold transition-all duration-150"
+            id={`detail-${comp.id}`}
+            onClick={onOpenDetail}
+            className="w-full text-center py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 cursor-pointer"
             style={{ backgroundColor: comp.lightBg, color: comp.accent, border: `1px solid ${comp.border}` }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = comp.border; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = comp.lightBg; }}
           >
-            {expanded ? 'Sembunyikan ↑' : 'Info Selengkapnya ↓'}
+            Info Selengkapnya ↗
           </button>
         </div>
       </div>
     </article>
+  );
+}
+
+/* ─── Modal ─── */
+interface CompetitionModalProps {
+  comp: Competition;
+  onClose: () => void;
+}
+
+function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
+  return (
+    /* Backdrop */
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ backgroundColor: 'rgba(7,18,32,0.72)', backdropFilter: 'blur(8px)' }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div
+        className="relative w-full max-w-lg rounded-3xl overflow-hidden flex flex-col"
+        style={{
+          backgroundColor: 'var(--color-white)',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.35)',
+          maxHeight: '90vh',
+        }}
+      >
+        {/* Modal Header — gradient banner */}
+        <div
+          className="relative flex items-end gap-5 p-7 pb-6"
+          style={{ background: comp.bg, minHeight: '160px' }}
+        >
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            id="modal-close"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-150"
+            style={{ backgroundColor: 'rgba(255,255,255,0.18)', color: 'white', backdropFilter: 'blur(8px)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.32)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.18)'; }}
+            aria-label="Tutup"
+          >
+            <X size={18} />
+          </button>
+
+          {/* Emoji */}
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+            style={{
+              background: 'rgba(255,255,255,0.18)',
+              border: '2px solid rgba(255,255,255,0.35)',
+              backdropFilter: 'blur(8px)',
+              fontSize: '32px',
+            }}
+          >
+            {comp.emoji}
+          </div>
+
+          {/* Title */}
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              FAMOUS 6.0 · {comp.level}
+            </p>
+            <h3 className="text-xl font-black text-white leading-tight">{comp.name}</h3>
+            {comp.fullName !== comp.name && (
+              <p className="text-sm mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{comp.fullName}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Modal Body — scrollable */}
+        <div className="overflow-y-auto flex-1 p-7 flex flex-col gap-6">
+
+          {/* Badges */}
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: comp.lightBg, color: comp.accent, border: `1px solid ${comp.border}` }}>
+              {comp.type}
+            </span>
+            <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: 'rgba(232,76,30,0.1)', color: 'var(--color-orange)', border: '1px solid rgba(232,76,30,0.25)' }}>
+              💰 {comp.price}
+            </span>
+            {comp.tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: 'var(--color-bg-light)', color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Description */}
+          <div>
+            <h4 className="text-sm font-black mb-2" style={{ color: 'var(--color-navy)' }}>
+              Tentang Lomba
+            </h4>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--color-muted)' }}>
+              {comp.description}
+            </p>
+          </div>
+
+          {/* Detail teknis */}
+          <div>
+            <h4 className="text-sm font-black mb-3" style={{ color: 'var(--color-navy)' }}>
+              Detail Teknis
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              {comp.details.map((d, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span
+                    className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5"
+                    style={{ backgroundColor: comp.lightBg, color: comp.accent }}
+                  >
+                    ✓
+                  </span>
+                  <span className="text-sm" style={{ color: 'var(--color-text)' }}>{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Guidebook download */}
+          <div
+            className="rounded-2xl p-4 flex items-center gap-4"
+            style={{ backgroundColor: comp.lightBg, border: `1px solid ${comp.border}` }}
+          >
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={{ background: comp.bg }}
+            >
+              <BookOpen size={18} color="white" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-black" style={{ color: 'var(--color-navy)' }}>Guidebook {comp.name}</p>
+              <p className="text-xs mt-0.5" style={{ color: 'var(--color-muted)' }}>Peraturan & teknis lomba lengkap</p>
+            </div>
+            <a
+              href={comp.guidebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              id={`guidebook-${comp.id}`}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold flex-shrink-0 transition-all duration-150"
+              style={{ background: comp.bg, color: 'white' }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+            >
+              <Download size={13} />
+              Unduh
+            </a>
+          </div>
+        </div>
+
+        {/* Modal Footer */}
+        <div className="p-5 pt-0 flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={onClose}
+            className="flex-1 py-3 rounded-xl text-sm font-semibold transition-all duration-150"
+            style={{ border: '1.5px solid var(--color-border)', color: 'var(--color-muted)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = comp.accent; e.currentTarget.style.color = comp.accent; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-muted)'; }}
+          >
+            Tutup
+          </button>
+          <a
+            href={comp.registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={`modal-register-${comp.id}`}
+            className="flex-1 py-3 rounded-xl text-sm font-bold text-center transition-all duration-150 inline-flex items-center justify-center gap-2"
+            style={{ background: comp.bg, color: 'white', boxShadow: `0 6px 20px ${comp.border}` }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = ''; }}
+          >
+            Daftar Sekarang <ExternalLink size={14} />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
