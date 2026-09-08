@@ -8,14 +8,10 @@ interface TimelineItem {
 }
 
 const timelineItems: TimelineItem[] = [
-  { id: 1, title: 'Open Registration', date: '02 Sep – 10 Okt 2026', icon: '📝' },
-  { id: 2, title: 'Batas Pendaftaran', date: '10 Oktober 2026', icon: '⏰' },
-  { id: 3, title: 'Technical Meeting', date: 'Oktober 2026', icon: '🤝' },
-  { id: 4, title: 'Pelaksanaan Lomba', date: 'November 2026', icon: '⚽' },
-  { id: 5, title: 'Penilaian & Penjurian', date: 'November 2026', icon: '⚖️' },
-  { id: 6, title: 'Pengumuman Finalis', date: 'November 2026', icon: '📢' },
-  { id: 7, title: 'Grand Final', date: 'November – Desember 2026', icon: '🏆' },
-  { id: 8, title: 'Awarding & Penutupan', date: 'Desember 2026', icon: '🎉' },
+  { id: 1, title: 'Registration', date: '02 Sep – 10 Okt 2026', icon: '📝' },
+  { id: 2, title: 'Technical Meeting', date: '11 Oktober 2026', icon: '🤝' },
+  { id: 3, title: 'Competition Day', date: '15-17 Oktober 2026', icon: '⚽' },
+  { id: 4, title: 'Awarding Ceremony', date: '31 Oktober 2026', icon: '🎉' },
 ];
 
 export default function Timeline() {
