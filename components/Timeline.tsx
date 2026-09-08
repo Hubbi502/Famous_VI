@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Jellyfish, AnglerFish, Seahorse, MantaRay, CoralBranch, Seaweed, Bubble } from './MarineBiota';
 
 interface TimelineItem {
   id: number;
@@ -21,34 +22,91 @@ export default function Timeline() {
     <section
       id="timeline"
       className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #0d0a2e 0%, #08051a 50%, #050312 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #12062d 0%, #15083a 50%, #10052d 100%)' }}
     >
-      {/* Ocean grid */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* ── Deep Ocean Ambient Biota & Bioluminescent Glow ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Ocean grid overlay */}
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'linear-gradient(rgba(42,196,216,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(42,196,216,0.04) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(192,132,252,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(192,132,252,0.04) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(232,76,30,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }} />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(42,196,216,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+
+        {/* Ambient bioluminescent glows */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+
+        {/* Bioluminescent Jellyfish */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '10%', right: '6%', opacity: 0.75, animationDuration: '8s' }}>
+          <Jellyfish size={52} color="rgba(192,132,252,0.85)" />
+        </div>
+        <div className="anim-jelly" style={{ position: 'absolute', top: '22%', right: '12%', opacity: 0.55, animationDuration: '10s', animationDelay: '2s' }}>
+          <Jellyfish size={36} color="rgba(56,189,248,0.75)" />
+        </div>
+
+        {/* Lurking AnglerFish */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '65%', left: '3%', opacity: 0.7, animationDuration: '12s' }}>
+          <AnglerFish size={48} />
+        </div>
+
+        {/* Seahorse bobbing on right */}
+        <div className="anim-jelly" style={{ position: 'absolute', bottom: '15%', right: '5%', opacity: 0.8, animationDuration: '6s' }}>
+          <Seahorse size={40} />
+        </div>
+
+        {/* MantaRay gliding past */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '42%', left: '-10%', opacity: 0.45, animationDuration: '32s' }}>
+          <MantaRay size={75} />
+        </div>
+
+        {/* Seaweed & Coral accents along bottom */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '2%', opacity: 0.5 }}>
+          <Seaweed height={75} color="#9333ea" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '5px', left: '6%', opacity: 0.6 }}>
+          <CoralBranch height={50} color="#38bdf8" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', right: '3%', opacity: 0.5 }}>
+          <Seaweed height={80} color="#0284c7" />
+        </div>
+
+        {/* Rising bubbles */}
+        {[
+          { left: '10%', delay: '0s', size: 10 },
+          { left: '35%', delay: '1.5s', size: 7 },
+          { left: '62%', delay: '0.8s', size: 12 },
+          { left: '88%', delay: '2.2s', size: 8 },
+        ].map((b, idx) => (
+          <div key={idx} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4.5s' }}>
+            <Bubble size={b.size} />
+          </div>
+        ))}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left - Text */}
           <div className="flex flex-col gap-6">
-            <span
-              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
-              style={{ color: 'var(--color-orange-light)' }}
-            >
-              <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
-              Rangkaian Kegiatan
-            </span>
+            <div className="flex items-center gap-3">
+              <span
+                className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
+                style={{ color: 'var(--color-orange-light)' }}
+              >
+                <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
+                Rangkaian Kegiatan
+              </span>
+              <span
+                className="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider"
+                style={{ backgroundColor: 'rgba(168,85,247,0.2)', color: '#c084fc', border: '1px solid rgba(168,85,247,0.3)' }}
+              >
+                ⏳ Depth: 7,500m · Hadal Trench
+              </span>
+            </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
               Timeline{' '}

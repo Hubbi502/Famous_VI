@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MantaRay, Jellyfish, Octopus, Seahorse, Seaweed, CoralBranch, Bubble } from './MarineBiota';
 
 const galleryImages = [
   {
@@ -70,15 +71,71 @@ export default function Gallery() {
   const thumbnails = galleryImages.slice(1);
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050312 0%, #070418 50%, #03020c 100%)' }}>
+    <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #10052d 0%, #140636 50%, #0e0427 100%)' }}>
+      {/* ── Deep Sea Ambient Glow & Biota ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Radial Bioluminescent Glows */}
+        <div className="absolute top-1/3 left-10 w-96 h-96 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)', filter: 'blur(75px)' }} />
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%)', filter: 'blur(75px)' }} />
+
+        {/* Jellyfish on Left */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '15%', left: '3%', opacity: 0.7, animationDuration: '7s' }}>
+          <Jellyfish size={50} color="rgba(56,189,248,0.8)" />
+        </div>
+
+        {/* Octopus floating mid-right */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '28%', right: '4%', opacity: 0.75, animationDuration: '9s', animationDelay: '1s' }}>
+          <Octopus size={48} />
+        </div>
+
+        {/* Seahorse bobbing left */}
+        <div className="anim-jelly" style={{ position: 'absolute', bottom: '20%', left: '4%', opacity: 0.8, animationDuration: '6s' }}>
+          <Seahorse size={38} />
+        </div>
+
+        {/* MantaRay swimming left across background */}
+        <div className="anim-swim-left" style={{ position: 'absolute', top: '55%', right: '-10%', opacity: 0.45, animationDuration: '30s' }}>
+          <MantaRay size={80} />
+        </div>
+
+        {/* Bottom seaweed & coral */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '2%', opacity: 0.5 }}>
+          <Seaweed height={75} color="#0284c7" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '5px', right: '5%', opacity: 0.6 }}>
+          <CoralBranch height={55} color="#a855f7" />
+        </div>
+
+        {/* Rising bubbles */}
+        {[
+          { left: '18%', delay: '0.4s', size: 9 },
+          { left: '48%', delay: '1.8s', size: 11 },
+          { left: '78%', delay: '1.0s', size: 7 },
+        ].map((b, idx) => (
+          <div key={idx} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4.2s' }}>
+            <Bubble size={b.size} />
+          </div>
+        ))}
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <span
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase mb-4 cloud-badge-cyan poster-shadow-cyan"
-            style={{ color: '#0284c7' }}
-          >
-            ✦ Photo Gallery
-          </span>
+          <div className="inline-flex items-center justify-center gap-2 mb-4">
+            <span
+              className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase cloud-badge-cyan poster-shadow-cyan"
+              style={{ color: '#0284c7' }}
+            >
+              ✦ Photo Gallery
+            </span>
+            <span
+              className="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+              style={{ backgroundColor: 'rgba(56,189,248,0.18)', color: '#7dd3fc', border: '1px solid rgba(56,189,248,0.3)' }}
+            >
+              🖼️ Depth: 9,000m · Bioluminescent Deep
+            </span>
+          </div>
           <h2 className="poster-font text-3xl sm:text-5xl font-black text-white">
             Galeri Acara{' '}
             <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #FF8A50 0%, #FFD166 100%)' }}>

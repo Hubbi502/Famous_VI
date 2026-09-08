@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { Jellyfish, AnglerFish, Seahorse, Starfish, Seaweed, CoralBranch, Bubble } from './MarineBiota';
 
 const faqs = [
   {
@@ -52,15 +53,69 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #03020c 0%, #040814 50%, #020617 100%)' }}>
+    <section id="faq" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0e0427 0%, #0c0321 50%, #080219 100%)' }}>
+      {/* ── Deep Ocean Ambient Glow & Biota ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Glows */}
+        <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+
+        {/* Jellyfish on Right */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '12%', right: '5%', opacity: 0.7, animationDuration: '8s' }}>
+          <Jellyfish size={46} color="rgba(192,132,252,0.8)" />
+        </div>
+
+        {/* AnglerFish lurking left */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '40%', left: '3%', opacity: 0.75, animationDuration: '10s' }}>
+          <AnglerFish size={48} />
+        </div>
+
+        {/* Seahorse bobbing right */}
+        <div className="anim-jelly" style={{ position: 'absolute', bottom: '25%', right: '6%', opacity: 0.8, animationDuration: '6s' }}>
+          <Seahorse size={36} />
+        </div>
+
+        {/* Bottom seaweed & coral */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '3%', opacity: 0.55 }}>
+          <Seaweed height={80} color="#7e22ce" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '5px', left: '8%', opacity: 0.6 }}>
+          <CoralBranch height={50} color="#ec4899" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '5px', right: '3%', opacity: 0.6 }}>
+          <Starfish size={24} color="#f59e0b" />
+        </div>
+
+        {/* Bubble columns */}
+        {[
+          { left: '20%', delay: '0.2s', size: 8 },
+          { left: '55%', delay: '1.4s', size: 10 },
+          { left: '85%', delay: '0.9s', size: 7 },
+        ].map((b, idx) => (
+          <div key={idx} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4s' }}>
+            <Bubble size={b.size} />
+          </div>
+        ))}
+      </div>
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <span
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase mb-4 cloud-badge-purple poster-shadow-purple"
-            style={{ color: '#7e22ce' }}
-          >
-            ✦ FAQ
-          </span>
+          <div className="inline-flex items-center justify-center gap-2 mb-4">
+            <span
+              className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase cloud-badge-purple poster-shadow-purple"
+              style={{ color: '#7e22ce' }}
+            >
+              ✦ FAQ
+            </span>
+            <span
+              className="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+              style={{ backgroundColor: 'rgba(168,85,247,0.2)', color: '#c084fc', border: '1px solid rgba(168,85,247,0.3)' }}
+            >
+              ❓ Depth: 10,500m · Mariana Trench
+            </span>
+          </div>
           <h2 className="poster-font text-3xl sm:text-5xl font-black text-white">
             Pertanyaan yang Sering{' '}
             <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)' }}>

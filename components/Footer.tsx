@@ -35,10 +35,14 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(180deg, #020617 0%, #01040d 50%, #000000 100%)', position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #080219 0%, #060113 50%, #03000b 100%)', position: 'relative', overflow: 'hidden' }}>
 
       {/* ── Deep ocean ambient creatures ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+
+        {/* Radial Bioluminescent Glows */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }} />
 
         {/* Jellyfish cluster - top left */}
         <div className="anim-jelly" style={{ position: 'absolute', top: '5%', left: '4%', animationDuration: '7s', opacity: 0.75 }}>
@@ -126,7 +130,7 @@ export default function Footer() {
       <div className="w-full overflow-hidden" style={{ marginTop: '-1px', position: 'relative', zIndex: 1 }}>
         <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
           <path d="M0,0 Q360,60 720,20 Q1080,-20 1440,40 L1440,0Z"
-            fill="#020617" />
+            fill="#080219" />
         </svg>
       </div>
 
