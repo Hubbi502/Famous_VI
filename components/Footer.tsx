@@ -1,21 +1,10 @@
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone } from 'lucide-react';
 import {
-  Crab,
-  Starfish,
-  Seaweed,
   Jellyfish,
   AnglerFish,
   Seahorse,
-  CoralBranch,
-  Bubble,
   ClownFish,
-  StaghornCoral,
-  BrainCoral,
-  TubeSponges,
-  SeaAnemone,
-  SeaFan,
-  SunkenAnchor,
-  GiantClam,
+  Bubble,
 } from './MarineBiota';
 
 const socialLinks = [
@@ -52,74 +41,74 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(180deg, #04000f 0%, #060216 40%, #08031d 75%, #050114 100%)', position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #04000f 0%, #060216 35%, #08031d 70%, #040112 100%)', position: 'relative', overflow: 'hidden' }}>
 
-      {/* ── Deep Ocean Subtle Bioluminescent Light & Ambiance ── */}
+      {/* ── Deep Ocean Subtle Bioluminescent Light & Water Ambience ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         
-        {/* Soft atmospheric light beams (God rays from above) */}
+        {/* Soft atmospheric light beams (Deep sea caustics / god rays) */}
         <div
-          className="absolute top-0 left-1/4 w-[300px] h-[550px] opacity-20 transform -rotate-12"
+          className="absolute top-0 left-1/4 w-[320px] h-[600px] opacity-20 transform -rotate-12 pointer-events-none"
           style={{
-            background: 'linear-gradient(180deg, rgba(56,189,248,0.3) 0%, rgba(14,116,144,0.15) 50%, transparent 100%)',
+            background: 'linear-gradient(180deg, rgba(56,189,248,0.35) 0%, rgba(14,116,144,0.18) 50%, transparent 100%)',
+            filter: 'blur(40px)',
+          }}
+        />
+        <div
+          className="absolute top-0 right-1/4 w-[280px] h-[550px] opacity-15 transform rotate-12 pointer-events-none"
+          style={{
+            background: 'linear-gradient(180deg, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.12) 50%, transparent 100%)',
             filter: 'blur(35px)',
           }}
         />
+
+        {/* Ambient Bioluminescent Deep Glows illuminating the water layers */}
         <div
-          className="absolute top-0 right-1/4 w-[240px] h-[500px] opacity-15 transform rotate-12"
-          style={{
-            background: 'linear-gradient(180deg, rgba(168,85,247,0.25) 0%, rgba(99,102,241,0.1) 50%, transparent 100%)',
-            filter: 'blur(30px)',
-          }}
+          className="absolute bottom-28 left-1/6 w-[450px] h-[250px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.18) 0%, rgba(147,51,234,0.08) 50%, transparent 75%)', filter: 'blur(55px)' }}
+        />
+        <div
+          className="absolute bottom-24 right-1/6 w-[420px] h-[230px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(126,34,206,0.06) 50%, transparent 75%)', filter: 'blur(50px)' }}
+        />
+        <div
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[600px] h-[180px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.16) 0%, transparent 70%)', filter: 'blur(45px)' }}
         />
 
-        {/* Bioluminescent Deep Glows */}
-        <div
-          className="absolute bottom-16 left-1/4 w-[420px] h-[220px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.16) 0%, rgba(147,51,234,0.08) 50%, transparent 75%)', filter: 'blur(50px)' }}
-        />
-        <div
-          className="absolute bottom-20 right-1/5 w-[380px] h-[200px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.14) 0%, rgba(126,34,206,0.06) 50%, transparent 75%)', filter: 'blur(45px)' }}
-        />
-        <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[550px] h-[160px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }}
-        />
-
-        {/* Jellyfish drifting gracefully */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '6%', left: '4%', animationDuration: '7s', opacity: 0.8 }}>
+        {/* Bioluminescent Jellyfish cruising in mid water */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '5%', left: '4%', animationDuration: '7s', opacity: 0.85 }}>
           <Jellyfish size={46} color="rgba(139,92,246,0.85)" glowColor="#38bdf8" />
         </div>
-        <div className="anim-jelly" style={{ position: 'absolute', top: '16%', left: '13%', animationDuration: '9s', animationDelay: '3s', opacity: 0.65 }}>
-          <Jellyfish size={34} color="rgba(56,189,248,0.75)" glowColor="#c084fc" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '15%', left: '13%', animationDuration: '9s', animationDelay: '3s', opacity: 0.7 }}>
+          <Jellyfish size={34} color="rgba(56,189,248,0.8)" glowColor="#c084fc" />
         </div>
 
-        {/* Angler Fish lurking with glowing lure */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '18%', right: '6%', animationDuration: '11s', animationDelay: '1s', opacity: 0.85 }}>
-          <AnglerFish size={52} />
+        {/* Deep Abyssal Angler Fish with glowing lure */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '16%', right: '5%', animationDuration: '11s', animationDelay: '1s', opacity: 0.85 }}>
+          <AnglerFish size={54} />
         </div>
 
-        {/* Seahorse near kelp */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '46%', left: '4%', animationDuration: '5.5s', opacity: 0.85 }}>
-          <Seahorse size={40} />
+        {/* Seahorse bobbing near reef ridge */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '44%', left: '3%', animationDuration: '5.5s', opacity: 0.85 }}>
+          <Seahorse size={42} />
         </div>
 
-        {/* Clownfish swimming across */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '56%', left: 0, animationDuration: '28s', opacity: 0.75 }}>
+        {/* Little fish swimming across the water column */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '54%', left: 0, animationDuration: '28s', opacity: 0.75 }}>
           <ClownFish size={28} />
         </div>
 
-        {/* Rising bioluminescent bubble columns */}
+        {/* Rising bioluminescent bubbles */}
         {[
-          { left: '12%', delay: '0s',   size: 11 },
-          { left: '26%', delay: '1.4s', size: 8  },
-          { left: '48%', delay: '0.6s', size: 13 },
+          { left: '10%', delay: '0s',   size: 11 },
+          { left: '25%', delay: '1.4s', size: 8  },
+          { left: '46%', delay: '0.6s', size: 13 },
           { left: '68%', delay: '2.1s', size: 9  },
-          { left: '82%', delay: '0.9s', size: 11 },
-          { left: '94%', delay: '1.7s', size: 7  },
+          { left: '84%', delay: '0.9s', size: 11 },
+          { left: '95%', delay: '1.7s', size: 7  },
         ].map((b, i) => (
-          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '200px', left: b.left, animationDelay: b.delay, animationDuration: `${3.5 + i * 0.5}s` }}>
+          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '260px', left: b.left, animationDelay: b.delay, animationDuration: `${3.5 + i * 0.5}s` }}>
             <Bubble size={b.size} />
           </div>
         ))}
@@ -133,7 +122,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" style={{ position: 'relative', zIndex: 2 }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           
           {/* Brand column */}
@@ -226,164 +215,328 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── RICH BIOLUMINESCENT CORAL REEF ECOSYSTEM SEABED ── */}
-      <div className="relative w-full overflow-hidden pointer-events-none" style={{ marginTop: '10px', minHeight: '190px' }}>
-        
-        {/* Soft Luminous Terrain SVG with Multi-Toned Depths & Bioluminescent Highlights */}
-        <svg viewBox="0 0 1440 210" className="w-full h-auto" preserveAspectRatio="none" style={{ display: 'block', minHeight: '150px' }}>
+      {/* ── REALISTIC MULTI-TIERED OCEAN FLOOR & REEF TOPOGRAPHY ── */}
+      {/* Real Ocean Depth: Mesopelagic (top) -> Bathyal Seamount & Shelf (middle) -> Abyssal Benthic Floor (bottom) */}
+      <div className="relative w-full overflow-hidden pointer-events-none" style={{ marginTop: '10px' }}>
+        <svg viewBox="0 0 1440 320" className="w-full h-auto" preserveAspectRatio="none" style={{ display: 'block', minHeight: '220px' }}>
           <defs>
-            <linearGradient id="reefBackTerrain" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#140b2e" />
-              <stop offset="50%" stopColor="#0d061f" />
+            {/* Gradients for Multi-layered Ocean Terraces */}
+            <linearGradient id="deepRidge1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#1a0f3d" />
+              <stop offset="60%" stopColor="#100826" />
+              <stop offset="100%" stopColor="#070214" />
+            </linearGradient>
+            <linearGradient id="deepRidge2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#1e1147" />
+              <stop offset="50%" stopColor="#12092c" />
               <stop offset="100%" stopColor="#050110" />
             </linearGradient>
-            <linearGradient id="reefForeTerrain" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1a0d3b" />
-              <stop offset="40%" stopColor="#100624" />
-              <stop offset="100%" stopColor="#04010a" />
+            <linearGradient id="foreRidge3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#251458" />
+              <stop offset="45%" stopColor="#150a33" />
+              <stop offset="100%" stopColor="#03000a" />
             </linearGradient>
-            <linearGradient id="crestGlow1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-              <stop offset="35%" stopColor="#a855f7" stopOpacity="0.5" />
-              <stop offset="70%" stopColor="#ec4899" stopOpacity="0.45" />
-              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
+            <linearGradient id="benthicFloor" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#160c38" />
+              <stop offset="100%" stopColor="#020008" />
             </linearGradient>
-            <linearGradient id="crestGlow2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.35" />
-              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.35" />
+
+            {/* Glowing illuminated crest edges */}
+            <linearGradient id="crestGlowBack" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.5" />
+              <stop offset="30%" stopColor="#a855f7" stopOpacity="0.6" />
+              <stop offset="70%" stopColor="#ec4899" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.5" />
+            </linearGradient>
+            <linearGradient id="crestGlowMid" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.45" />
+              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.45" />
+            </linearGradient>
+            <linearGradient id="crestGlowFore" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.4" />
+              <stop offset="40%" stopColor="#c084fc" stopOpacity="0.45" />
+              <stop offset="80%" stopColor="#f59e0b" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.4" />
+            </linearGradient>
+
+            {/* Coral gradients */}
+            <linearGradient id="clamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fce7f3" />
+              <stop offset="45%" stopColor="#f472b6" />
+              <stop offset="100%" stopColor="#be185d" />
+            </linearGradient>
+            <radialGradient id="pearlShimmer" cx="35%" cy="35%" r="65%">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="55%" stopColor="#fef08a" />
+              <stop offset="100%" stopColor="#f59e0b" />
+            </radialGradient>
+            <linearGradient id="stagPinkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="#ec4899" />
+              <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
+            <linearGradient id="stagCyanGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="#7c3aed" />
+              <stop offset="100%" stopColor="#38bdf8" />
+            </linearGradient>
+            <radialGradient id="brainCoralGrad" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#fbcfe8" />
+              <stop offset="45%" stopColor="#ec4899" />
+              <stop offset="100%" stopColor="#4c1d95" />
+            </radialGradient>
+            <radialGradient id="brainCoralBlueGrad" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#c7d2fe" />
+              <stop offset="45%" stopColor="#6366f1" />
+              <stop offset="100%" stopColor="#1e1b4b" />
+            </radialGradient>
+            <linearGradient id="tubeSpongeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0369a1" />
+              <stop offset="40%" stopColor="#38bdf8" />
+              <stop offset="80%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#082f49" />
+            </linearGradient>
+            <linearGradient id="tubeSpongePurple" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#6b21a8" />
+              <stop offset="40%" stopColor="#c084fc" />
+              <stop offset="80%" stopColor="#9333ea" />
+              <stop offset="100%" stopColor="#3b0764" />
             </linearGradient>
           </defs>
 
-          {/* Layer 1: Background Distant Ridge with glowing crest */}
-          <path d="M0,210 L0,95 Q220,55 450,85 Q680,115 900,70 Q1120,30 1320,75 Q1390,90 1440,70 L1440,210Z" fill="url(#reefBackTerrain)" />
-          <path d="M0,95 Q220,55 450,85 Q680,115 900,70 Q1120,30 1320,75 Q1390,90 1440,70" stroke="url(#crestGlow1)" strokeWidth="2.5" fill="none" opacity="0.8" />
+          {/* ══════════════════════════════════════════════════════════════
+              LAYER 1: DISTANT HIGH SEAMOUNT & CONTINENTAL SHELF (Y: 50–120)
+              ══════════════════════════════════════════════════════════════ */}
+          <path d="M0,320 L0,105 Q160,55 360,85 Q560,115 760,65 Q960,25 1160,70 Q1300,95 1440,65 L1440,320Z" fill="url(#deepRidge1)" />
+          <path d="M0,105 Q160,55 360,85 Q560,115 760,65 Q960,25 1160,70 Q1300,95 1440,65" stroke="url(#crestGlowBack)" strokeWidth="2.5" fill="none" opacity="0.75" />
 
-          {/* Layer 2: Foreground Reef Ridge with glowing crest */}
-          <path d="M0,210 L0,125 Q180,90 400,120 Q620,145 840,105 Q1060,65 1260,105 Q1360,120 1440,95 L1440,210Z" fill="url(#reefForeTerrain)" />
-          <path d="M0,125 Q180,90 400,120 Q620,145 840,105 Q1060,65 1260,105 Q1360,120 1440,95" stroke="url(#crestGlow2)" strokeWidth="2" fill="none" opacity="0.75" />
+          {/* Background Corals perched high on seamount ridge (Layer 1) */}
+          {/* Far Left High Kelp Bed */}
+          <g transform="translate(45, 20)">
+            <path d="M15,90 Q5,65 15,40 Q25,18 10,0" stroke="#14532d" strokeWidth="6" fill="none" strokeLinecap="round" opacity="0.6" />
+            <path d="M25,90 Q35,68 22,42 Q12,20 22,0" stroke="#166534" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.5" />
+          </g>
+          {/* Distant Sea Fan on high peak (x=240, y=70) */}
+          <g transform="translate(225, 10)">
+            <path d="M35,65 L35,45" stroke="#7c2d12" strokeWidth="4" strokeLinecap="round" />
+            <path d="M35,45 Q12,30 4,12 Q35,0 66,12 Q58,30 35,45 Z" fill="#f97316" opacity="0.3" />
+            <path d="M35,45 Q20,28 10,12 M35,45 Q28,22 24,5 M35,45 Q35,20 35,3 M35,45 Q42,22 46,5 M35,45 Q50,28 60,12" stroke="#f97316" strokeWidth="1.8" fill="none" strokeLinecap="round" opacity="0.75" />
+          </g>
+          {/* Distant Glowing Coral Tree on center-left peak (x=520, y=85) */}
+          <g transform="translate(510, 30)">
+            <path d="M25,60 L25,32 M25,44 L40,24 M25,38 L10,22 M25,30 L32,12 M25,28 L16,10" stroke="#a855f7" strokeWidth="4.5" strokeLinecap="round" fill="none" opacity="0.7" />
+            <circle cx="40" cy="24" r="3" fill="#38bdf8" filter="drop-shadow(0 0 4px #38bdf8)" />
+            <circle cx="10" cy="22" r="3" fill="#38bdf8" filter="drop-shadow(0 0 4px #38bdf8)" />
+            <circle cx="32" cy="12" r="3" fill="#38bdf8" filter="drop-shadow(0 0 4px #38bdf8)" />
+            <circle cx="16" cy="10" r="3" fill="#38bdf8" filter="drop-shadow(0 0 4px #38bdf8)" />
+          </g>
+          {/* Distant Sea Fan on high right peak (x=980, y=40) */}
+          <g transform="translate(970, -10)">
+            <path d="M35,60 L35,42" stroke="#7c2d12" strokeWidth="4" strokeLinecap="round" />
+            <path d="M35,42 Q10,28 3,10 Q35,-2 67,10 Q60,28 35,42 Z" fill="#ec4899" opacity="0.3" />
+            <path d="M35,42 Q20,26 10,10 M35,42 Q28,20 24,3 M35,42 Q35,18 35,2 M35,42 Q42,20 46,3 M35,42 Q50,26 60,10" stroke="#ec4899" strokeWidth="1.8" fill="none" strokeLinecap="round" opacity="0.8" />
+          </g>
+          {/* Far Right Kelp Forest */}
+          <g transform="translate(1360, -5)">
+            <path d="M20,80 Q32,55 18,32 Q6,12 18,-8" stroke="#15803d" strokeWidth="5.5" fill="none" strokeLinecap="round" opacity="0.6" />
+            <path d="M30,80 Q18,58 30,35 Q40,15 28,-5" stroke="#166534" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.5" />
+          </g>
 
-          {/* Ambient Bioluminescent Spores / Plankton specks */}
+
+          {/* ══════════════════════════════════════════════════════════════
+              LAYER 2: MIDGROUND ROCKY TERRACES & REEF SLOPES (Y: 90–190)
+              ══════════════════════════════════════════════════════════════ */}
+          <path d="M0,320 L0,145 Q150,90 350,135 Q550,175 740,120 Q930,70 1140,125 Q1290,150 1440,115 L1440,320Z" fill="url(#deepRidge2)" />
+          <path d="M0,145 Q150,90 350,135 Q550,175 740,120 Q930,70 1140,125 Q1290,150 1440,115" stroke="url(#crestGlowMid)" strokeWidth="2.2" fill="none" opacity="0.8" />
+
+          {/* Midground Corals & Formations rooted on rocky terrace slopes */}
+          
+          {/* Left Midground: Tall Purple/Cyan Tube Sponges on slope (x=130, y=105) */}
+          <g transform="translate(110, 45)">
+            <rect x="4" y="25" width="12" height="42" rx="6" fill="url(#tubeSpongePurple)" />
+            <ellipse cx="10" cy="25" rx="6" ry="3.5" fill="#3b0764" stroke="#c084fc" strokeWidth="1.5" />
+            <rect x="18" y="10" width="15" height="58" rx="7.5" fill="url(#tubeSpongePurple)" />
+            <ellipse cx="25.5" cy="10" rx="7.5" ry="4" fill="#3b0764" stroke="#c084fc" strokeWidth="1.8" />
+            <circle cx="25.5" cy="4" r="2.5" fill="#ffffff" filter="drop-shadow(0 0 4px #c084fc)" />
+            <rect x="35" y="20" width="13" height="48" rx="6.5" fill="url(#tubeSpongePurple)" />
+            <ellipse cx="41.5" cy="20" rx="6.5" ry="3.5" fill="#3b0764" stroke="#c084fc" strokeWidth="1.5" />
+          </g>
+
+          {/* Left-Center Midground: Staghorn Coral on rocky mound (x=380, y=140) */}
+          <g transform="translate(350, 75)">
+            <path d="M35,70 L35,38 M35,50 L52,30 M35,42 L18,25 M35,34 L44,14 M35,30 L24,10" stroke="url(#stagCyanGrad)" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <path d="M52,30 L60,18 M18,25 L10,15 M44,14 L50,4 M24,10 L18,2" stroke="url(#stagCyanGrad)" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+            {[
+              { cx: 60, cy: 18 }, { cx: 10, cy: 15 }, { cx: 50, cy: 4 }, { cx: 18, cy: 2 }, { cx: 35, cy: 22 },
+            ].map((p, i) => (
+              <circle key={i} cx={p.cx} cy={p.cy} r="3.5" fill="#38bdf8" filter="drop-shadow(0 0 4px #38bdf8)" />
+            ))}
+          </g>
+
+          {/* Center Midground: Blue Brain Coral on rocky shelf (x=680, y=130) */}
+          <g transform="translate(640, 85)">
+            <path d="M8 42 Q4 18 24 8 Q36 2 48 8 Q68 18 64 42 Q36 52 8 42 Z" fill="url(#brainCoralBlueGrad)" stroke="#1e1b4b" strokeWidth="1.8" />
+            <path d="M18 34 Q24 28 20 20 Q28 14 36 20 Q44 26 38 34" stroke="#c7d2fe" strokeWidth="2.4" strokeLinecap="round" fill="none" opacity="0.85" />
+            <path d="M28 40 Q36 34 32 26 Q40 22 48 28 Q54 34 50 40" stroke="#c7d2fe" strokeWidth="2.4" strokeLinecap="round" fill="none" opacity="0.85" />
+            <path d="M16 24 Q12 14 22 12 Q28 16 36 10 Q44 14 52 12" stroke="#c7d2fe" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.75" />
+          </g>
+
+          {/* Right-Center Midground: Sunken Weathered Anchor half-wedged in shelf rock (x=880, y=95) */}
+          <g transform="translate(850, 40)">
+            <circle cx="24" cy="9" r="6" stroke="#64748b" strokeWidth="3" fill="none" />
+            <line x1="8" y1="18" x2="40" y2="18" stroke="#475569" strokeWidth="4" strokeLinecap="round" />
+            <circle cx="8" cy="18" r="2.5" fill="#94a3b8" />
+            <circle cx="40" cy="18" r="2.5" fill="#94a3b8" />
+            <line x1="24" y1="12" x2="24" y2="54" stroke="#475569" strokeWidth="5" strokeLinecap="round" />
+            <path d="M6 40 Q24 60 42 40" stroke="#334155" strokeWidth="5.5" strokeLinecap="round" fill="none" />
+            <polygon points="6,40 3,32 11,37" fill="#475569" />
+            <polygon points="42,40 45,32 37,37" fill="#475569" />
+            {/* Clinging kelp */}
+            <path d="M22 30 Q16 22 23 15" stroke="#22c55e" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+            <path d="M26 46 Q32 40 28 34" stroke="#16a34a" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+          </g>
+
+          {/* Right Midground: Staghorn & Sea Anemone on slope (x=1200, y=140) */}
+          <g transform="translate(1170, 75)">
+            <path d="M35,70 L35,38 M35,50 L52,30 M35,42 L18,25 M35,34 L44,14 M35,30 L24,10" stroke="url(#stagPinkGrad)" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <path d="M52,30 L60,18 M18,25 L10,15 M44,14 L50,4 M24,10 L18,2" stroke="url(#stagPinkGrad)" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+            {[
+              { cx: 60, cy: 18 }, { cx: 10, cy: 15 }, { cx: 50, cy: 4 }, { cx: 18, cy: 2 }, { cx: 35, cy: 22 },
+            ].map((p, i) => (
+              <circle key={i} cx={p.cx} cy={p.cy} r="3.5" fill="#fef08a" filter="drop-shadow(0 0 4px #fef08a)" />
+            ))}
+          </g>
+
+
+          {/* ══════════════════════════════════════════════════════════════
+              LAYER 3: FOREGROUND BENTHIC REEF & DEEP OCEAN BED (Y: 150–260)
+              ══════════════════════════════════════════════════════════════ */}
+          <path d="M0,320 L0,185 Q200,135 440,175 Q680,215 900,165 Q1120,120 1300,170 Q1380,185 1440,165 L1440,320Z" fill="url(#foreRidge3)" />
+          <path d="M0,185 Q200,135 440,175 Q680,215 900,165 Q1120,120 1300,170 Q1380,185 1440,165" stroke="url(#crestGlowFore)" strokeWidth="2" fill="none" opacity="0.8" />
+
+          {/* Sandy Abyssal Trench Valley Floor Base */}
+          <path d="M0,320 L0,230 Q300,195 620,235 Q940,265 1240,225 L1440,245 L1440,320Z" fill="url(#benthicFloor)" />
+
+          {/* Foreground Rich Coral Features nestled on the ocean floor */}
+
+          {/* Far Left Foreground: Brain Coral & Starfish (x=60, y=190) */}
+          <g transform="translate(45, 140)">
+            <path d="M8 44 Q4 20 24 10 Q36 4 48 10 Q68 20 64 44 Q36 54 8 44 Z" fill="url(#brainCoralGrad)" stroke="#4c1d95" strokeWidth="2" />
+            <path d="M18 36 Q24 30 20 22 Q28 16 36 22 Q44 28 38 36" stroke="#fbcfe8" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.85" />
+            <path d="M28 42 Q36 36 32 28 Q40 24 48 30 Q54 36 50 42" stroke="#fbcfe8" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.85" />
+            {/* Orange Starfish resting on sloped rock face */}
+            <g transform="translate(60, 25) rotate(-20)">
+              <path d="M12 2 Q14 8 16 9 Q22 9 23 11 Q18 15 17 16 Q20 22 17 24 Q12 20 10 20 Q6 24 5 22 Q7 16 4 13 Q8 11 9 9 Q10 8 12 2 Z" fill="#f97316" stroke="rgba(0,0,0,0.3)" strokeWidth="1" />
+              <circle cx="12" cy="12" r="2" fill="#fff" opacity="0.8" />
+            </g>
+          </g>
+
+          {/* Left-Center Foreground: Sea Anemone & Coral Bush (x=270, y=165) */}
+          <g transform="translate(250, 125)">
+            {/* Anemone */}
+            <path d="M16 45 Q24 38 32 45 L30 38 Q24 35 18 38 Z" fill="#9f1239" />
+            {[
+              { d: 'M24,42 Q8,26 5,10', tip: [5, 10] },
+              { d: 'M24,42 Q14,22 11,5', tip: [11, 5] },
+              { d: 'M24,42 Q19,18 19,2', tip: [19, 2] },
+              { d: 'M24,42 Q24,16 26,0', tip: [26, 0] },
+              { d: 'M24,42 Q30,17 34,2', tip: [34, 2] },
+              { d: 'M24,42 Q36,20 40,6', tip: [40, 6] },
+              { d: 'M24,42 Q41,26 44,12', tip: [44, 12] },
+            ].map((t, i) => (
+              <g key={i}>
+                <path d={t.d} stroke="#06b6d4" strokeWidth="3.8" strokeLinecap="round" fill="none" />
+                <circle cx={t.tip[0]} cy={t.tip[1]} r="2.8" fill="#fef08a" filter="drop-shadow(0 0 3px rgba(255,255,255,0.9))" />
+              </g>
+            ))}
+            {/* Coral Branch beside anemone */}
+            <g transform="translate(42, 5)">
+              <path d="M15 45 L15 25 M15 35 L26 20 M15 30 L6 18 M15 24 L22 10 M15 22 L8 8" stroke="#f43f5e" strokeWidth="4" strokeLinecap="round" fill="none" />
+              <circle cx="26" cy="20" r="2.5" fill="#f43f5e" />
+              <circle cx="6" cy="18" r="2.5" fill="#f43f5e" />
+              <circle cx="22" cy="10" r="2.5" fill="#f43f5e" />
+              <circle cx="8" cy="8" r="2.5" fill="#f43f5e" />
+            </g>
+          </g>
+
+          {/* CENTERPIECE: RADIANT GIANT CLAM & PEARL IN SEABED TRENCH (x=720, y=210) */}
+          <g transform="translate(670, 155)">
+            {/* Pearl Glow Aura in seabed hollow */}
+            <ellipse cx="50" cy="55" rx="40" ry="25" fill="#fef08a" opacity="0.25" filter="blur(15px)" />
+            {/* Giant Clam Shell */}
+            <path d="M10,55 Q50,82 90,55 Q95,28 50,18 Q5,28 10,55Z" fill="url(#clamGrad)" stroke="#9d174d" strokeWidth="2.5" />
+            {/* Inner Ridges */}
+            <path d="M22,50 Q50,70 78,50" fill="none" stroke="#fbcfe8" strokeWidth="2" />
+            <path d="M32,44 Q50,60 68,44" fill="none" stroke="#fbcfe8" strokeWidth="2" />
+            {/* Shimmering Pearl */}
+            <circle cx="50" cy="42" r="14" fill="url(#pearlShimmer)" filter="drop-shadow(0 0 12px rgba(255,255,255,0.95))" />
+            <circle cx="45" cy="37" r="4.2" fill="#ffffff" opacity="0.9" />
+            {/* Little Crab resting near pearl */}
+            <g transform="translate(95, 38)">
+              <ellipse cx="14" cy="12" rx="8" ry="5.5" fill="#ef4444" stroke="#b91c1c" strokeWidth="1.2" />
+              <line x1="10" y1="7" x2="10" y2="3" stroke="#b91c1c" strokeWidth="1.5" />
+              <circle cx="10" cy="3" r="1.5" fill="#fff" />
+              <circle cx="10" cy="3" r="0.7" fill="#000" />
+              <line x1="18" y1="7" x2="18" y2="3" stroke="#b91c1c" strokeWidth="1.5" />
+              <circle cx="18" cy="3" r="1.5" fill="#fff" />
+              <circle cx="18" cy="3" r="0.7" fill="#000" />
+              <path d="M8 10 Q2 6 4 2 Q8 2 9 8" fill="#ef4444" stroke="#b91c1c" strokeWidth="1.2" />
+              <path d="M20 10 Q26 6 24 2 Q20 2 19 8" fill="#ef4444" stroke="#b91c1c" strokeWidth="1.2" />
+            </g>
+          </g>
+
+          {/* Right-Center Foreground: Cyan Tube Sponge Cluster (x=1020, y=170) */}
+          <g transform="translate(980, 115)">
+            <rect x="6" y="28" width="14" height="46" rx="7" fill="url(#tubeSpongeGrad)" />
+            <ellipse cx="13" cy="28" rx="7" ry="4" fill="#082f49" stroke="#38bdf8" strokeWidth="1.8" />
+            <rect x="22" y="10" width="17" height="64" rx="8.5" fill="url(#tubeSpongeGrad)" />
+            <ellipse cx="30.5" cy="10" rx="8.5" ry="4.5" fill="#082f49" stroke="#38bdf8" strokeWidth="2" />
+            <circle cx="30.5" cy="4" r="2.5" fill="rgba(255,255,255,0.9)" filter="drop-shadow(0 0 5px #38bdf8)" />
+            <rect x="41" y="22" width="13" height="52" rx="6.5" fill="url(#tubeSpongeGrad)" />
+            <ellipse cx="47.5" cy="22" rx="6.5" ry="3.5" fill="#082f49" stroke="#38bdf8" strokeWidth="1.8" />
+          </g>
+
+          {/* Far Right Foreground: Sea Anemone & Golden Starfish (x=1320, y=185) */}
+          <g transform="translate(1280, 135)">
+            <path d="M16 45 Q24 38 32 45 L30 38 Q24 35 18 38 Z" fill="#581c87" />
+            {[
+              { d: 'M24,42 Q8,26 5,10', tip: [5, 10] },
+              { d: 'M24,42 Q14,22 11,5', tip: [11, 5] },
+              { d: 'M24,42 Q19,18 19,2', tip: [19, 2] },
+              { d: 'M24,42 Q24,16 26,0', tip: [26, 0] },
+              { d: 'M24,42 Q30,17 34,2', tip: [34, 2] },
+              { d: 'M24,42 Q36,20 40,6', tip: [40, 6] },
+              { d: 'M24,42 Q41,26 44,12', tip: [44, 12] },
+            ].map((t, i) => (
+              <g key={i}>
+                <path d={t.d} stroke="#c084fc" strokeWidth="3.8" strokeLinecap="round" fill="none" />
+                <circle cx={t.tip[0]} cy={t.tip[1]} r="2.8" fill="#38bdf8" filter="drop-shadow(0 0 3px #38bdf8)" />
+              </g>
+            ))}
+            {/* Golden Starfish resting on the floor slope */}
+            <g transform="translate(48, 20) rotate(15)">
+              <path d="M12 2 Q14 8 16 9 Q22 9 23 11 Q18 15 17 16 Q20 22 17 24 Q12 20 10 20 Q6 24 5 22 Q7 16 4 13 Q8 11 9 9 Q10 8 12 2 Z" fill="#f59e0b" stroke="rgba(0,0,0,0.3)" strokeWidth="1" />
+              <circle cx="12" cy="12" r="2" fill="#fff" opacity="0.8" />
+            </g>
+          </g>
+
+          {/* Bioluminescent floating plankton spores along the ocean depth */}
           {[
-            { cx: 95, cy: 75, r: 2.5, color: '#38bdf8' },
-            { cx: 210, cy: 60, r: 3, color: '#c084fc' },
-            { cx: 340, cy: 85, r: 2, color: '#f472b6' },
-            { cx: 480, cy: 55, r: 3.5, color: '#38bdf8' },
-            { cx: 620, cy: 75, r: 2, color: '#a855f7' },
-            { cx: 750, cy: 50, r: 3, color: '#34d399' },
-            { cx: 890, cy: 65, r: 2.5, color: '#fbcfe8' },
-            { cx: 1040, cy: 45, r: 3.5, color: '#38bdf8' },
-            { cx: 1180, cy: 70, r: 2, color: '#c084fc' },
-            { cx: 1320, cy: 55, r: 3, color: '#38bdf8' },
-            { cx: 1400, cy: 75, r: 2, color: '#f472b6' },
+            { cx: 80, cy: 90, r: 2.5, color: '#38bdf8' },
+            { cx: 180, cy: 135, r: 3, color: '#c084fc' },
+            { cx: 310, cy: 110, r: 2, color: '#f472b6' },
+            { cx: 460, cy: 160, r: 3.5, color: '#38bdf8' },
+            { cx: 590, cy: 95, r: 2, color: '#a855f7' },
+            { cx: 730, cy: 130, r: 3, color: '#fef08a' },
+            { cx: 820, cy: 75, r: 2.5, color: '#38bdf8' },
+            { cx: 940, cy: 150, r: 3, color: '#34d399' },
+            { cx: 1080, cy: 105, r: 3.5, color: '#38bdf8' },
+            { cx: 1220, cy: 165, r: 2, color: '#c084fc' },
+            { cx: 1360, cy: 120, r: 3, color: '#38bdf8' },
+            { cx: 1410, cy: 175, r: 2, color: '#f472b6' },
           ].map((s, i) => (
             <circle key={i} cx={s.cx} cy={s.cy} r={s.r} fill={s.color} filter="drop-shadow(0 0 6px currentColor)" opacity="0.85" />
           ))}
         </svg>
-
-        {/* ── Corals & Biota Layered on Reef Bed ── */}
-
-        {/* 1. LEFT CORAL REEF COMPLEX */}
-        <div style={{ position: 'absolute', bottom: '25px', left: '1.5%', zIndex: 4 }}>
-          <div className="relative flex items-end gap-1">
-            {/* Swaying Kelp in back */}
-            <div className="anim-sway" style={{ marginBottom: '10px' }}>
-              <Seaweed height={85} color="#15803d" />
-            </div>
-            {/* Sea Fan */}
-            <div style={{ marginLeft: '-15px', marginBottom: '8px' }}>
-              <SeaFan height={78} color="#f97316" />
-            </div>
-            {/* Tube Sponges */}
-            <div style={{ marginLeft: '-10px' }}>
-              <TubeSponges height={75} color="#7c3aed" rimColor="#38bdf8" />
-            </div>
-            {/* Brain Coral */}
-            <div style={{ marginLeft: '-8px', marginBottom: '2px' }}>
-              <BrainCoral size={55} color="#ec4899" ridgeColor="#fbcfe8" />
-            </div>
-            {/* Sea Anemone */}
-            <div style={{ marginLeft: '-10px' }}>
-              <SeaAnemone size={48} color="#06b6d4" tipColor="#fef08a" />
-            </div>
-          </div>
-        </div>
-
-        {/* 2. MID-LEFT STAGHORN REEF GARDEN */}
-        <div style={{ position: 'absolute', bottom: '28px', left: '26%', zIndex: 4 }}>
-          <div className="relative flex items-end gap-1">
-            {/* Branching Staghorn Coral */}
-            <StaghornCoral height={80} color="#a855f7" accentColor="#38bdf8" />
-            {/* Coral Branch */}
-            <div style={{ marginLeft: '-12px', marginBottom: '4px' }}>
-              <CoralBranch height={60} color="#f43f5e" />
-            </div>
-            {/* Starfish on reef shelf */}
-            <div style={{ marginLeft: '4px', marginBottom: '4px' }}>
-              <Starfish size={24} color="#f59e0b" />
-            </div>
-          </div>
-        </div>
-
-        {/* 3. CENTER GIANT CLAM & PEARL WITH CORAL CLUSTER */}
-        <div style={{ position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)', zIndex: 5 }}>
-          <div className="relative flex items-end justify-center gap-2">
-            {/* Soft Coral Branch */}
-            <div style={{ marginBottom: '8px' }}>
-              <CoralBranch height={68} color="#0284c7" />
-            </div>
-            {/* Giant Clam with glowing pearl */}
-            <GiantClam size={64} />
-            {/* Tube Sponges Right */}
-            <div style={{ marginLeft: '-10px', marginBottom: '4px' }}>
-              <TubeSponges height={62} color="#0d9488" rimColor="#2dd4bf" />
-            </div>
-            {/* Little Crab scuttling near pearl */}
-            <div style={{ marginBottom: '6px' }}>
-              <Crab size={26} />
-            </div>
-          </div>
-        </div>
-
-        {/* 4. MID-RIGHT SUNKEN ANCHOR & REEF OVERGROWTH */}
-        <div style={{ position: 'absolute', bottom: '26px', right: '23%', zIndex: 4 }}>
-          <div className="relative flex items-end gap-1">
-            {/* Weathered Anchor */}
-            <SunkenAnchor size={60} />
-            {/* Brain Coral clinging to anchor */}
-            <div style={{ marginLeft: '-12px', marginBottom: '2px' }}>
-              <BrainCoral size={50} color="#6366f1" ridgeColor="#a5b4fc" />
-            </div>
-            {/* Swaying Kelp */}
-            <div className="anim-sway" style={{ marginLeft: '-8px', marginBottom: '6px', animationDelay: '1.5s' }}>
-              <Seaweed height={75} color="#166534" />
-            </div>
-          </div>
-        </div>
-
-        {/* 5. RIGHT CORAL REEF COMPLEX */}
-        <div style={{ position: 'absolute', bottom: '24px', right: '1.5%', zIndex: 4 }}>
-          <div className="relative flex items-end gap-1">
-            {/* Staghorn Coral in pink/orange */}
-            <StaghornCoral height={82} color="#f43f5e" accentColor="#fef08a" />
-            {/* Sea Fan */}
-            <div style={{ marginLeft: '-14px', marginBottom: '6px' }}>
-              <SeaFan height={72} color="#ec4899" />
-            </div>
-            {/* Tube Sponges */}
-            <div style={{ marginLeft: '-10px' }}>
-              <TubeSponges height={70} color="#e11d48" rimColor="#f472b6" />
-            </div>
-            {/* Sea Anemone */}
-            <div style={{ marginLeft: '-8px' }}>
-              <SeaAnemone size={46} color="#8b5cf6" tipColor="#38bdf8" />
-            </div>
-            {/* Starfish */}
-            <div style={{ marginLeft: '4px', marginBottom: '4px' }}>
-              <Starfish size={22} color="#f97316" />
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Copyright Bar */}
