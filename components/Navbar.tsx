@@ -16,6 +16,7 @@ const lombaItems = [
 const navLinks = [
   { label: 'Beranda', href: '#home' },
   { label: 'Tentang', href: '#about' },
+  { label: 'Partnership', href: '#partnership' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'FAQ', href: '#faq' },
 ];

@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import torchEmblem from '../assets/img/IMG_7270.PNG';
 
 export default function About() {
   return (
@@ -34,10 +35,10 @@ export default function About() {
                   <FamousEmblem />
                   <div className="text-center">
                     <div className="text-3xl font-black text-white tracking-tight">
-                      FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US
-                    </div>
-                    <div className="text-xl font-black" style={{ color: 'var(--color-cyan)' }}>VI</div>
-                    <div className="text-xs mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>SMAIT Al-Fityan Bogor</div>
+                    FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US
+                  </div>
+                  <div className="text-xl font-black" style={{ color: 'var(--color-cyan)' }}>6.0</div>
+                  <div className="text-xs mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>SMAIT Al-Fityan Bogor</div>
                   </div>
                 </div>
 
@@ -51,15 +52,15 @@ export default function About() {
                 className="absolute -top-5 -right-5 px-3 py-2 rounded-xl text-center"
                 style={{ backgroundColor: 'var(--color-white)', border: '2px solid var(--color-border)', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
               >
-                <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Cabang Lomba</div>
-                <div className="text-2xl font-black" style={{ color: 'var(--color-orange)' }}>8</div>
+                  <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Cabang Lomba</div>
+                  <div className="text-2xl font-black" style={{ color: 'var(--color-orange)' }}>8</div>
               </div>
               <div
                 className="absolute -bottom-5 -left-5 px-3 py-2 rounded-xl text-center"
                 style={{ backgroundColor: 'var(--color-white)', border: '2px solid var(--color-border)', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
               >
-                <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Tahun</div>
-                <div className="text-2xl font-black" style={{ color: 'var(--color-blue)' }}>2026</div>
+                <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Penyelenggaraan</div>
+                <div className="text-2xl font-black" style={{ color: 'var(--color-blue)' }}>6.0</div>
               </div>
             </div>
           </div>
@@ -76,25 +77,26 @@ export default function About() {
 
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight" style={{ color: 'var(--color-navy)' }}>
               Apa itu{' '}
-              <span style={{ color: 'var(--color-orange)' }}>FAMOUS VI?</span>
+              <span style={{ color: 'var(--color-orange)' }}>FAMOUS 6.0?</span>
             </h2>
 
             <p className="text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
-              <strong style={{ color: 'var(--color-navy)' }}>FAMOUS VI</strong> (Festival Al-Fityan Multi Open Sport) adalah ajang kompetisi bergengsi
-              antar sekolah tingkat <strong>SMP/MTs sederajat Se-Pulau Jawa</strong> yang diselenggarakan oleh
-              SMAIT Al-Fityan Boarding School Bogor.
+              <strong style={{ color: 'var(--color-navy)' }}>FAMOUS 6.0</strong> merupakan ajang kompetisi antarpelajar yang diselenggarakan oleh
+              <strong> SMAIT Al-Fityan Boarding School Bogor</strong>. FAMOUS hadir sebagai wadah bagi pelajar untuk
+              mengembangkan potensi, menunjukkan kemampuan, membangun kepercayaan diri, serta berkompetisi secara sportif.
             </p>
             <p className="text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
-              Hadir untuk keenam kalinya, FAMOUS VI menghadirkan 8 cabang lomba mulai dari olahraga
-              hingga akademik dan seni. Kompetisi ini bertujuan menjadi wadah pengembangan bakat,
-              kreativitas, dan sportivitas generasi muda berprestasi.
+              Memasuki penyelenggaraan ke-6, FAMOUS 6.0 mengangkat tema
+              <em style={{ color: 'var(--color-navy)', fontStyle: 'italic', fontWeight: 600 }}> "Rooted in Legacy, Driven by Excellence"</em>,
+              yang menggambarkan semangat untuk tetap berpegang pada nilai dan pencapaian yang telah dibangun sebelumnya,
+              sekaligus terus berkembang dan memberikan yang terbaik.
             </p>
 
             <div className="flex flex-col gap-3 mt-1">
               {[
-                'Kompetisi multi-cabang Se-Pulau Jawa tingkat SMP/MTs',
-                'Hadiah puluhan juta rupiah untuk para juara',
-                'Diselenggarakan di SMAIT Al-Fityan Bogor',
+                'Kompetisi multi-cabang Se-Pulau Jawa tingkat SMP/MTs sederajat',
+                '8 cabang lomba: MHQ, Khitobah, Speech, Storytelling, LKBB, Futsal, Archery & Poster Digital',
+                'Diselenggarakan di SMAIT Al-Fityan Boarding School Bogor',
               ].map((point) => (
                 <div key={point} className="flex items-start gap-3">
                   <span
@@ -110,8 +112,9 @@ export default function About() {
 
             <div className="flex flex-wrap gap-3 mt-2">
               <a
-                href="#competitions"
-                onClick={(e) => { e.preventDefault(); document.querySelector('#competitions')?.scrollIntoView({ behavior: 'smooth' }); }}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white', boxShadow: '0 4px 16px rgba(232,76,30,0.3)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; }}
@@ -139,39 +142,12 @@ export default function About() {
 
 function FamousEmblem() {
   return (
-    <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="FAMOUS emblem">
-      {/* Key shaft */}
-      <rect x="35" y="45" width="10" height="38" rx="5" fill="#1E6FBF" />
-      <rect x="30" y="70" width="8" height="10" rx="2" fill="#3B8FDF" />
-      <rect x="42" y="62" width="8" height="10" rx="2" fill="#3B8FDF" />
-
-      {/* Key head - flame/eye shape */}
-      <path d="M40 8 C25 12 15 22 18 35 C21 46 32 50 40 50 C48 50 59 46 62 35 C65 22 55 12 40 8Z"
-        fill="white" opacity="0.9" />
-      <path d="M40 8 C25 12 15 22 18 35 C21 46 32 50 40 50 C48 50 59 46 62 35 C65 22 55 12 40 8Z"
-        fill="url(#emblemGrad)" opacity="0.8" />
-
-      {/* Flame top */}
-      <path d="M18 20 C5 5 25 -2 40 8 C25 6 10 15 18 20Z" fill="var(--color-orange)" />
-      <path d="M62 20 C75 5 55 -2 40 8 C55 6 70 15 62 20Z" fill="var(--color-orange)" />
-      <path d="M10 18 C2 4 30 -6 42 6 C28 2 8 12 10 18Z" fill="#FF6B3D" opacity="0.7" />
-      <path d="M70 18 C78 4 50 -6 38 6 C52 2 72 12 70 18Z" fill="#FF6B3D" opacity="0.7" />
-
-      {/* Eye iris */}
-      <ellipse cx="40" cy="32" rx="12" ry="14" fill="#0d4a8a" />
-      <ellipse cx="40" cy="32" rx="7" ry="9" fill="#1E6FBF" />
-      <ellipse cx="40" cy="32" rx="4" ry="5" fill="#071220" />
-      <ellipse cx="38" cy="30" rx="1.5" ry="2" fill="white" opacity="0.8" />
-
-      {/* Green leaf accent */}
-      <path d="M28 28 C22 20 28 14 35 22 C30 24 28 28 28 28Z" fill="#4CAF50" opacity="0.75" />
-
-      <defs>
-        <linearGradient id="emblemGrad" x1="18" y1="8" x2="62" y2="50" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(42,196,216,0.3)" />
-          <stop offset="100%" stopColor="rgba(30,111,191,0.3)" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <div className="w-24 h-28 flex items-center justify-center">
+      <img
+        src={torchEmblem}
+        alt="FAMOUS VI Official Torch Emblem"
+        className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform duration-300"
+      />
+    </div>
   );
 }

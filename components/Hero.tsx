@@ -36,19 +36,24 @@ export default function Hero() {
         }}
       />
 
+      {/* Sun rays penetrating from ocean surface */}
+      <div className="sun-ray" style={{ left: '12%', animationDelay: '0s' }} />
+      <div className="sun-ray" style={{ left: '42%', animationDelay: '3s', width: '200px' }} />
+      <div className="sun-ray" style={{ left: '78%', animationDelay: '1.5s', width: '130px' }} />
+
       {/* Animated coral/reef decorations at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none">
         <svg viewBox="0 0 1440 200" className="w-full h-full" preserveAspectRatio="none">
           <path d="M0,200 L0,140 Q60,100 120,130 Q180,160 240,120 Q300,80 360,110 Q420,140 480,100 Q540,60 600,90 Q660,120 720,80 Q780,40 840,70 Q900,100 960,60 Q1020,20 1080,50 Q1140,80 1200,50 Q1260,20 1320,60 Q1380,100 1440,80 L1440,200Z"
-            fill="rgba(42,196,216,0.08)" />
+            fill="rgba(42,196,216,0.12)" />
           <path d="M0,200 L0,160 Q80,120 160,150 Q240,180 320,140 Q400,100 480,130 Q560,160 640,120 Q720,80 800,110 Q880,140 960,100 Q1040,60 1120,90 Q1200,120 1280,90 Q1360,60 1440,100 L1440,200Z"
-            fill="rgba(30,111,191,0.15)" />
+            fill="rgba(168,85,247,0.14)" />
           {/* Coral shapes */}
-          <ellipse cx="100" cy="195" rx="30" ry="18" fill="rgba(232,76,30,0.35)" />
-          <ellipse cx="300" cy="198" rx="20" ry="12" fill="rgba(232,76,30,0.25)" />
-          <ellipse cx="700" cy="196" rx="25" ry="15" fill="rgba(232,76,30,0.3)" />
-          <ellipse cx="1100" cy="197" rx="22" ry="13" fill="rgba(232,76,30,0.25)" />
-          <ellipse cx="1350" cy="199" rx="28" ry="16" fill="rgba(232,76,30,0.3)" />
+          <ellipse cx="100" cy="195" rx="36" ry="20" fill="rgba(251,113,133,0.45)" />
+          <ellipse cx="300" cy="198" rx="24" ry="14" fill="rgba(42,196,216,0.35)" />
+          <ellipse cx="700" cy="196" rx="30" ry="18" fill="rgba(232,76,30,0.4)" />
+          <ellipse cx="1100" cy="197" rx="26" ry="15" fill="rgba(168,85,247,0.4)" />
+          <ellipse cx="1350" cy="199" rx="32" ry="18" fill="rgba(251,113,133,0.4)" />
         </svg>
       </div>
 
@@ -104,49 +109,63 @@ export default function Hero() {
               transition: 'opacity 0.7s ease, transform 0.7s ease',
             }}
           >
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase"
-                style={{ backgroundColor: 'rgba(232,76,30,0.2)', color: '#FF8A65', border: '1px solid rgba(232,76,30,0.4)' }}>
-                ✦ Open Registration: 02 Sep – 10 Okt 2026
+            {/* Theme Tagline Eyebrow */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(42,196,216,0.22) 0%, rgba(168,85,247,0.22) 100%)',
+                  color: '#A5F3FC',
+                  border: '1px solid rgba(42,196,216,0.4)',
+                  backdropFilter: 'blur(8px)',
+                }}>
+                <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2AC4D8' }} />
+                SMAIT Al-Fityan Boarding School Bogor
+              </div>
+
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold"
+                style={{ backgroundColor: 'rgba(232,76,30,0.2)', color: '#FF8A65', border: '1px solid rgba(232,76,30,0.35)' }}>
+                ✦ Open: 02 Sep – 10 Okt 2026
               </div>
             </div>
 
-            {/* Logo text */}
+            {/* Logo text & Title */}
             <div>
-              <h1 className="font-black leading-none tracking-tight" style={{ fontSize: 'clamp(52px, 10vw, 88px)', color: 'white' }}>
-                FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US
+              <h1 className="font-black leading-none tracking-tight flex items-baseline flex-wrap gap-3" style={{ fontSize: 'clamp(52px, 10vw, 88px)', color: 'white' }}>
+                <span>FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US</span>
+                <span className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, var(--color-cyan) 0%, var(--color-lilac-light) 100%)' }}>
+                  6.0
+                </span>
               </h1>
-              <div className="flex items-baseline gap-3 mt-1">
-                <span className="text-4xl font-black" style={{ color: 'var(--color-cyan)' }}>VI</span>
-                <span className="text-base font-semibold" style={{ color: 'rgba(255,255,255,0.5)' }}>· 2026</span>
-              </div>
+              <p className="text-sm sm:text-base font-semibold mt-3 italic tracking-wide" style={{ color: 'var(--color-sand)', textShadow: '0 2px 12px rgba(0,0,0,0.4)', maxWidth: '480px' }}>
+                "Rooted in Legacy, Driven by Excellence"
+              </p>
             </div>
 
             {/* School badge */}
             <div className="flex items-center gap-3 p-3 rounded-xl w-fit"
               style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)' }}>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-md"
                 style={{ backgroundColor: 'var(--color-orange)', color: 'white' }}>A</div>
               <div>
-                <div className="text-xs font-bold text-white">SMAIT Al-Fityan Bogor</div>
-                <div className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>Tingkat SMP/MTs Se-Pulau Jawa</div>
+                <div className="text-xs font-bold text-white">SMAIT Al-Fityan Boarding School Bogor</div>
+                <div className="text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>Kompetisi Pelajar SMP/MTs Se-Pulau Jawa</div>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-base leading-relaxed max-w-lg" style={{ color: 'rgba(255,255,255,0.72)' }}>
-              Festival lomba antar sekolah tingkat SMP/MTs Se-Pulau Jawa yang diselenggarakan oleh
-              <span style={{ color: '#FF8A65', fontWeight: 600 }}> SMAIT Al-Fityan Bogor</span>.
-              Dapatkan hadiah senilai puluhan juta rupiah dan buktikan kemampuan terbaikmu!
+            <p className="text-base leading-relaxed max-w-lg" style={{ color: 'rgba(255,255,255,0.78)' }}>
+              FAMOUS 6.0 adalah ajang kompetisi antarpelajar bergengsi yang hadir sebagai wadah
+              mengembangkan potensi, menunjukkan kemampuan, membangun kepercayaan diri, serta
+              berkompetisi secara sportif. Diselenggarakan oleh
+              <span style={{ color: '#FF8A65', fontWeight: 600 }}> SMAIT Al-Fityan Boarding School Bogor</span>.
             </p>
 
             {/* Stats */}
             <div className="flex gap-6 flex-wrap">
               {[
                 { value: '8', label: 'Cabang Lomba' },
-                { value: 'Puluhan JT', label: 'Total Hadiah' },
                 { value: 'Se-Jawa', label: 'Tingkat' },
+                { value: '6.0', label: 'Penyelenggaraan' },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col">
                   <span className="text-xl font-black" style={{ color: 'var(--color-orange-light)' }}>{stat.value}</span>
@@ -158,8 +177,9 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
               <a
-                href="#competitions"
-                onClick={(e) => { e.preventDefault(); scrollTo('#competitions'); }}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all duration-200"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white', boxShadow: '0 6px 20px rgba(232,76,30,0.4)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 28px rgba(232,76,30,0.5)'; }}
@@ -175,7 +195,7 @@ export default function Hero() {
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.12)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)'; }}
               >
-                Pelajari Lebih
+                Tentang FAMOUS
               </a>
             </div>
           </div>
