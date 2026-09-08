@@ -22,8 +22,18 @@ export default function Timeline() {
     <section
       id="timeline"
       className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #1d0a45 0%, #17073b 50%, #10052d 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #2a0a5e 0%, #220855 40%, #18063d 75%, #100526 100%)' }}
     >
+      {/* ── Top Camouflage Soft Fade (From PrizePool) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #2a0a5e 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To Gallery) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #100526 100%)' }}
+      />
       {/* ── Deep Ocean Ambient Biota & Bioluminescent Glow ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         {/* Ocean grid overlay */}

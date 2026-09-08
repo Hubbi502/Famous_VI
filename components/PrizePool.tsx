@@ -5,9 +5,19 @@ export default function PrizePool() {
     <section
       className="py-16 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #581c87 0%, #3b0764 45%, #2e1065 75%, #1e1b4b 100%)',
+        background: 'linear-gradient(180deg, #581c87 0%, #4a0f7a 40%, #3b0764 75%, #2a0a5e 100%)',
       }}
     >
+      {/* ── Top Camouflage Soft Fade (From Competitions) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #581c87 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To Timeline) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #2a0a5e 100%)' }}
+      />
       {/* ── Marine Biota Layer ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
         {/* Floating Octopus */}

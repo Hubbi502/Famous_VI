@@ -4,10 +4,20 @@ import { SeaTurtle, ClownFish, Seahorse, Jellyfish, Starfish, Seaweed, CoralBran
 
 export default function About() {
   return (
-    <section id="about" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #e0fafa 0%, #b2f0e8 20%, #42c8c0 50%, #1a9db5 75%, #0e7a9a 100%)' }}>
+    <section id="about" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0e7a9a 0%, #0a6e96 40%, #0a5a8a 75%, #0e5090 100%)' }}>
+      {/* ── Top Camouflage Soft Fade (From Hero) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #0e7a9a 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To Competitions) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #0e5090 100%)' }}
+      />
 
       {/* Shallow water ambient light */}
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.5) 0%, transparent 60%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 20%, rgba(56,189,248,0.18) 0%, transparent 60%)', pointerEvents: 'none' }} />
 
       {/* Marine life decorations - shallow water zone */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>

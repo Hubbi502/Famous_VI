@@ -35,7 +35,7 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(180deg, #080219 0%, #060113 50%, #03000b 100%)', position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #04000f 0%, #030009 50%, #010005 100%)', position: 'relative', overflow: 'hidden' }}>
 
       {/* ── Deep ocean ambient creatures ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>

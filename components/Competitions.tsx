@@ -228,9 +228,20 @@ export default function Competitions() {
       id="competitions"
       className="relative py-20 lg:py-28 overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0e7a9a 0%, #0284c7 20%, #312e81 60%, #581c87 100%)',
+        background: 'linear-gradient(180deg, #0e5090 0%, #1a3fa0 25%, #2d2b8a 55%, #4a1280 80%, #581c87 100%)',
       }}
     >
+      {/* ── Top Camouflage Soft Fade (From About) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #0e5090 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To PrizePool) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #581c87 100%)' }}
+      />
+
       {/* ── Ocean decorative bubbles ── */}
       <OceanBubbles />
 

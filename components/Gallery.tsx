@@ -71,7 +71,17 @@ export default function Gallery() {
   const thumbnails = galleryImages.slice(1);
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #10052d 0%, #140636 50%, #0e0427 100%)' }}>
+    <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #100526 0%, #0e0422 40%, #0b031a 75%, #080215 100%)' }}>
+      {/* ── Top Camouflage Soft Fade (From Timeline) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #100526 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To FAQ) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #080215 100%)' }}
+      />
       {/* ── Deep Sea Ambient Glow & Biota ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         {/* Radial Bioluminescent Glows */}

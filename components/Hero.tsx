@@ -319,11 +319,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom wave — transition to shallow water (About) */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ zIndex: 4 }}>
-        <svg viewBox="0 0 1440 80" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          <path d="M0,40 Q180,80 360,40 Q540,0 720,40 Q900,80 1080,40 Q1260,0 1440,40 L1440,80 L0,80Z" fill="#e0fafa" />
-        </svg>
+      {/* Bottom seamless fade — dissolves Hero sky into the ocean below */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ zIndex: 4, height: '180px' }}>
+        <div style={{ width: '100%', height: '100%', background: 'linear-gradient(180deg, transparent 0%, rgba(20,147,163,0.5) 40%, rgba(14,122,154,0.85) 70%, #0e7a9a 100%)' }} />
       </div>
     </section>
   );

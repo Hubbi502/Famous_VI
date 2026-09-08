@@ -53,7 +53,17 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0e0427 0%, #0c0321 50%, #080219 100%)' }}>
+    <section id="faq" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #080215 0%, #060113 50%, #04000f 100%)' }}>
+      {/* ── Top Camouflage Soft Fade (From Gallery) ── */}
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, #080215 0%, transparent 100%)' }}
+      />
+      {/* ── Bottom Camouflage Soft Fade (To Footer) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
+        style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #04000f 100%)' }}
+      />
       {/* ── Deep Ocean Ambient Glow & Biota ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         {/* Glows */}
