@@ -139,12 +139,6 @@ export default function Gallery() {
             >
               ✦ Photo Gallery
             </span>
-            <span
-              className="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
-              style={{ backgroundColor: 'rgba(56,189,248,0.18)', color: '#7dd3fc', border: '1px solid rgba(56,189,248,0.3)' }}
-            >
-              🖼️ Depth: 9,000m · Bioluminescent Deep
-            </span>
           </div>
           <h2 className="poster-font text-3xl sm:text-5xl font-black text-white">
             Galeri Acara{' '}
@@ -152,7 +146,7 @@ export default function Gallery() {
               FAMOUS 6.0
             </span>
           </h2>
-          <p className="mt-3 text-base max-w-md mx-auto font-medium" style={{ color: 'rgba(200,225,255,0.7)' }}>
+          <p className="poster-font mt-3 text-base max-w-md mx-auto font-medium text-white/90">
             Sekilas momen berharga dari penyelenggaraan FAMOUS sebelumnya
           </p>
         </div>

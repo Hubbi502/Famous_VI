@@ -1,18 +1,19 @@
 import { useState } from 'react';
+import { Calendar, Users, Trophy, Award, Phone } from 'lucide-react';
 import { Jellyfish, AnglerFish, Seahorse, MantaRay, CoralBranch, Seaweed, Bubble } from './MarineBiota';
 
 interface TimelineItem {
   id: number;
   title: string;
   date: string;
-  icon: string;
+  stepNumber: string;
 }
 
 const timelineItems: TimelineItem[] = [
-  { id: 1, title: 'Registration', date: '02 Sep – 10 Okt 2026', icon: '📝' },
-  { id: 2, title: 'Technical Meeting', date: '11 Oktober 2026', icon: '🤝' },
-  { id: 3, title: 'Competition Day', date: '15-17 Oktober 2026', icon: '⚽' },
-  { id: 4, title: 'Awarding Ceremony', date: '31 Oktober 2026', icon: '🎉' },
+  { id: 1, title: 'Registration', date: '02 Sep – 10 Okt 2026', stepNumber: '01' },
+  { id: 2, title: 'Technical Meeting', date: '11 Oktober 2026', stepNumber: '02' },
+  { id: 3, title: 'Competition Day', date: '15-17 Oktober 2026', stepNumber: '03' },
+  { id: 4, title: 'Awarding Ceremony', date: '31 Oktober 2026', stepNumber: '04' },
 ];
 
 export default function Timeline() {
@@ -104,26 +105,22 @@ export default function Timeline() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <span
-                className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
+                className="poster-font inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
                 style={{ color: 'var(--color-orange-light)' }}
               >
                 <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
                 Rangkaian Kegiatan
               </span>
-              <span
-                className="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider"
-                style={{ backgroundColor: 'rgba(168,85,247,0.2)', color: '#c084fc', border: '1px solid rgba(168,85,247,0.3)' }}
-              >
-                ⏳ Depth: 7,500m · Hadal Trench
-              </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            <h2 className="poster-font text-3xl sm:text-5xl font-black text-white leading-tight">
               Timeline{' '}
-              <span style={{ color: 'var(--color-orange)' }}>FAMOUS VI</span>
+              <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #FF7A45 0%, #FFB088 100%)' }}>
+                FAMOUS 6.0
+              </span>
             </h2>
 
-            <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <p className="text-base leading-relaxed text-white/90 font-medium">
               Cek jadwal lengkap acara FAMOUS VI 2026! Mulai dari pendaftaran hingga momen
               puncak Grand Final dan Awarding. Jangan sampai terlewat, daftarkan dirimu sekarang!
             </p>
@@ -133,29 +130,30 @@ export default function Timeline() {
                 { value: '02 Sep', label: 'Buka Pendaftaran' },
                 { value: '10 Okt', label: 'Tutup Pendaftaran' },
                 { value: '8', label: 'Cabang Lomba' },
-                { value: 'Bogor', label: 'Lokasi' },
+                { value: 'Bogor', label: 'Lokasi Pelaksanaan' },
               ].map((stat) => (
                 <div
                   key={stat.label}
                   className="rounded-xl p-4"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}
                 >
-                  <div className="text-xl font-bold" style={{ color: 'var(--color-orange-light)' }}>{stat.value}</div>
-                  <div className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>{stat.label}</div>
+                  <div className="poster-font text-2xl font-black" style={{ color: 'var(--color-orange-light)' }}>{stat.value}</div>
+                  <div className="text-xs mt-1 text-white/80 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Contact */}
-            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.1)', border: '1px solid rgba(232,76,30,0.25)' }}>
-              <div className="text-xs font-bold mb-2" style={{ color: 'var(--color-orange-light)' }}>Contact Person</div>
+            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.14)', border: '1px solid rgba(232,76,30,0.3)' }}>
+              <div className="poster-font text-xs font-bold mb-2 text-orange-400 uppercase tracking-wider">Contact Person</div>
               {[
                 { name: 'Diza', phone: '081343059590' },
                 { name: 'Hendra', phone: '081400842090' },
                 { name: 'Ustadz Ahad', phone: '08212134290' },
               ].map((cp) => (
-                <div key={cp.name} className="text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                  📞 {cp.phone} <span style={{ color: 'rgba(255,255,255,0.35)' }}>({cp.name})</span>
+                <div key={cp.name} className="flex items-center gap-2 text-sm text-white/90 font-medium py-0.5">
+                  <Phone size={13} className="text-orange-400 flex-shrink-0" />
+                  <span>{cp.phone} <span className="text-white/60">({cp.name})</span></span>
                 </div>
               ))}
             </div>
@@ -192,25 +190,26 @@ function TimelineEntry({ item, isLast, isActive, onClick }: TimelineEntryProps) 
       <div className="flex flex-col items-center">
         <button
           onClick={onClick}
-          className="relative w-10 h-10 rounded-full flex items-center justify-center text-base flex-shrink-0 transition-all duration-200 cursor-pointer"
+          className="poster-font relative w-10 h-10 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 transition-all duration-200 cursor-pointer"
           style={{
-            backgroundColor: isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.05)',
-            border: `2px solid ${isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.12)'}`,
-            transform: isActive ? 'scale(1.1)' : 'scale(1)',
-            boxShadow: isActive ? '0 0 16px rgba(232,76,30,0.4)' : 'none',
+            backgroundColor: isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.08)',
+            color: 'white',
+            border: `2px solid ${isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.2)'}`,
+            transform: isActive ? 'scale(1.08)' : 'scale(1)',
+            boxShadow: isActive ? '0 0 20px rgba(232,76,30,0.5)' : 'none',
           }}
           aria-label={`${item.title}: ${item.date}`}
         >
-          <span role="img" aria-hidden="true">{item.icon}</span>
+          {item.stepNumber}
         </button>
         {!isLast && (
           <div
             className="w-0.5 flex-1 my-1"
             style={{
               background: isActive
-                ? 'linear-gradient(to bottom, var(--color-orange), rgba(232,76,30,0.1))'
-                : 'rgba(255,255,255,0.06)',
-              minHeight: '24px',
+                ? 'linear-gradient(to bottom, var(--color-orange), rgba(232,76,30,0.15))'
+                : 'rgba(255,255,255,0.1)',
+              minHeight: '28px',
             }}
           />
         )}
@@ -220,25 +219,26 @@ function TimelineEntry({ item, isLast, isActive, onClick }: TimelineEntryProps) 
         <div
           className="rounded-xl p-4 transition-all duration-200"
           style={{
-            backgroundColor: isActive ? 'rgba(232,76,30,0.08)' : 'transparent',
-            border: `1px solid ${isActive ? 'rgba(232,76,30,0.25)' : 'transparent'}`,
+            backgroundColor: isActive ? 'rgba(232,76,30,0.12)' : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${isActive ? 'rgba(232,76,30,0.35)' : 'rgba(255,255,255,0.08)'}`,
           }}
         >
           <div className="flex items-start justify-between gap-2">
-            <h3 className="text-sm font-semibold" style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.65)' }}>
+            <h3 className="poster-font text-base font-black" style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.85)' }}>
               {item.title}
             </h3>
             {isActive && (
               <span
-                className="text-xs px-2 py-0.5 rounded-full font-bold flex-shrink-0"
+                className="poster-font text-xs px-2.5 py-0.5 rounded-full font-bold flex-shrink-0"
                 style={{ backgroundColor: 'rgba(232,76,30,0.25)', color: 'var(--color-orange-light)' }}
               >
-                ●
+                Aktif
               </span>
             )}
           </div>
-          <p className="text-xs mt-1" style={{ color: isActive ? 'var(--color-orange-light)' : 'rgba(255,255,255,0.3)' }}>
-            📅 {item.date}
+          <p className="flex items-center gap-1.5 text-xs mt-1.5 font-medium" style={{ color: isActive ? 'var(--color-orange-light)' : 'rgba(255,255,255,0.7)' }}>
+            <Calendar size={13} className="flex-shrink-0" />
+            {item.date}
           </p>
         </div>
       </div>

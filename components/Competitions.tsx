@@ -269,13 +269,13 @@ export default function Competitions() {
             Cabang Lomba
             <span className="w-8 h-px bg-current opacity-60" />
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight">
+          <h2 className="poster-font text-3xl sm:text-5xl font-black text-white leading-tight">
             8 Cabang{' '}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #FF8A50 0%, #FFD166 100%)' }}>
               Kompetisi
             </span>
           </h2>
-          <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'rgba(200,235,255,0.65)' }}>
+          <p className="poster-font mt-4 text-base max-w-xl mx-auto font-medium text-white/90">
             Terbuka untuk pelajar SMP/MTs sederajat Se-Pulau Jawa · 02 Sep – 10 Okt 2026
           </p>
         </div>
@@ -494,33 +494,39 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
 
       {/* ── Name label below bubble ── */}
       <div className="text-center mt-3 px-1">
-        <h3 style={{
-          fontWeight: 900,
-          fontSize: '13px',
-          color: 'white',
-          letterSpacing: '0.04em',
-          textTransform: 'uppercase',
-          textShadow: `0 2px 12px rgba(0,0,0,0.5), 0 0 20px ${comp.glowHex}55`,
-          lineHeight: 1.2,
-        }}>
+        <h3
+          className="poster-font"
+          style={{
+            fontWeight: 900,
+            fontSize: '14px',
+            color: 'white',
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            textShadow: `0 2px 12px rgba(0,0,0,0.5), 0 0 20px ${comp.glowHex}55`,
+            lineHeight: 1.2,
+          }}
+        >
           {comp.name}
         </h3>
         {comp.fullName !== comp.name && (
-          <p style={{ fontSize: '10px', color: 'rgba(200,235,255,0.6)', marginTop: '2px', lineHeight: 1.3 }}>
+          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.85)', marginTop: '2px', lineHeight: 1.3 }}>
             {comp.fullName}
           </p>
         )}
         {/* Type tag */}
-        <span style={{
-          display: 'inline-block', marginTop: '5px',
-          fontSize: '9px', fontWeight: 700,
-          padding: '2px 8px', borderRadius: '99px',
-          backgroundColor: comp.bubbleColor,
-          color: comp.glowHex,
-          border: `1px solid ${comp.glowHex}55`,
-          backdropFilter: 'blur(6px)',
-          letterSpacing: '0.04em',
-        }}>
+        <span
+          className="poster-font"
+          style={{
+            display: 'inline-block', marginTop: '5px',
+            fontSize: '9px', fontWeight: 800,
+            padding: '2px 8px', borderRadius: '99px',
+            backgroundColor: comp.bubbleColor,
+            color: comp.glowHex,
+            border: `1px solid ${comp.glowHex}55`,
+            backdropFilter: 'blur(6px)',
+            letterSpacing: '0.04em',
+          }}
+        >
           {comp.type}
         </span>
       </div>
@@ -641,26 +647,26 @@ function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
           </div>
 
           {/* Title */}
-          <p className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(160,220,255,0.6)', marginBottom: '4px' }}>
+          <p className="poster-font text-xs font-bold uppercase tracking-widest text-cyan-200" style={{ marginBottom: '4px' }}>
             FAMOUS 6.0 · {comp.level}
           </p>
-          <h3 style={{ fontSize: '26px', fontWeight: 900, color: 'white', lineHeight: 1.1, textAlign: 'center', textShadow: `0 2px 20px ${comp.bubbleColor}, 0 0 40px ${comp.bubbleColor}` }}>
+          <h3 className="poster-font text-2xl sm:text-3xl font-black text-white text-center leading-tight">
             {comp.name}
           </h3>
           {comp.fullName !== comp.name && (
-            <p style={{ fontSize: '12px', color: 'rgba(180,225,255,0.65)', marginTop: '4px', textAlign: 'center' }}>{comp.fullName}</p>
+            <p className="text-xs text-white/90 font-medium mt-1 text-center">{comp.fullName}</p>
           )}
 
           {/* Type + Price pills */}
           <div className="flex gap-2 flex-wrap justify-center mt-4">
-            <span style={{ fontSize: '10px', fontWeight: 800, padding: '4px 12px', borderRadius: '99px', background: comp.bubbleColor, color: comp.glowHex, border: `1px solid ${comp.glowHex}55`, backdropFilter: 'blur(8px)', letterSpacing: '0.04em' }}>
+            <span className="poster-font text-xs font-bold px-3 py-1 rounded-full" style={{ background: comp.bubbleColor, color: comp.glowHex, border: `1px solid ${comp.glowHex}55`, backdropFilter: 'blur(8px)' }}>
               {comp.type}
             </span>
-            <span style={{ fontSize: '10px', fontWeight: 800, padding: '4px 12px', borderRadius: '99px', background: 'rgba(255,200,80,0.18)', color: '#FFD166', border: '1px solid rgba(255,200,80,0.35)', backdropFilter: 'blur(8px)', letterSpacing: '0.04em' }}>
-              💰 {comp.price}
+            <span className="poster-font text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'rgba(255,200,80,0.18)', color: '#FFD166', border: '1px solid rgba(255,200,80,0.35)', backdropFilter: 'blur(8px)' }}>
+              {comp.price}
             </span>
             {comp.tags.map((tag) => (
-              <span key={tag} style={{ fontSize: '10px', fontWeight: 600, padding: '4px 10px', borderRadius: '99px', background: 'rgba(255,255,255,0.08)', color: 'rgba(200,235,255,0.75)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)' }}>
+              <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full text-white/90" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)' }}>
                 {tag}
               </span>
             ))}
@@ -683,19 +689,19 @@ function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
         <div className="overflow-y-auto flex-1 flex flex-col gap-5 px-6 py-5" style={{ zIndex: 1 }}>
 
           {/* Description glass panel */}
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
-            <p style={{ fontSize: '10px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
-              🌊 Tentang Lomba
+          <div style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
+            <p className="poster-font" style={{ fontSize: '11px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
+              ✦ Tentang Lomba
             </p>
-            <p style={{ fontSize: '13px', lineHeight: 1.75, color: 'rgba(200,235,255,0.82)' }}>
+            <p className="text-sm leading-relaxed text-white/95 font-medium">
               {comp.description}
             </p>
           </div>
 
           {/* Detail teknis glass panel */}
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
-            <p style={{ fontSize: '10px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              📋 Detail Teknis
+          <div style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
+            <p className="poster-font" style={{ fontSize: '11px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
+              ✦ Detail Teknis
             </p>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {comp.details.map((d, i) => (
@@ -708,7 +714,7 @@ function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
                     fontSize: '9px', fontWeight: 900, color: comp.glowHex,
                     marginTop: '1px',
                   }}>✓</div>
-                  <span style={{ fontSize: '13px', color: 'rgba(200,235,255,0.85)', lineHeight: 1.5 }}>{d}</span>
+                  <span className="text-sm text-white/95 font-medium leading-relaxed">{d}</span>
                 </li>
               ))}
             </ul>

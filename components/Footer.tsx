@@ -141,7 +141,7 @@ export default function Footer() {
                 <span className="text-xs font-bold tracking-wider" style={{ color: 'var(--color-cyan)' }}>VI · 2026</span>
               </div>
             </a>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-sm leading-relaxed text-white/85 font-medium">
               Festival Al-Fityan Multi Open Sport — ajang kompetisi bergengsi Se-Pulau Jawa untuk generasi berprestasi.
             </p>
             <div className="flex gap-3 mt-1">
@@ -151,9 +151,9 @@ export default function Footer() {
                   href={href}
                   aria-label={label}
                   className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.2)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; }}
+                  style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.25)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; }}
                 >
                   <Icon size={16} />
                 </a>
@@ -169,7 +169,7 @@ export default function Footer() {
 
           {/* Kontak */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-sm font-bold text-white">Kontak Panitia</h3>
+            <h3 className="poster-font text-base font-black text-white">Kontak Panitia</h3>
             <div className="flex flex-col gap-3">
               {[
                 { name: 'Diza', phone: '081343059590' },
@@ -179,31 +179,30 @@ export default function Footer() {
                 <a
                   key={cp.name}
                   href={`tel:${cp.phone}`}
-                  className="flex items-center gap-2 text-sm transition-colors duration-150"
-                  style={{ color: 'rgba(255,255,255,0.5)' }}
+                  className="flex items-center gap-2 text-sm text-white/85 font-medium transition-colors duration-150"
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.85)')}
                 >
-                  <Phone size={13} className="flex-shrink-0" />
-                  <span>{cp.phone} <span style={{ color: 'rgba(255,255,255,0.3)' }}>({cp.name})</span></span>
+                  <Phone size={13} className="text-orange-400 flex-shrink-0" />
+                  <span>{cp.phone} <span className="text-white/60">({cp.name})</span></span>
                 </a>
               ))}
 
-              <div className="flex items-start gap-2 text-sm mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                <MapPin size={13} className="flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 text-sm text-white/85 font-medium mt-1">
+                <MapPin size={13} className="text-cyan-400 flex-shrink-0 mt-0.5" />
                 <span>SMAIT Al-Fityan Boarding School,<br />Bogor, Jawa Barat</span>
               </div>
             </div>
 
             {/* Registration CTA */}
-            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.14)', border: '1px solid rgba(232,76,30,0.3)' }}>
-              <div className="text-xs font-bold mb-1" style={{ color: 'var(--color-orange-light)' }}>Open Registration</div>
-              <div className="text-sm font-black text-white">02 Sep – 10 Okt 2026</div>
+            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.16)', border: '1px solid rgba(232,76,30,0.35)' }}>
+              <div className="poster-font text-xs font-bold mb-1 text-orange-400 uppercase tracking-wider">Open Registration</div>
+              <div className="poster-font text-base font-black text-white">02 Sep – 10 Okt 2026</div>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 text-xs font-bold px-3.5 py-1.5 rounded-lg transition-all duration-200"
+                className="poster-font inline-block mt-2 text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200"
                 style={{ backgroundColor: 'var(--color-orange)', color: 'white' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange-dark)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange)')}
@@ -563,7 +562,7 @@ interface FooterColumnProps {
 function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="text-sm font-bold text-white">{title}</h3>
+      <h3 className="poster-font text-base font-black text-white">{title}</h3>
       <div className="flex flex-col gap-2.5">
         {links.map((link) => (
           <a
@@ -575,10 +574,9 @@ function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
                 scrollTo(link.href);
               }
             }}
-            className="text-sm transition-colors duration-150"
-            style={{ color: 'rgba(255,255,255,0.45)' }}
+            className="text-sm text-white/80 transition-colors duration-150 font-medium"
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
           >
             {link.label}
           </a>

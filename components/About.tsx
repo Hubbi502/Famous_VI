@@ -171,21 +171,21 @@ export default function About() {
               ✦ Tentang FAMOUS 6.0
             </span>
 
-            <h2 className="poster-font text-4xl sm:text-5xl font-black leading-tight" style={{ color: '#0369a1' }}>
+            <h2 className="poster-font text-4xl sm:text-5xl font-black leading-tight text-white">
               Apa itu{' '}
-              <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #E84C1E 0%, #C43A10 100%)' }}>
+              <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #FF7A45 0%, #FFB088 100%)' }}>
                 FAMOUS 6.0?
               </span>
             </h2>
 
-            <p className="text-base leading-relaxed font-medium" style={{ color: '#0f172a' }}>
-              <strong style={{ color: '#0369a1' }}>FAMOUS 6.0</strong> merupakan ajang kompetisi antarpelajar yang diselenggarakan oleh
-              <strong> SMAIT Al-Fityan Boarding School Bogor</strong>. FAMOUS hadir sebagai wadah bagi pelajar untuk
+            <p className="text-base leading-relaxed font-medium text-white/90">
+              <strong className="text-white font-bold">FAMOUS 6.0</strong> merupakan ajang kompetisi antarpelajar yang diselenggarakan oleh
+              <strong className="text-white font-bold"> SMAIT Al-Fityan Boarding School Bogor</strong>. FAMOUS hadir sebagai wadah bagi pelajar untuk
               mengembangkan potensi, menunjukkan kemampuan, membangun kepercayaan diri, serta berkompetisi secara sportif.
             </p>
-            <p className="text-base leading-relaxed font-medium" style={{ color: '#0f172a' }}>
+            <p className="text-base leading-relaxed font-medium text-white/90">
               Memasuki penyelenggaraan ke-6, FAMOUS 6.0 mengangkat tema
-              <em style={{ color: '#0284c7', fontStyle: 'italic', fontWeight: 700 }}> "Rooted in Legacy, Driven by Excellence"</em>,
+              <em className="text-cyan-200 font-bold not-italic"> "Rooted in Legacy, Driven by Excellence"</em>,
               yang menggambarkan semangat untuk tetap berpegang pada nilai dan pencapaian yang telah dibangun sebelumnya,
               sekaligus terus berkembang dan memberikan yang terbaik.
             </p>
@@ -203,7 +203,7 @@ export default function About() {
                   >
                     ✓
                   </span>
-                  <span className="text-sm font-semibold" style={{ color: '#0f172a' }}>{point}</span>
+                  <span className="text-sm font-semibold text-white">{point}</span>
                 </div>
               ))}
             </div>
@@ -213,7 +213,7 @@ export default function About() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
+                className="poster-font inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white', boxShadow: '0 4px 16px rgba(232,76,30,0.3)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
@@ -223,10 +223,10 @@ export default function About() {
               <a
                 href="#timeline"
                 onClick={(e) => { e.preventDefault(); document.querySelector('#timeline')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-                style={{ border: '1.5px solid var(--color-border)', color: 'var(--color-navy)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-orange)'; e.currentTarget.style.color = 'var(--color-orange)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-navy)'; }}
+                className="poster-font inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200 text-white"
+                style={{ border: '1.5px solid rgba(255,255,255,0.35)', backgroundColor: 'rgba(255,255,255,0.1)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-orange)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; e.currentTarget.style.color = 'white'; }}
               >
                 Lihat Timeline
               </a>

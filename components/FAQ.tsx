@@ -119,12 +119,6 @@ export default function FAQ() {
             >
               ✦ FAQ
             </span>
-            <span
-              className="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
-              style={{ backgroundColor: 'rgba(168,85,247,0.2)', color: '#c084fc', border: '1px solid rgba(168,85,247,0.3)' }}
-            >
-              ❓ Depth: 10,500m · Mariana Trench
-            </span>
           </div>
           <h2 className="poster-font text-3xl sm:text-5xl font-black text-white">
             Pertanyaan yang Sering{' '}
@@ -132,7 +126,7 @@ export default function FAQ() {
               Diajukan
             </span>
           </h2>
-          <p className="mt-3 text-base font-medium" style={{ color: 'rgba(200,225,255,0.7)' }}>
+          <p className="poster-font mt-3 text-base font-medium text-white/90">
             Temukan jawaban atas pertanyaan umum seputar FAMOUS 6.0 2026
           </p>
         </div>
@@ -159,7 +153,7 @@ export default function FAQ() {
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black"
+                      className="poster-font flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black"
                       style={{
                         backgroundColor: isOpen ? '#38bdf8' : 'rgba(255,255,255,0.15)',
                         color: isOpen ? '#0369a1' : 'white',
@@ -167,7 +161,7 @@ export default function FAQ() {
                     >
                       {faq.id}
                     </span>
-                    <span className="text-sm font-bold text-white">
+                    <span className="poster-font text-sm font-bold text-white">
                       {faq.question}
                     </span>
                   </div>
@@ -189,7 +183,7 @@ export default function FAQ() {
                 >
                   <div className="px-5 pb-5">
                     <div className="h-px mb-4" style={{ backgroundColor: isOpen ? 'rgba(56,189,248,0.3)' : 'rgba(255,255,255,0.1)' }} />
-                    <p className="text-sm leading-relaxed pl-10 font-medium" style={{ color: 'rgba(224,242,254,0.85)' }}>
+                    <p className="text-sm leading-relaxed pl-10 font-medium text-white/95">
                       {faq.answer}
                     </p>
                   </div>

@@ -95,45 +95,50 @@ export default function PrizePool() {
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
             style={{ backgroundColor: 'rgba(232,76,30,0.2)', border: '1px solid rgba(232,76,30,0.4)' }}>
-            <span style={{ color: 'var(--color-orange-light)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            <span className="poster-font" style={{ color: 'var(--color-orange-light)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               ✦ Total Hadiah FAMOUS VI 2026 ✦
             </span>
           </div>
 
           {/* Amount */}
           <div className="flex items-center justify-center gap-3 mb-2">
-            <span className="text-3xl font-black" style={{ color: 'var(--color-orange)' }}>✦</span>
+            <span className="text-3xl font-black text-orange-500">✦</span>
             <h2
-              className="font-black leading-none"
+              className="poster-font font-black leading-none"
               style={{ fontSize: 'clamp(48px, 10vw, 96px)', color: 'white', textShadow: '0 0 40px rgba(232,76,30,0.4)' }}
             >
               Puluhan Juta
             </h2>
-            <span className="text-3xl font-black" style={{ color: 'var(--color-orange)' }}>✦</span>
+            <span className="text-3xl font-black text-orange-500">✦</span>
           </div>
-          <div className="text-xl font-bold mb-8" style={{ color: 'var(--color-cyan)' }}>Rupiah</div>
+          <div className="poster-font text-2xl font-black mb-8" style={{ color: 'var(--color-cyan)' }}>Rupiah</div>
 
           {/* Prize breakdown */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
-              { place: '🥇 Juara 1', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
-              { place: '🥈 Juara 2', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
-              { place: '🥉 Juara 3', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
+              { rank: '01', title: 'Juara 1', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai', color: '#facc15' },
+              { rank: '02', title: 'Juara 2', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai', color: '#e2e8f0' },
+              { rank: '03', title: 'Juara 3', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai', color: '#f97316' },
             ].map((prize) => (
               <div
-                key={prize.place}
-                className="px-4 py-4 rounded-2xl text-center"
-                style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)' }}
+                key={prize.title}
+                className="px-4 py-5 rounded-2xl text-center transition-transform duration-200 hover:-translate-y-1"
+                style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.16)', backdropFilter: 'blur(8px)' }}
               >
-                <div className="text-2xl mb-1">{prize.place.split(' ')[0]}</div>
-                <div className="text-sm font-bold text-white">{prize.place.split(' ').slice(1).join(' ')}</div>
-                <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{prize.label}</div>
-                <div className="text-xs mt-1 font-semibold" style={{ color: 'var(--color-cyan)' }}>{prize.desc}</div>
+                <div
+                  className="poster-font text-xs font-black inline-block px-2.5 py-0.5 rounded-full mb-2"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: prize.color, border: `1px solid ${prize.color}66` }}
+                >
+                  {prize.rank}
+                </div>
+                <div className="poster-font text-lg font-black text-white">{prize.title}</div>
+                <div className="text-xs mt-0.5 text-white/80 font-medium">{prize.label}</div>
+                <div className="poster-font text-xs mt-2 font-bold" style={{ color: 'var(--color-cyan)' }}>{prize.desc}</div>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
+          <p className="poster-font mt-8 text-sm font-medium text-white/80">
             *Detail hadiah akan diumumkan melalui media sosial resmi FAMOUS VI
           </p>
         </div>

@@ -227,7 +227,7 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="poster-font text-lg sm:text-xl font-bold mt-2 tracking-wide" style={{ color: '#0369a1', maxWidth: '520px' }}>
-                ✨ "Rooted in Legacy, Driven by Excellence"
+                "Rooted in Legacy, Driven by Excellence"
               </p>
             </div>
 
