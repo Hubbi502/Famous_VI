@@ -9,10 +9,17 @@ const galleryImages = [
   { id: 4, src: '/assets/img/dokumentasi/IMG_6550.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 4' },
   { id: 5, src: '/assets/img/dokumentasi/IMG_6551.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 5' },
   { id: 6, src: '/assets/img/dokumentasi/IMG_6552.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 6' },
+  { id: 7, src: '/assets/img/dokumentasi/IMG_6553.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 7' },
+  { id: 8, src: '/assets/img/dokumentasi/IMG_6554.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 8' },
+  { id: 9, src: '/assets/img/dokumentasi/IMG_6555.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 9' },
+  { id: 10, src: '/assets/img/dokumentasi/IMG_6556.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 10' },
 ];
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleImages = showAll ? galleryImages : galleryImages.slice(0, 6);
 
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
@@ -121,7 +128,7 @@ export default function Gallery() {
 
         {/* 3×2 Grid */}
         <div className="grid grid-cols-3 gap-4">
-          {galleryImages.map((image, idx) => (
+          {visibleImages.map((image, idx) => (
             <div
               key={image.id}
               className="gallery-img rounded-2xl overflow-hidden relative group cursor-pointer"
@@ -170,8 +177,9 @@ export default function Gallery() {
               e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
               e.currentTarget.style.transform = '';
             }}
+            onClick={() => setShowAll((v) => !v)}
           >
-            Lihat Semua Galeri
+            {showAll ? 'Sembunyikan' : 'Lihat Semua Galeri'}
           </button>
         </div>
       </div>
