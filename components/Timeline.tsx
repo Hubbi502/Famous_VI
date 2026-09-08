@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Jellyfish, AnglerFish, Seahorse, MantaRay, Seaweed, Bubble, TubeSponges, BrainCoral, SchoolOfFish } from './MarineBiota';
+import { Jellyfish, AnglerFish, Seahorse, MantaRay, CoralBranch, Seaweed, Bubble } from './MarineBiota';
 
 interface TimelineItem {
   id: number;
@@ -36,55 +36,63 @@ export default function Timeline() {
       />
       {/* ── Deep Ocean Ambient Biota & Bioluminescent Glow ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Ocean grid overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(192,132,252,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(192,132,252,0.04) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
+
         {/* Ambient bioluminescent glows */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.18) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%)', filter: 'blur(70px)' }} />
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%)', filter: 'blur(70px)' }} />
-
-        {/* Gliding Manta Ray */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '15%', left: 0, animationDuration: '32s', opacity: 0.75 }}>
-          <MantaRay size={78} />
-        </div>
-
-        {/* School of Fish */}
-        <div className="anim-swim-left" style={{ position: 'absolute', top: '75%', right: 0, animationDuration: '24s', opacity: 0.7 }}>
-          <SchoolOfFish count={5} color="#38bdf8" accentColor="#c084fc" size={16} />
-        </div>
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)', filter: 'blur(70px)' }} />
 
         {/* Bioluminescent Jellyfish */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '10%', right: '6%', opacity: 0.85, animationDuration: '8s' }}>
-          <Jellyfish size={58} color="#c084fc" glowColor="#38bdf8" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '10%', right: '6%', opacity: 0.75, animationDuration: '8s' }}>
+          <Jellyfish size={52} color="rgba(192,132,252,0.85)" />
         </div>
-        <div className="anim-jelly" style={{ position: 'absolute', top: '25%', right: '14%', opacity: 0.65, animationDuration: '10s', animationDelay: '2s' }}>
-          <Jellyfish size={40} color="#38bdf8" glowColor="#ffffff" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '22%', right: '12%', opacity: 0.55, animationDuration: '10s', animationDelay: '2s' }}>
+          <Jellyfish size={36} color="rgba(56,189,248,0.75)" />
         </div>
 
         {/* Lurking AnglerFish */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '65%', left: '3%', opacity: 0.85, animationDuration: '12s' }}>
-          <AnglerFish size={55} />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '65%', left: '3%', opacity: 0.7, animationDuration: '12s' }}>
+          <AnglerFish size={48} />
         </div>
 
         {/* Seahorse bobbing on right */}
-        <div className="anim-jelly" style={{ position: 'absolute', bottom: '15%', right: '4%', opacity: 0.85, animationDuration: '6s' }}>
-          <Seahorse size={46} color="#fb923c" />
+        <div className="anim-jelly" style={{ position: 'absolute', bottom: '15%', right: '5%', opacity: 0.8, animationDuration: '6s' }}>
+          <Seahorse size={40} />
         </div>
 
-        {/* Deep Corals & Sponges */}
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '30px', left: '3%', opacity: 0.7 }}>
-          <TubeSponges height={100} color="#6366f1" rimColor="#a5b4fc" />
+        {/* MantaRay gliding past */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '42%', left: '-10%', opacity: 0.45, animationDuration: '32s' }}>
+          <MantaRay size={75} />
         </div>
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '30px', right: '3%', animationDelay: '1.2s', opacity: 0.65 }}>
-          <BrainCoral size={70} color="#7e22ce" ridgeColor="#e9d5ff" />
+
+        {/* Seaweed & Coral accents along bottom */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '2%', opacity: 0.5 }}>
+          <Seaweed height={75} color="#9333ea" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '5px', left: '6%', opacity: 0.6 }}>
+          <CoralBranch height={50} color="#38bdf8" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', right: '3%', opacity: 0.5 }}>
+          <Seaweed height={80} color="#0284c7" />
         </div>
 
         {/* Rising bubbles */}
         {[
-          { left: '15%', delay: '0s', size: 14 },
-          { left: '45%', delay: '1.8s', size: 10 },
-          { left: '80%', delay: '0.9s', size: 15 },
-        ].map((b, i) => (
-          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '30px', left: b.left, animationDelay: b.delay, animationDuration: '4.8s' }}>
+          { left: '10%', delay: '0s', size: 10 },
+          { left: '35%', delay: '1.5s', size: 7 },
+          { left: '62%', delay: '0.8s', size: 12 },
+          { left: '88%', delay: '2.2s', size: 8 },
+        ].map((b, idx) => (
+          <div key={idx} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4.5s' }}>
             <Bubble size={b.size} />
           </div>
         ))}

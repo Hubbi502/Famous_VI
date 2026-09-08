@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { Jellyfish, AnglerFish, Seahorse, Starfish, Seaweed, Bubble, MantaRay, StaghornCoral, TubeSponges } from './MarineBiota';
+import { Jellyfish, AnglerFish, Seahorse, Starfish, Seaweed, CoralBranch, Bubble } from './MarineBiota';
 
 const faqs = [
   {
@@ -68,46 +68,41 @@ export default function FAQ() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         {/* Glows */}
         <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)', filter: 'blur(70px)' }} />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)', filter: 'blur(70px)' }} />
-
-        {/* Gliding Manta Ray */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '15%', left: 0, animationDuration: '30s', opacity: 0.7 }}>
-          <MantaRay size={72} />
-        </div>
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%)', filter: 'blur(70px)' }} />
 
         {/* Jellyfish on Right */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '12%', right: '5%', opacity: 0.85, animationDuration: '8s' }}>
-          <Jellyfish size={54} color="#c084fc" glowColor="#38bdf8" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '12%', right: '5%', opacity: 0.7, animationDuration: '8s' }}>
+          <Jellyfish size={46} color="rgba(192,132,252,0.8)" />
         </div>
 
         {/* AnglerFish lurking left */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '48%', left: '3%', opacity: 0.85, animationDuration: '10s' }}>
-          <AnglerFish size={52} />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '40%', left: '3%', opacity: 0.75, animationDuration: '10s' }}>
+          <AnglerFish size={48} />
         </div>
 
         {/* Seahorse bobbing right */}
-        <div className="anim-jelly" style={{ position: 'absolute', bottom: '25%', right: '5%', opacity: 0.85, animationDuration: '6s' }}>
-          <Seahorse size={42} color="#fb923c" />
+        <div className="anim-jelly" style={{ position: 'absolute', bottom: '25%', right: '6%', opacity: 0.8, animationDuration: '6s' }}>
+          <Seahorse size={36} />
         </div>
 
-        {/* Bottom seaweed & coral formations */}
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '15px', left: '3%', opacity: 0.65 }}>
-          <StaghornCoral height={75} color="#d946ef" accentColor="#f0abfc" />
+        {/* Bottom seaweed & coral */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '3%', opacity: 0.55 }}>
+          <Seaweed height={80} color="#7e22ce" />
         </div>
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '15px', right: '3%', opacity: 0.65 }}>
-          <TubeSponges height={80} color="#0284c7" rimColor="#38bdf8" />
+        <div style={{ position: 'absolute', bottom: '5px', left: '8%', opacity: 0.6 }}>
+          <CoralBranch height={50} color="#ec4899" />
         </div>
-        <div style={{ position: 'absolute', bottom: '10px', left: '12%', opacity: 0.75 }}>
-          <Starfish size={26} color="#f59e0b" />
+        <div style={{ position: 'absolute', bottom: '5px', right: '3%', opacity: 0.6 }}>
+          <Starfish size={24} color="#f59e0b" />
         </div>
 
         {/* Bubble columns */}
         {[
-          { left: '20%', delay: '0.2s', size: 14 },
-          { left: '55%', delay: '1.4s', size: 12 },
-          { left: '85%', delay: '0.9s', size: 16 },
+          { left: '20%', delay: '0.2s', size: 8 },
+          { left: '55%', delay: '1.4s', size: 10 },
+          { left: '85%', delay: '0.9s', size: 7 },
         ].map((b, idx) => (
           <div key={idx} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4s' }}>
             <Bubble size={b.size} />

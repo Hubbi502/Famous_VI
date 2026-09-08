@@ -1,6 +1,5 @@
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
-import { Crab, Starfish, Seaweed, Jellyfish, AnglerFish, Seahorse, Bubble, ClownFish, StaghornCoral, TubeSponges, MantaRay } from './MarineBiota';
-import CoralReefLandscape from './CoralReefLandscape';
+import { Crab, Starfish, Seaweed, Jellyfish, AnglerFish, Seahorse, CoralBranch, Bubble, ClownFish, CoralReefLeft, CoralReefRight } from './MarineBiota';
 
 const socialLinks = [
   { icon: Facebook, label: 'Facebook', href: '#' },
@@ -227,9 +226,62 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Magnificent Coral Reef Ecosystem at the Ocean Floor ── */}
-      <div className="w-full mt-4">
-        <CoralReefLandscape />
+      {/* ── Hadal Sea Floor Coral Reef Bed at bottom of Footer ── */}
+      <div className="relative w-full overflow-hidden pointer-events-none" style={{ marginTop: '30px' }}>
+        {/* Left Real Coral Reef Rock Asset */}
+        <div className="absolute bottom-0 left-0 pointer-events-none" style={{ width: 'clamp(260px, 32vw, 460px)', zIndex: 3 }}>
+          <CoralReefLeft width="100%" className="drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]" />
+        </div>
+
+        {/* Right Real Coral Reef Rock Asset */}
+        <div className="absolute bottom-0 right-0 pointer-events-none" style={{ width: 'clamp(260px, 32vw, 460px)', zIndex: 3 }}>
+          <CoralReefRight width="100%" className="drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]" />
+        </div>
+
+        <svg viewBox="0 0 1440 180" className="w-full h-auto" preserveAspectRatio="none" style={{ display: 'block', minHeight: '140px', position: 'relative', zIndex: 1 }}>
+          <defs>
+            <linearGradient id="seabedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#0a081a" />
+              <stop offset="100%" stopColor="#020108" />
+            </linearGradient>
+            <radialGradient id="pearlGradient" cx="35%" cy="35%" r="65%">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="60%" stopColor="#fef08a" />
+              <stop offset="100%" stopColor="#f59e0b" />
+            </radialGradient>
+          </defs>
+
+          {/* Seabed Terrain */}
+          <path d="M0,180 L0,90 Q200,60 400,80 Q600,100 800,65 Q1000,30 1200,60 Q1350,75 1440,55 L1440,180Z" fill="url(#seabedGrad)" />
+          <path d="M0,180 L0,110 Q180,85 380,105 Q580,125 780,90 Q980,55 1180,85 Q1330,100 1440,80 L1440,180Z" fill="#03020a" opacity="0.9" />
+
+          {/* ── Middle Coral & Clam Shell ── */}
+          <g transform="translate(640, 50)">
+            {/* Giant Clam with Glowing Pearl */}
+            <path d="M60,65 Q90,35 120,65 Q125,85 90,95 Q55,85 60,65Z" fill="#be185d" stroke="#f472b6" strokeWidth="2" />
+            <circle cx="90" cy="68" r="11" fill="url(#pearlGradient)" filter="drop-shadow(0 0 10px #fff)" />
+            <circle cx="86" cy="64" r="3" fill="#ffffff" opacity="0.9" />
+            {/* Coral Branch */}
+            <path d="M10,80 Q20,40 10,10 M10,50 Q30,30 40,20 M10,60 Q-10,40 -15,30" stroke="#f97316" strokeWidth="6" strokeLinecap="round" fill="none" opacity="0.85" />
+          </g>
+
+          {/* ── Sunken Ship Anchor ── */}
+          <g transform="translate(980, 55)">
+            <path d="M40,10 L40,70 M20,25 L60,25 M15,65 Q40,90 65,65" stroke="#475569" strokeWidth="5" strokeLinecap="round" fill="none" />
+            <circle cx="40" cy="10" r="6" stroke="#475569" strokeWidth="4" fill="none" />
+          </g>
+
+          {/* Bioluminescent rising bubbles from seabed */}
+          {[
+            { cx: 320, cy: 40, r: 4 },
+            { cx: 520, cy: 30, r: 5 },
+            { cx: 740, cy: 45, r: 5 },
+            { cx: 900, cy: 35, r: 4 },
+            { cx: 1120, cy: 50, r: 5 },
+          ].map((b, i) => (
+            <circle key={i} cx={b.cx} cy={b.cy} r={b.r} fill="rgba(56,189,248,0.6)" filter="drop-shadow(0 0 6px #38bdf8)" />
+          ))}
+        </svg>
       </div>
 
       <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>

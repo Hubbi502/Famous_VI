@@ -1,4 +1,4 @@
-import { Starfish, Jellyfish, Seahorse, Seaweed, Bubble, MantaRay, StaghornCoral, BrainCoral, SchoolOfFish, TreasureChest } from './MarineBiota';
+import { Octopus, Starfish, Jellyfish, Seahorse, CoralBranch, Seaweed, Bubble, MantaRay } from './MarineBiota';
 
 export default function PrizePool() {
   return (
@@ -20,43 +20,43 @@ export default function PrizePool() {
       />
       {/* ── Marine Biota Layer ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
-        {/* School of Neon Fish */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '10%', left: 0, animationDuration: '25s', opacity: 0.75 }}>
-          <SchoolOfFish count={5} color="#c084fc" accentColor="#fef08a" size={16} />
+        {/* Floating Octopus */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '12%', left: '8%', opacity: 0.85 }}>
+          <Octopus size={52} />
         </div>
 
         {/* Jellyfish floating right */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '8%', right: '6%', animationDuration: '7s', opacity: 0.8 }}>
-          <Jellyfish size={58} color="#f472b6" glowColor="#ffffff" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '8%', right: '6%', animationDuration: '7s', opacity: 0.75 }}>
+          <Jellyfish size={55} color="rgba(244,63,94,0.7)" />
         </div>
-        <div className="anim-jelly" style={{ position: 'absolute', top: '28%', right: '18%', animationDuration: '9s', animationDelay: '2s', opacity: 0.65 }}>
-          <Jellyfish size={42} color="#a855f7" glowColor="#38bdf8" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '28%', right: '18%', animationDuration: '9s', animationDelay: '2s', opacity: 0.55 }}>
+          <Jellyfish size={38} color="rgba(192,132,252,0.65)" />
         </div>
 
         {/* Gliding Manta Ray */}
-        <div className="anim-swim-left" style={{ position: 'absolute', top: '55%', right: '0', animationDuration: '30s', opacity: 0.75 }}>
-          <MantaRay size={70} />
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '55%', left: '0', animationDuration: '35s', opacity: 0.55 }}>
+          <MantaRay size={65} />
         </div>
 
         {/* Seahorse */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '48%', left: '4%', animationDuration: '6s', opacity: 0.85 }}>
-          <Seahorse size={46} color="#fb923c" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '50%', right: '4%', animationDuration: '6s', opacity: 0.8 }}>
+          <Seahorse size={44} />
         </div>
 
         {/* Seaweed bottom */}
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', left: '4%', opacity: 0.55 }}>
-          <Seaweed height={90} color="#15803d" />
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', left: '4%', opacity: 0.45 }}>
+          <Seaweed height={70} color="#166534" />
         </div>
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', right: '5%', animationDelay: '1.5s', opacity: 0.5 }}>
-          <Seaweed height={95} color="#166534" />
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', right: '5%', animationDelay: '1.5s', opacity: 0.4 }}>
+          <Seaweed height={80} color="#15803d" />
         </div>
 
-        {/* Coral Formations */}
-        <div style={{ position: 'absolute', bottom: '0', left: '18%', opacity: 0.7 }}>
-          <StaghornCoral height={80} color="#d946ef" accentColor="#f0abfc" />
+        {/* Coral branches */}
+        <div style={{ position: 'absolute', bottom: '0', left: '20%', opacity: 0.5 }}>
+          <CoralBranch height={60} color="#a855f7" />
         </div>
-        <div style={{ position: 'absolute', bottom: '0', right: '20%', opacity: 0.65 }}>
-          <BrainCoral size={65} color="#7e22ce" ridgeColor="#c084fc" />
+        <div style={{ position: 'absolute', bottom: '0', right: '20%', opacity: 0.45 }}>
+          <CoralBranch height={55} color="#f43f5e" />
         </div>
 
         {/* Starfish */}
