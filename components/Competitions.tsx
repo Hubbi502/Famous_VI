@@ -227,7 +227,7 @@ export default function Competitions() {
       id="competitions"
       className="relative py-20 lg:py-28 overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #071a38 0%, #0b2d5e 30%, #0d4a8a 60%, #0e6e9c 85%, #1a9db5 100%)',
+        background: 'linear-gradient(180deg, #0e7a9a 0%, #0284c7 25%, #312e81 60%, #581c87 100%)',
       }}
     >
       {/* ── Ocean decorative bubbles ── */}
