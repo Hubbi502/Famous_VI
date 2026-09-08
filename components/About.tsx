@@ -136,18 +136,28 @@ export default function About() {
 
               {/* Floating stats */}
               <div
-                className="absolute -top-5 -right-5 px-3 py-2 rounded-xl text-center"
-                style={{ backgroundColor: 'var(--color-white)', border: '2px solid var(--color-border)', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
+                className="cloud-badge-orange absolute -top-5 -right-5 px-3.5 py-2 text-center"
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '16px',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(232,76,30,0.15)',
+                  border: '1.5px solid rgba(232,76,30,0.2)',
+                }}
               >
-                  <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Cabang Lomba</div>
-                  <div className="text-2xl font-black" style={{ color: 'var(--color-orange)' }}>8</div>
+                <div className="text-[11px] font-bold text-gray-500">Cabang Lomba</div>
+                <div className="poster-font text-2xl font-black" style={{ color: '#e84c1e' }}>8</div>
               </div>
               <div
-                className="absolute -bottom-5 -left-5 px-3 py-2 rounded-xl text-center"
-                style={{ backgroundColor: 'var(--color-white)', border: '2px solid var(--color-border)', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
+                className="cloud-badge-cyan absolute -bottom-5 -left-5 px-3.5 py-2 text-center"
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '16px',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(14,122,154,0.15)',
+                  border: '1.5px solid rgba(14,122,154,0.2)',
+                }}
               >
-                <div className="text-xs font-medium" style={{ color: 'var(--color-muted)' }}>Penyelenggaraan</div>
-                <div className="text-2xl font-black" style={{ color: 'var(--color-blue)' }}>6.0</div>
+                <div className="text-[11px] font-bold text-gray-500">Penyelenggaraan</div>
+                <div className="poster-font text-2xl font-black" style={{ color: '#0284c7' }}>Ke-6</div>
               </div>
             </div>
           </div>

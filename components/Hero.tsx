@@ -73,33 +73,43 @@ export default function Hero() {
           <path d="M0,220 L0,80 Q250,30 500,70 Q750,110 1000,50 Q1250,-10 1440,40 L1440,220Z" fill="url(#sandGradient1)" opacity="0.9" />
           <path d="M0,220 L0,110 Q200,75 450,105 Q700,135 950,85 Q1200,35 1440,90 L1440,220Z" fill="url(#sandGradient2)" />
 
-          {/* Left Palm Tree - rooted on sand dune */}
-          <g transform="translate(10, 20)">
-            <path d="M50,160 Q45,100 65,30" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
-            <path d="M50,160 Q45,100 65,30" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
+          {/* Left Palm Tree - rooted on sand dune, curved towards beach */}
+          <g transform="translate(25, 10)">
+            <path d="M45,170 Q35,100 65,35" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
+            <path d="M45,170 Q35,100 65,35" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
+            {/* Trunk rings */}
+            <path d="M40,140 Q47,138 52,142" stroke="#5c2606" strokeWidth="2.5" fill="none" />
+            <path d="M45,110 Q52,108 58,112" stroke="#5c2606" strokeWidth="2.5" fill="none" />
+            <path d="M52,80 Q59,78 64,82" stroke="#5c2606" strokeWidth="2.5" fill="none" />
             {/* Coconuts */}
-            <circle cx="62" cy="38" r="6" fill="#451a03" />
-            <circle cx="68" cy="36" r="5.5" fill="#78350f" />
+            <circle cx="60" cy="42" r="6" fill="#451a03" />
+            <circle cx="68" cy="40" r="5.5" fill="#78350f" />
+            <circle cx="64" cy="48" r="5" fill="#5c2606" />
             {/* Fronds */}
-            <ellipse cx="65" cy="28" rx="55" ry="18" fill="#15803d" transform="rotate(-30 65 28)" />
-            <ellipse cx="65" cy="28" rx="50" ry="16" fill="#16a34a" transform="rotate(15 65 28)" />
-            <ellipse cx="65" cy="28" rx="48" ry="15" fill="#22c55e" transform="rotate(-55 65 28)" />
-            <ellipse cx="65" cy="28" rx="45" ry="14" fill="#4ade80" transform="rotate(45 65 28)" />
-            <ellipse cx="65" cy="28" rx="40" ry="12" fill="#86efac" transform="rotate(-10 65 28)" />
+            <ellipse cx="65" cy="30" rx="55" ry="18" fill="#15803d" transform="rotate(-35 65 30)" />
+            <ellipse cx="65" cy="30" rx="50" ry="16" fill="#16a34a" transform="rotate(10 65 30)" />
+            <ellipse cx="65" cy="30" rx="48" ry="15" fill="#22c55e" transform="rotate(-60 65 30)" />
+            <ellipse cx="65" cy="30" rx="46" ry="14" fill="#4ade80" transform="rotate(40 65 30)" />
+            <ellipse cx="65" cy="30" rx="40" ry="12" fill="#86efac" transform="rotate(-15 65 30)" />
           </g>
 
-          {/* Right Palm Tree - rooted on sand dune */}
-          <g transform="translate(1330, 10)">
-            <path d="M40,170 Q50,105 30,35" stroke="#78350f" strokeWidth="11" fill="none" strokeLinecap="round" />
-            <path d="M40,170 Q50,105 30,35" stroke="#92400e" strokeWidth="7" fill="none" strokeLinecap="round" />
+          {/* Right Palm Tree - rooted on sand dune, gracefully leaning left */}
+          <g transform="translate(1260, 10)">
+            <path d="M60,170 Q65,100 35,35" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
+            <path d="M60,170 Q65,100 35,35" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
+            {/* Trunk rings */}
+            <path d="M55,140 Q48,138 43,142" stroke="#5c2606" strokeWidth="2.5" fill="none" />
+            <path d="M50,110 Q43,108 37,112" stroke="#5c2606" strokeWidth="2.5" fill="none" />
+            <path d="M43,80 Q36,78 31,82" stroke="#5c2606" strokeWidth="2.5" fill="none" />
             {/* Coconuts */}
-            <circle cx="28" cy="42" r="6" fill="#451a03" />
-            <circle cx="34" cy="40" r="5" fill="#78350f" />
+            <circle cx="38" cy="42" r="6" fill="#451a03" />
+            <circle cx="44" cy="40" r="5.5" fill="#78350f" />
             {/* Fronds */}
-            <ellipse cx="30" cy="32" rx="50" ry="16" fill="#15803d" transform="rotate(25 30 32)" />
-            <ellipse cx="30" cy="32" rx="46" ry="14" fill="#16a34a" transform="rotate(-20 30 32)" />
-            <ellipse cx="30" cy="32" rx="42" ry="13" fill="#22c55e" transform="rotate(50 30 32)" />
-            <ellipse cx="30" cy="32" rx="38" ry="12" fill="#4ade80" transform="rotate(-45 30 32)" />
+            <ellipse cx="35" cy="30" rx="55" ry="18" fill="#15803d" transform="rotate(35 35 30)" />
+            <ellipse cx="35" cy="30" rx="50" ry="16" fill="#16a34a" transform="rotate(-15 35 30)" />
+            <ellipse cx="35" cy="30" rx="48" ry="15" fill="#22c55e" transform="rotate(60 35 30)" />
+            <ellipse cx="35" cy="30" rx="46" ry="14" fill="#4ade80" transform="rotate(-40 35 30)" />
+            <ellipse cx="35" cy="30" rx="40" ry="12" fill="#86efac" transform="rotate(15 35 30)" />
           </g>
 
           {/* Shoreline water waves crashing on sand */}
@@ -114,6 +124,32 @@ export default function Hero() {
           <ellipse cx="880" cy="177" rx="10" ry="5" fill="#ffffff" opacity="0.55" />
           <ellipse cx="1180" cy="173" rx="8" ry="4" fill="#38bdf8" opacity="0.7" />
         </svg>
+
+        {/* Clam Shell with Glowing Pearl resting on the beach sand */}
+        <div style={{ position: 'absolute', bottom: '38px', right: '320px', zIndex: 5, pointerEvents: 'none' }}>
+          <svg width="68" height="56" viewBox="0 0 100 85">
+            {/* Clam outer shell */}
+            <path d="M10,65 Q50,90 90,65 Q95,40 50,30 Q5,40 10,65Z" fill="url(#clamGradShore)" stroke="#be185d" strokeWidth="2.5" />
+            {/* Inner pink shell ridges */}
+            <path d="M20,60 Q50,78 80,60" fill="none" stroke="#f472b6" strokeWidth="2" />
+            <path d="M30,55 Q50,70 70,55" fill="none" stroke="#f472b6" strokeWidth="2" />
+            {/* Pearl */}
+            <circle cx="50" cy="52" r="13" fill="url(#pearlGradShore)" filter="drop-shadow(0 0 10px #fff)" />
+            <circle cx="46" cy="48" r="3.5" fill="#ffffff" opacity="0.9" />
+            <defs>
+              <linearGradient id="clamGradShore" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fce7f3" />
+                <stop offset="50%" stopColor="#f472b6" />
+                <stop offset="100%" stopColor="#9d174d" />
+              </linearGradient>
+              <radialGradient id="pearlGradShore" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="60%" stopColor="#fef08a" />
+                <stop offset="100%" stopColor="#f59e0b" />
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
 
         {/* Crab scuttling on sand dune */}
         <div style={{ position: 'absolute', bottom: '35px', left: '120px', zIndex: 5 }}>
@@ -272,32 +308,6 @@ export default function Hero() {
                   alt="FAMOUS VI Mascot"
                   className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
                 />
-              </div>
-
-              {/* Poster 1 Clam Shell with Glowing Pearl on Beach Sand */}
-              <div className="absolute bottom-2 -left-6 z-20 pointer-events-none float-anim" style={{ animationDelay: '1.5s' }}>
-                <svg width="90" height="75" viewBox="0 0 100 85">
-                  {/* Clam outer shell */}
-                  <path d="M10,65 Q50,90 90,65 Q95,40 50,30 Q5,40 10,65Z" fill="url(#clamGradient)" stroke="#be185d" strokeWidth="2.5" />
-                  {/* Inner pink shell ridges */}
-                  <path d="M20,60 Q50,78 80,60" fill="none" stroke="#f472b6" strokeWidth="2" />
-                  <path d="M30,55 Q50,70 70,55" fill="none" stroke="#f472b6" strokeWidth="2" />
-                  {/* Pearl */}
-                  <circle cx="50" cy="52" r="14" fill="url(#pearlGradient)" filter="drop-shadow(0 0 12px #fff)" />
-                  <circle cx="45" cy="47" r="4" fill="#ffffff" opacity="0.9" />
-                  <defs>
-                    <linearGradient id="clamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#fce7f3" />
-                      <stop offset="50%" stopColor="#f472b6" />
-                      <stop offset="100%" stopColor="#9d174d" />
-                    </linearGradient>
-                    <radialGradient id="pearlGradient" cx="35%" cy="35%" r="65%">
-                      <stop offset="0%" stopColor="#ffffff" />
-                      <stop offset="60%" stopColor="#fef08a" />
-                      <stop offset="100%" stopColor="#f59e0b" />
-                    </radialGradient>
-                  </defs>
-                </svg>
               </div>
 
               {/* Floating Cloud Badges (Poster 1 style) */}
