@@ -5,38 +5,41 @@ interface TimelineItem {
   title: string;
   date: string;
   icon: string;
-  isActive?: boolean;
 }
 
 const timelineItems: TimelineItem[] = [
-  { id: 1, title: 'Pendaftaran Gelombang I', date: '1 Mar – 4 Mar 2026', icon: '📝' },
-  { id: 2, title: 'Pendaftaran Gelombang II', date: '5 Mar – 31 Mar 2026', icon: '📋' },
-  { id: 3, title: 'Technical Meeting', date: '30 Mar 2026', icon: '🤝' },
-  { id: 4, title: 'Pengumpulan Karya', date: '31 Mar 2026', icon: '📤' },
-  { id: 5, title: 'Penilaian Karya', date: '1 Apr – 5 Apr 2026', icon: '⚖️' },
-  { id: 6, title: 'Pengumuman Finalis', date: '6 Apr 2026', icon: '📢', isActive: true },
-  { id: 7, title: 'Grand Final', date: '5 Jun – 7 Jun 2026', icon: '🏆' },
-  { id: 8, title: 'Awarding & Penutupan', date: '7 Juni 2026', icon: '🎉' },
+  { id: 1, title: 'Open Registration', date: '02 Sep – 10 Okt 2026', icon: '📝' },
+  { id: 2, title: 'Batas Pendaftaran', date: '10 Oktober 2026', icon: '⏰' },
+  { id: 3, title: 'Technical Meeting', date: 'Oktober 2026', icon: '🤝' },
+  { id: 4, title: 'Pelaksanaan Lomba', date: 'November 2026', icon: '⚽' },
+  { id: 5, title: 'Penilaian & Penjurian', date: 'November 2026', icon: '⚖️' },
+  { id: 6, title: 'Pengumuman Finalis', date: 'November 2026', icon: '📢' },
+  { id: 7, title: 'Grand Final', date: 'November – Desember 2026', icon: '🏆' },
+  { id: 8, title: 'Awarding & Penutupan', date: 'Desember 2026', icon: '🎉' },
 ];
 
 export default function Timeline() {
-  const [activeItem, setActiveItem] = useState<number | null>(6);
+  const [activeItem, setActiveItem] = useState<number | null>(1);
 
   return (
     <section
       id="timeline"
       className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ backgroundColor: 'var(--color-navy)' }}
+      style={{ background: 'linear-gradient(180deg, #071220 0%, #0a2a50 60%, #071220 100%)' }}
     >
-      {/* Background */}
+      {/* Ocean grid */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'linear-gradient(rgba(32,199,215,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(32,199,215,0.03) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(42,196,216,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(42,196,216,0.04) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
+        <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(232,76,30,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(42,196,216,0.1) 0%, transparent 70%)', filter: 'blur(60px)' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -44,42 +47,51 @@ export default function Timeline() {
           {/* Left - Text */}
           <div className="flex flex-col gap-6">
             <span
-              className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase"
-              style={{ color: 'var(--color-cyan)' }}
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
+              style={{ color: 'var(--color-orange-light)' }}
             >
-              <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-cyan)' }} />
+              <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
               Rangkaian Kegiatan
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
               Timeline{' '}
-              <span style={{ color: 'var(--color-cyan)' }}>Event</span>
+              <span style={{ color: 'var(--color-orange)' }}>FAMOUS VI</span>
             </h2>
 
             <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Yuk, cek jadwal lengkap acara SITEFEST 2026! Di sini kamu bisa lihat semua tahapan
-              penting mulai dari pendaftaran sampai acara seru di penghujung acara. Jangan sampai
-              terlewat atau kamu akan ketinggalan kesempatan emas!
-            </p>
-            <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Ikuti setiap tahapan, ikut semua bisa dan seru!
+              Cek jadwal lengkap acara FAMOUS VI 2026! Mulai dari pendaftaran hingga momen
+              puncak Grand Final dan Awarding. Jangan sampai terlewat, daftarkan dirimu sekarang!
             </p>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-2 gap-4 mt-2">
               {[
-                { value: '2', label: 'Gelombang Pendaftaran' },
-                { value: '3 Hari', label: 'Grand Final' },
-                { value: 'Jun 2026', label: 'Acara Utama' },
-                { value: '8', label: 'Tahapan Kegiatan' },
+                { value: '02 Sep', label: 'Buka Pendaftaran' },
+                { value: '10 Okt', label: 'Tutup Pendaftaran' },
+                { value: '8', label: 'Cabang Lomba' },
+                { value: 'Bogor', label: 'Lokasi' },
               ].map((stat) => (
                 <div
                   key={stat.label}
                   className="rounded-xl p-4"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                 >
-                  <div className="text-xl font-bold" style={{ color: 'var(--color-cyan)' }}>{stat.value}</div>
+                  <div className="text-xl font-bold" style={{ color: 'var(--color-orange-light)' }}>{stat.value}</div>
                   <div className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Contact */}
+            <div className="mt-2 p-4 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.1)', border: '1px solid rgba(232,76,30,0.25)' }}>
+              <div className="text-xs font-bold mb-2" style={{ color: 'var(--color-orange-light)' }}>Contact Person</div>
+              {[
+                { name: 'Diza', phone: '081343059590' },
+                { name: 'Hendra', phone: '081400842090' },
+                { name: 'Ustadz Ahad', phone: '08212134290' },
+              ].map((cp) => (
+                <div key={cp.name} className="text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  📞 {cp.phone} <span style={{ color: 'rgba(255,255,255,0.35)' }}>({cp.name})</span>
                 </div>
               ))}
             </div>
@@ -113,15 +125,15 @@ interface TimelineEntryProps {
 function TimelineEntry({ item, isLast, isActive, onClick }: TimelineEntryProps) {
   return (
     <div className="flex gap-4">
-      {/* Left indicator */}
       <div className="flex flex-col items-center">
         <button
           onClick={onClick}
           className="relative w-10 h-10 rounded-full flex items-center justify-center text-base flex-shrink-0 transition-all duration-200 cursor-pointer"
           style={{
-            backgroundColor: isActive ? 'var(--color-cyan)' : 'rgba(255,255,255,0.05)',
-            border: `2px solid ${isActive ? 'var(--color-cyan)' : 'rgba(255,255,255,0.1)'}`,
+            backgroundColor: isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.05)',
+            border: `2px solid ${isActive ? 'var(--color-orange)' : 'rgba(255,255,255,0.12)'}`,
             transform: isActive ? 'scale(1.1)' : 'scale(1)',
+            boxShadow: isActive ? '0 0 16px rgba(232,76,30,0.4)' : 'none',
           }}
           aria-label={`${item.title}: ${item.date}`}
         >
@@ -132,46 +144,36 @@ function TimelineEntry({ item, isLast, isActive, onClick }: TimelineEntryProps) 
             className="w-0.5 flex-1 my-1"
             style={{
               background: isActive
-                ? 'linear-gradient(to bottom, var(--color-cyan), rgba(32,199,215,0.1))'
-                : 'rgba(255,255,255,0.07)',
+                ? 'linear-gradient(to bottom, var(--color-orange), rgba(232,76,30,0.1))'
+                : 'rgba(255,255,255,0.06)',
               minHeight: '24px',
             }}
           />
         )}
       </div>
 
-      {/* Content */}
-      <div
-        className="pb-6 flex-1 transition-all duration-200 cursor-pointer"
-        onClick={onClick}
-      >
+      <div className="pb-5 flex-1 transition-all duration-200 cursor-pointer" onClick={onClick}>
         <div
           className="rounded-xl p-4 transition-all duration-200"
           style={{
-            backgroundColor: isActive ? 'rgba(32,199,215,0.08)' : 'transparent',
-            border: `1px solid ${isActive ? 'rgba(32,199,215,0.2)' : 'transparent'}`,
+            backgroundColor: isActive ? 'rgba(232,76,30,0.08)' : 'transparent',
+            border: `1px solid ${isActive ? 'rgba(232,76,30,0.25)' : 'transparent'}`,
           }}
         >
           <div className="flex items-start justify-between gap-2">
-            <h3
-              className="text-sm font-semibold"
-              style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.7)' }}
-            >
+            <h3 className="text-sm font-semibold" style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.65)' }}>
               {item.title}
             </h3>
             {isActive && (
               <span
-                className="text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0"
-                style={{ backgroundColor: 'rgba(32,199,215,0.2)', color: 'var(--color-cyan)' }}
+                className="text-xs px-2 py-0.5 rounded-full font-bold flex-shrink-0"
+                style={{ backgroundColor: 'rgba(232,76,30,0.25)', color: 'var(--color-orange-light)' }}
               >
-                Aktif
+                ●
               </span>
             )}
           </div>
-          <p
-            className="text-xs mt-1"
-            style={{ color: isActive ? 'var(--color-cyan)' : 'rgba(255,255,255,0.35)' }}
-          >
+          <p className="text-xs mt-1" style={{ color: isActive ? 'var(--color-orange-light)' : 'rgba(255,255,255,0.3)' }}>
             📅 {item.date}
           </p>
         </div>

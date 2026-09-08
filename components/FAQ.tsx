@@ -4,43 +4,43 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     id: 1,
-    question: 'Apa saja kategori lomba yang tersedia?',
-    answer: 'Kategori lomba meliputi Web Design (SMA/SMK & Perguruan Tinggi), Lomba Ilustrasi Digital, Cerdas Cermat Akuntansi, dan Cerdas Cermat Manajemen.',
+    question: 'Apa saja cabang lomba yang tersedia di FAMOUS VI?',
+    answer: 'FAMOUS VI memiliki 8 cabang lomba: Futsal, LKBB (Lomba Ketangkasan Baris Berbaris), Archery Putri, Speech, Story Telling, MHQ (Musabaqah Hifdzil Qur\'an), Poster Digital, dan Khitobah.',
   },
   {
     id: 2,
-    question: 'Siapa yang dapat mengikuti perlombaan ini?',
-    answer: 'Lomba ini terbuka untuk pelajar SMA/SMK dan mahasiswa aktif dari seluruh Indonesia yang memenuhi syarat pendaftaran.',
+    question: 'Siapa yang dapat mengikuti FAMOUS VI?',
+    answer: 'FAMOUS VI terbuka untuk pelajar SMP/MTs sederajat Se-Pulau Jawa. Peserta harus merupakan siswa aktif di sekolah masing-masing.',
   },
   {
     id: 3,
-    question: 'Bagaimana cara mendaftar lomba?',
-    answer: 'Pendaftaran dapat dilakukan secara online melalui website resmi SITEFEST atau dengan mengisi formulir pendaftaran yang tersedia.',
+    question: 'Bagaimana cara mendaftar FAMOUS VI?',
+    answer: 'Pendaftaran dilakukan secara online melalui link bit.ly yang tersedia, atau bisa menghubungi Contact Person: Diza (081343059590), Hendra (081400842090), atau Ustadz Ahad (08212134290).',
   },
   {
     id: 4,
-    question: 'Apakah ada biaya pendaftaran?',
-    answer: 'Biaya pendaftaran bervariasi untuk setiap kategori lomba. Detail biaya akan diinformasikan melalui halaman kompetisi masing-masing.',
+    question: 'Kapan batas waktu pendaftaran?',
+    answer: 'Open registration FAMOUS VI dibuka mulai 02 September hingga 10 Oktober 2026. Segera daftarkan diri sebelum batas waktu!',
   },
   {
     id: 5,
     question: 'Apa hadiah yang bisa didapatkan?',
-    answer: 'Total hadiah mencapai Rp 100.000.000+ yang akan dibagikan kepada pemenang dari setiap kategori lomba.',
+    answer: 'Pemenang setiap cabang lomba berhak mendapatkan trofi, sertifikat, dan uang tunai senilai puluhan juta rupiah. Detail hadiah akan diumumkan melalui media sosial resmi FAMOUS VI.',
   },
   {
     id: 6,
-    question: 'Bagaimana sistem penilaian lomba?',
-    answer: 'Penilaian dilakukan oleh juri profesional berdasarkan kriteria yang telah ditetapkan untuk masing-masing kategori kompetisi.',
+    question: 'Di mana lokasi penyelenggaraan FAMOUS VI?',
+    answer: 'FAMOUS VI diselenggarakan di SMAIT Al-Fityan Boarding School Bogor. Detail lokasi lengkap akan diberikan saat Technical Meeting.',
   },
   {
     id: 7,
-    question: 'Kapan pengumuman pemenang akan dilakukan?',
-    answer: 'Pengumuman pemenang akan dilakukan pada acara Grand Final dan Awarding yang dijadwalkan pada 7 Juni 2026.',
+    question: 'Apakah ada biaya pendaftaran?',
+    answer: 'Informasi detail mengenai biaya pendaftaran dapat diperoleh dengan menghubungi Contact Person yang tersedia atau melalui media sosial resmi FAMOUS VI.',
   },
   {
     id: 8,
     question: 'Bagaimana jika ada pertanyaan lebih lanjut?',
-    answer: 'Silakan hubungi panitia SITEFEST melalui email atau media sosial resmi kami. Tim kami siap membantu menjawab pertanyaan Anda.',
+    answer: 'Hubungi panitia FAMOUS VI melalui Contact Person: Diza (081343059590), Hendra (081400842090), atau Ustadz Ahad (08212134290). Tim kami siap membantu!',
   },
 ];
 
@@ -52,28 +52,26 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28" style={{ backgroundColor: '#f8fafc' }}>
+    <section id="faq" className="py-20 lg:py-28" style={{ backgroundColor: 'var(--color-bg-light)' }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <span
-            className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ color: 'var(--color-cyan)' }}
+            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase mb-4"
+            style={{ color: 'var(--color-orange)' }}
           >
-            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-cyan)' }} />
+            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
             FAQ
-            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-cyan)' }} />
+            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--color-navy)' }}>
             Pertanyaan yang Sering{' '}
-            <span style={{ color: 'var(--color-cyan)' }}>Diajukan</span>
+            <span style={{ color: 'var(--color-orange)' }}>Diajukan</span>
           </h2>
           <p className="mt-3 text-base" style={{ color: 'var(--color-muted)' }}>
-            Temukan jawaban atas pertanyaan umum seputar SITEFEST 2026
+            Temukan jawaban atas pertanyaan umum seputar FAMOUS VI 2026
           </p>
         </div>
 
-        {/* FAQ List */}
         <div className="flex flex-col gap-3">
           {faqs.map((faq) => {
             const isOpen = openId === faq.id;
@@ -82,9 +80,9 @@ export default function FAQ() {
                 key={faq.id}
                 className="rounded-xl overflow-hidden transition-all duration-200"
                 style={{
-                  border: `1.5px solid ${isOpen ? 'var(--color-cyan)' : 'var(--color-border)'}`,
-                  backgroundColor: isOpen ? 'rgba(32,199,215,0.03)' : 'var(--color-white)',
-                  boxShadow: isOpen ? '0 4px 20px rgba(32,199,215,0.08)' : 'none',
+                  border: `1.5px solid ${isOpen ? 'var(--color-orange)' : 'var(--color-border)'}`,
+                  backgroundColor: isOpen ? 'rgba(232,76,30,0.03)' : 'var(--color-white)',
+                  boxShadow: isOpen ? '0 4px 20px rgba(232,76,30,0.1)' : 'none',
                 }}
               >
                 <button
@@ -97,24 +95,21 @@ export default function FAQ() {
                     <span
                       className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
                       style={{
-                        backgroundColor: isOpen ? 'var(--color-cyan)' : 'rgba(6,62,112,0.08)',
-                        color: isOpen ? 'var(--color-navy)' : 'var(--color-blue)',
+                        backgroundColor: isOpen ? 'var(--color-orange)' : 'rgba(232,76,30,0.1)',
+                        color: isOpen ? 'white' : 'var(--color-orange)',
                       }}
                     >
                       {faq.id}
                     </span>
-                    <span
-                      className="text-sm font-semibold"
-                      style={{ color: isOpen ? 'var(--color-navy)' : 'var(--color-text)' }}
-                    >
+                    <span className="text-sm font-semibold" style={{ color: isOpen ? 'var(--color-navy)' : 'var(--color-text)' }}>
                       {faq.question}
                     </span>
                   </div>
                   <span
                     className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-200"
                     style={{
-                      backgroundColor: isOpen ? 'var(--color-cyan)' : 'rgba(6,62,112,0.08)',
-                      color: isOpen ? 'var(--color-navy)' : 'var(--color-blue)',
+                      backgroundColor: isOpen ? 'var(--color-orange)' : 'rgba(232,76,30,0.1)',
+                      color: isOpen ? 'white' : 'var(--color-orange)',
                     }}
                   >
                     {isOpen ? <Minus size={14} /> : <Plus size={14} />}
@@ -125,13 +120,9 @@ export default function FAQ() {
                   id={`faq-answer-${faq.id}`}
                   className={`faq-content ${isOpen ? 'open' : ''}`}
                   role="region"
-                  aria-labelledby={`faq-question-${faq.id}`}
                 >
                   <div className="px-5 pb-5">
-                    <div
-                      className="h-px mb-4"
-                      style={{ backgroundColor: isOpen ? 'rgba(32,199,215,0.2)' : 'var(--color-border)' }}
-                    />
+                    <div className="h-px mb-4" style={{ backgroundColor: isOpen ? 'rgba(232,76,30,0.15)' : 'var(--color-border)' }} />
                     <p className="text-sm leading-relaxed pl-9" style={{ color: 'var(--color-muted)' }}>
                       {faq.answer}
                     </p>
@@ -142,24 +133,25 @@ export default function FAQ() {
           })}
         </div>
 
-        {/* CTA at bottom */}
         <div
           className="mt-12 rounded-2xl p-8 text-center"
-          style={{ backgroundColor: 'var(--color-navy)' }}
+          style={{ background: 'linear-gradient(135deg, #071220 0%, #0a2a50 100%)' }}
         >
           <h3 className="text-lg font-bold text-white mb-2">Masih punya pertanyaan?</h3>
           <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Hubungi tim kami dan kami akan dengan senang hati membantu Anda
+            Hubungi panitia FAMOUS VI dan kami siap membantu!
           </p>
-          <a
-            href="mailto:marketing@primakara.ac.id"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-            style={{ backgroundColor: 'var(--color-cyan)', color: 'var(--color-navy)' }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#18b0bf')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-cyan)')}
-          >
-            Hubungi Kami
-          </a>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="tel:081343059590"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-200"
+              style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-dark) 100%)', color: 'white' }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
+            >
+              📞 Hubungi Kami
+            </a>
+          </div>
         </div>
       </div>
     </section>

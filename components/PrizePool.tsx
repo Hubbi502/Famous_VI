@@ -1,110 +1,75 @@
 export default function PrizePool() {
   return (
     <section
-      className="py-20 relative overflow-hidden"
-      style={{ backgroundColor: 'var(--color-deep-navy)' }}
+      className="py-16 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #071220 0%, #0a2a50 40%, #0d4a8a 70%, #071220 100%)',
+      }}
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Decorative bubbles */}
+      {[
+        { size: 120, top: '-20px', left: '5%', opacity: 0.06 },
+        { size: 80, bottom: '-10px', right: '8%', opacity: 0.06 },
+        { size: 50, top: '30%', left: '45%', opacity: 0.05 },
+      ].map((b, i) => (
         <div
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(32,199,215,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(6,62,112,0.3) 0%, transparent 50%)',
-          }}
+          key={i}
+          className="absolute rounded-full pointer-events-none"
+          style={{ width: b.size, height: b.size, top: (b as any).top, bottom: (b as any).bottom, left: (b as any).left, right: (b as any).right, border: '2px solid rgba(255,255,255,0.3)', opacity: b.opacity * 10 }}
         />
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(32,199,215,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(32,199,215,0.03) 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-          }}
-        />
+      ))}
+
+      {/* Flame/glow at center */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-96 h-48 rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(232,76,30,0.2) 0%, transparent 70%)', filter: 'blur(40px)' }} />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center flex flex-col items-center gap-6">
-          {/* Stars decoration */}
-          <div className="flex items-center gap-4">
-            <span style={{ color: 'var(--color-cyan)', fontSize: '24px', opacity: 0.6 }}>✦</span>
-            <span style={{ color: 'var(--color-cyan)', fontSize: '16px', opacity: 0.4 }}>✧</span>
-            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '12px' }}>✦</span>
-          </div>
-
+        <div className="text-center">
           {/* Label */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase"
-            style={{ border: '1px solid rgba(32,199,215,0.3)', color: 'var(--color-cyan)', backgroundColor: 'rgba(32,199,215,0.08)' }}
-          >
-            🏆 Total Hadiah SITEFEST 2026
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
+            style={{ backgroundColor: 'rgba(232,76,30,0.2)', border: '1px solid rgba(232,76,30,0.4)' }}>
+            <span style={{ color: 'var(--color-orange-light)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              ✦ Total Hadiah FAMOUS VI 2026 ✦
+            </span>
           </div>
 
-          {/* Prize Amount */}
-          <div className="relative">
-            <div
-              className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight"
-              style={{ color: 'var(--color-white)', textShadow: '0 0 60px rgba(32,199,215,0.3)' }}
+          {/* Amount */}
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="text-3xl font-black" style={{ color: 'var(--color-orange)' }}>✦</span>
+            <h2
+              className="font-black leading-none"
+              style={{ fontSize: 'clamp(48px, 10vw, 96px)', color: 'white', textShadow: '0 0 40px rgba(232,76,30,0.4)' }}
             >
-              Rp{' '}
-              <span style={{ color: 'var(--color-cyan)' }}>100.000.000</span>
-              <span style={{ color: 'var(--color-cyan)' }}>+</span>
-            </div>
-            {/* Glow effect */}
-            <div
-              className="absolute inset-0 blur-3xl -z-10"
-              style={{ background: 'radial-gradient(circle, rgba(32,199,215,0.15) 0%, transparent 70%)' }}
-            />
+              Puluhan Juta
+            </h2>
+            <span className="text-3xl font-black" style={{ color: 'var(--color-orange)' }}>✦</span>
           </div>
-
-          {/* Subtitle */}
-          <p className="text-base max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Dibagikan kepada para pemenang dari setiap kategori kompetisi SITEFEST 2026
-          </p>
+          <div className="text-xl font-bold mb-8" style={{ color: 'var(--color-cyan)' }}>Rupiah</div>
 
           {/* Prize breakdown */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
-              { place: 'Juara 1', amount: '25JT', label: 'per kategori' },
-              { place: 'Juara 2', amount: '15JT', label: 'per kategori' },
-              { place: 'Juara 3', amount: '10JT', label: 'per kategori' },
-              { place: 'Favorit', amount: '5JT', label: 'per kategori' },
+              { place: '🥇 Juara 1', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
+              { place: '🥈 Juara 2', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
+              { place: '🥉 Juara 3', label: 'Tiap Cabang', desc: 'Trofi + Uang Tunai' },
             ].map((prize) => (
               <div
                 key={prize.place}
-                className="rounded-xl p-4 text-center"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(32,199,215,0.15)',
-                }}
+                className="px-4 py-4 rounded-2xl text-center"
+                style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)' }}
               >
-                <div className="text-xs font-medium mb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  {prize.place}
-                </div>
-                <div className="text-xl font-bold" style={{ color: 'var(--color-cyan)' }}>
-                  {prize.amount}
-                </div>
-                <div className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                  {prize.label}
-                </div>
+                <div className="text-2xl mb-1">{prize.place.split(' ')[0]}</div>
+                <div className="text-sm font-bold text-white">{prize.place.split(' ').slice(1).join(' ')}</div>
+                <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{prize.label}</div>
+                <div className="text-xs mt-1 font-semibold" style={{ color: 'var(--color-cyan)' }}>{prize.desc}</div>
               </div>
             ))}
           </div>
 
-          {/* Stars decoration bottom */}
-          <div className="flex items-center gap-4 mt-2">
-            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '12px' }}>✦</span>
-            <span style={{ color: 'var(--color-cyan)', fontSize: '16px', opacity: 0.4 }}>✧</span>
-            <span style={{ color: 'var(--color-cyan)', fontSize: '24px', opacity: 0.6 }}>✦</span>
-          </div>
-
-          <a
-            href="#"
-            className="mt-2 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200"
-            style={{ backgroundColor: 'var(--color-cyan)', color: 'var(--color-navy)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#18b0bf'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-cyan)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-          >
-            Daftar & Menangkan
-          </a>
+          <p className="mt-8 text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            *Detail hadiah akan diumumkan melalui media sosial resmi FAMOUS VI
+          </p>
         </div>
       </div>
     </section>
