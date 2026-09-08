@@ -193,8 +193,22 @@ export default function FAQ() {
           })}
         </div>
 
+        {/* Maps */}
+        <div className="mt-12 rounded-2xl overflow-hidden" style={{ border: '1.5px solid rgba(255,255,255,0.12)' }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25151.883386997673!2d106.99270309914108!3d-6.408940470746246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69942384c0b399%3A0x125f9d41e1831a61!2sAlfityan%20Boarding%20School%20Bogor!5e1!3m2!1sen!2sid!4v1788869685984!5m2!1sen!2sid"
+            width="100%"
+            height="400"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title="Lokasi SMAIT Al-Fityan Boarding School Bogor"
+          />
+        </div>
+
         <div
-          className="mt-12 rounded-2xl p-8 text-center"
+          className="mt-6 rounded-2xl p-8 text-center"
           style={{ background: 'linear-gradient(135deg, #071220 0%, #0a2a50 100%)' }}
         >
           <h3 className="poster-font text-lg font-bold text-white mb-2">Masih punya pertanyaan?</h3>

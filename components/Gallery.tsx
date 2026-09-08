@@ -3,42 +3,12 @@ import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MantaRay, Jellyfish, Octopus, Seahorse, Seaweed, CoralBranch, Bubble } from './MarineBiota';
 
 const galleryImages = [
-  {
-    id: 1,
-    alt: 'FAMOUS VI Opening Ceremony',
-    label: 'Opening Ceremony',
-    emoji: '🎊',
-    bg: 'linear-gradient(135deg, #071220 0%, #0a2a50 50%, #1E6FBF 100%)',
-    featured: true,
-  },
-  {
-    id: 2,
-    alt: 'Lomba Futsal FAMOUS VI',
-    label: 'Lomba Futsal',
-    emoji: '⚽',
-    bg: 'linear-gradient(135deg, #7B1D1D 0%, #C43A10 100%)',
-  },
-  {
-    id: 3,
-    alt: 'LKBB FAMOUS VI',
-    label: 'LKBB',
-    emoji: '🪖',
-    bg: 'linear-gradient(135deg, #0a2a50 0%, #1E6FBF 100%)',
-  },
-  {
-    id: 4,
-    alt: 'Archery Putri FAMOUS VI',
-    label: 'Archery Putri',
-    emoji: '🏹',
-    bg: 'linear-gradient(135deg, #4a1d6e 0%, #7B3F9E 100%)',
-  },
-  {
-    id: 5,
-    alt: 'Awarding Night FAMOUS VI',
-    label: 'Awarding Night',
-    emoji: '🏆',
-    bg: 'linear-gradient(135deg, #7B6000 0%, #F9A825 100%)',
-  },
+  { id: 1, src: '/assets/img/dokumentasi/2dc37a2c-6f77-48bf-bb6d-a4b0b70bd461.png', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 1' },
+  { id: 2, src: '/assets/img/dokumentasi/IMG_6547.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 2' },
+  { id: 3, src: '/assets/img/dokumentasi/IMG_6548.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 3' },
+  { id: 4, src: '/assets/img/dokumentasi/IMG_6550.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 4' },
+  { id: 5, src: '/assets/img/dokumentasi/IMG_6551.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 5' },
+  { id: 6, src: '/assets/img/dokumentasi/IMG_6552.PNG', alt: 'Dokumentasi FAMOUS VI', label: 'Dokumentasi 6' },
 ];
 
 export default function Gallery() {
@@ -67,8 +37,6 @@ export default function Gallery() {
     if (e.key === 'ArrowLeft') goPrev();
     if (e.key === 'ArrowRight') goNext();
   }, [closeLightbox, goPrev, goNext]);
-
-  const thumbnails = galleryImages.slice(1);
 
   return (
     <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #100526 0%, #0e0422 40%, #0b031a 75%, #080215 100%)' }}>
@@ -151,49 +119,33 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* Featured */}
-          <div
-            className="gallery-img rounded-2xl overflow-hidden relative group"
-            style={{ aspectRatio: '4/3', background: galleryImages[0].bg }}
-            onClick={() => openLightbox(0)}
-            role="button"
-            tabIndex={0}
-            aria-label={`Buka gambar: ${galleryImages[0].label}`}
-            onKeyDown={(e) => e.key === 'Enter' && openLightbox(0)}
-          >
-            <GalleryPlaceholder image={galleryImages[0]} featured />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: 'rgba(232,76,30,0.9)' }}>
-                <ZoomIn size={22} color="white" />
-              </div>
-            </div>
-          </div>
-
-          {/* 2x2 Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {thumbnails.map((image, idx) => (
-              <div
-                key={image.id}
-                className="gallery-img rounded-2xl overflow-hidden relative group"
-                style={{ aspectRatio: '1/1', background: image.bg }}
-                onClick={() => openLightbox(idx + 1)}
-                role="button"
-                tabIndex={0}
-                aria-label={`Buka gambar: ${image.label}`}
-                onKeyDown={(e) => e.key === 'Enter' && openLightbox(idx + 1)}
-              >
-                <GalleryPlaceholder image={image} />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: 'rgba(232,76,30,0.85)' }}>
-                    <ZoomIn size={16} color="white" />
-                  </div>
+        {/* 3×2 Grid */}
+        <div className="grid grid-cols-3 gap-4">
+          {galleryImages.map((image, idx) => (
+            <div
+              key={image.id}
+              className="gallery-img rounded-2xl overflow-hidden relative group cursor-pointer"
+              style={{ aspectRatio: '4/3', background: '#0a1628' }}
+              onClick={() => openLightbox(idx)}
+              role="button"
+              tabIndex={0}
+              aria-label={`Buka gambar: ${image.label}`}
+              onKeyDown={(e) => e.key === 'Enter' && openLightbox(idx)}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ backgroundColor: 'rgba(0,0,0,0.35)' }}>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'rgba(232,76,30,0.9)' }}>
+                  <ZoomIn size={20} color="white" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-10">
@@ -253,10 +205,14 @@ export default function Gallery() {
           </button>
           <div
             className="relative rounded-2xl overflow-hidden w-full max-w-3xl"
-            style={{ aspectRatio: '16/9', background: galleryImages[lightboxIndex].bg }}
+            style={{ aspectRatio: '16/9', background: '#0a1628' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <GalleryPlaceholder image={galleryImages[lightboxIndex]} featured />
+            <img
+              src={galleryImages[lightboxIndex].src}
+              alt={galleryImages[lightboxIndex].alt}
+              className="w-full h-full object-contain"
+            />
           </div>
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center"
@@ -275,34 +231,5 @@ export default function Gallery() {
         </div>
       )}
     </section>
-  );
-}
-
-function GalleryPlaceholder({ image, featured }: { image: typeof galleryImages[0]; featured?: boolean }) {
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4">
-      <div
-        className="rounded-full flex items-center justify-center"
-        style={{
-          width: featured ? '72px' : '52px',
-          height: featured ? '72px' : '52px',
-          backgroundColor: 'rgba(255,255,255,0.12)',
-          fontSize: featured ? '32px' : '24px',
-        }}
-        role="img"
-        aria-label={image.alt}
-      >
-        {image.emoji}
-      </div>
-      <span
-        className="text-center font-bold"
-        style={{ color: 'rgba(255,255,255,0.8)', fontSize: featured ? '16px' : '12px' }}
-      >
-        {image.label}
-      </span>
-      <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-        FAMOUS VI · 2026
-      </span>
-    </div>
   );
 }
