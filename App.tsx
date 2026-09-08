@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Competitions from './components/Competitions';
 import PrizePool from './components/PrizePool';
-import CallingOut from './components/CallingOut';
 import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
@@ -19,7 +18,6 @@ export default function App() {
         <About />
         <Competitions />
         <PrizePool />
-        <CallingOut />
         <Timeline />
         <Gallery />
         <FAQ />

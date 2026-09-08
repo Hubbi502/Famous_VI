@@ -22,7 +22,7 @@ export default function Timeline() {
     <section
       id="timeline"
       className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #12062d 0%, #15083a 50%, #10052d 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #1d0a45 0%, #17073b 50%, #10052d 100%)' }}
     >
       {/* ── Deep Ocean Ambient Biota & Bioluminescent Glow ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
