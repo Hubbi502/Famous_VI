@@ -1,5 +1,4 @@
 import { ArrowRight } from 'lucide-react';
-import torchEmblem from '../assets/img/IMG_7270.PNG';
 import { SeaTurtle, ClownFish, Seahorse, Jellyfish, Starfish, Seaweed, CoralBranch } from './MarineBiota';
 
 export default function About() {
@@ -242,7 +241,7 @@ function FamousEmblem() {
   return (
     <div className="w-24 h-28 flex items-center justify-center">
       <img
-        src={torchEmblem}
+        src="/assets/img/IMG_7270.PNG"
         alt="FAMOUS VI Official Torch Emblem"
         className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform duration-300"
       />

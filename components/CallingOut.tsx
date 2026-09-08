@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sparkles, Megaphone, Store, Award, ArrowRight, MessageCircle } from 'lucide-react';
-import mascotImg from '../assets/img/IMG_7254.PNG';
 import { Seahorse, ClownFish, Starfish, Jellyfish, AnglerFish, Octopus, Seaweed, CoralBranch, Bubble, BlueTang } from './MarineBiota';
 
 const partnerships = [
@@ -170,7 +169,7 @@ export default function CallingOut() {
 
             {/* Cute mascot peeking */}
             <div className="hidden sm:block absolute -top-12 -right-20 w-20 h-24 float-anim">
-              <img src={mascotImg} alt="FAMOUS VI Mascot" className="w-full h-full object-contain filter drop-shadow-lg" />
+              <img src="/assets/img/IMG_7254.PNG" alt="FAMOUS VI Mascot" className="w-full h-full object-contain filter drop-shadow-lg" />
             </div>
           </div>
 

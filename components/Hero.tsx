@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import mascotImg from '../assets/img/IMG_7254.PNG';
 import { Crab, Starfish, ClownFish } from './MarineBiota';
 
 const bubbles = Array.from({ length: 18 }, (_, i) => ({
@@ -304,7 +303,7 @@ export default function Hero() {
               {/* Mascot container */}
               <div className="relative float-anim flex items-center justify-center" style={{ width: 340, height: 440 }}>
                 <img
-                  src={mascotImg}
+                  src="/assets/img/IMG_7254.PNG"
                   alt="FAMOUS VI Mascot"
                   className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
                 />
