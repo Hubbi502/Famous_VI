@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+  --color-orange: #E84C1E;
+  --color-orange-dark: #C43A10;
+  --color-orange-light: #FF6B3D;
+  --color-blue: #1E6FBF;
+  --color-blue-dark: #155A9E;
+  --color-blue-light: #3B8FDF;
+  --color-navy: #0B1A2E;
+  --color-deep-navy: #071220;
+  --color-cyan: #2AC4D8;
+  --color-white: #FFFFFF;
+  --color-text: #1A2233;
+  --color-muted: #5A6A80;
+  --color-border: #D8E4F0;
+  --color-bg-light: #F0F6FF;
+  
+  /* Poster Colors: Poster 1 Beach & Poster 2 Deep Wave */
+  --color-sky-blue: #7cd0ff;
+  --color-pastel-pink: #fbcfe8;
+  --color-pastel-purple: #e9d5ff;
+  --color-pastel-cyan: #bae6fd;
+  --color-sand: #fef08a;
+  --color-deep-purple: #581c87;
+  --color-violet-wave: #4338ca;
+  --color-cyan-wave: #0284c7;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.poster-font {
+  font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px #ffffff;
+  paint-order: stroke fill;
+}
+
+.text-stroke-navy {
+  -webkit-text-stroke: 1.5px #0f172a;
+  paint-order: stroke fill;
+}
+
+.poster-shadow-pink {
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.poster-shadow-purple {
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.poster-shadow-cyan {
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.cloud-badge-pink {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  border: 3px solid #ffffff;
+  border-radius: 30px 45px 35px 40px / 40px 30px 45px 35px;
+}
+
+.cloud-badge-purple {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border: 3px solid #ffffff;
+  border-radius: 40px 30px 45px 35px / 35px 45px 30px 40px;
+}
+
+.cloud-badge-cyan {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 3px solid #ffffff;
+  border-radius: 35px 40px 30px 45px / 45px 35px 40px 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--color-text);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+.faq-content.open {
+  max-height: 300px;
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(232, 76, 30, 0.12);
+}
+
+.nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.nav-dropdown-wrapper:hover .nav-dropdown,
+.nav-dropdown-wrapper:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.mobile-menu.open {
+  max-height: 600px;
+}
+
+.gallery-img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+.gallery-img:hover {
+  transform: scale(1.04);
+}
+
+.lightbox-overlay {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes swimRight {
+  0% { transform: translateX(-10vw); }
+  100% { transform: translateX(110vw); }
+}
+
+@keyframes swimLeft {
+  0% { transform: translateX(110vw) scaleX(-1); }
+  100% { transform: translateX(-10vw) scaleX(-1); }
+}
+
+@keyframes floatJelly {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.anim-swim-right {
+  animation: swimRight 24s linear infinite;
+}
+
+.anim-swim-left {
+  animation: swimLeft 28s linear infinite;
+}
+
+.anim-jelly {
+  animation: floatJelly 6s ease-in-out infinite;
+}
+
+@keyframes bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes bubbleRise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  70%  { opacity: 0.4; }
+  100% { transform: translateY(-80px) scale(1.1); opacity: 0; }
+}
+
+@keyframes biolum {
+  0%, 100% { filter: drop-shadow(0 0 4px currentColor); opacity: 0.7; }
+  50% { filter: drop-shadow(0 0 16px currentColor); opacity: 1; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg) translateX(0); }
+  50% { transform: rotate(8deg) translateX(4px); }
+}
+
+.anim-bubble-rise {
+  animation: bubbleRise 4s ease-in infinite;
+}
+
+.anim-biolum {
+  animation: biolum 3s ease-in-out infinite;
+}
+
+.anim-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), rgba(42,196,216,0.15));
+  border: 1px solid rgba(255,255,255,0.25);
+  animation: bubble linear infinite;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar { height: 6px; width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--color-orange); border-radius: 3px; }
+
+.comp-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.comp-scroll > * {
+  scroll-snap-align: start;
+}
+
+.ocean-bg {
+  background: linear-gradient(180deg, #07152B 0%, #0B254A 35%, #10437A 70%, #1565C0 100%);
+}
+
+@keyframes sunray {
+  0%, 100% { opacity: 0.15; transform: rotate(-15deg) scaleY(1); }
+  50% { opacity: 0.35; transform: rotate(-12deg) scaleY(1.06); }
+}
+
+.sun-ray {
+  position: absolute;
+  top: -20%;
+  width: 140px;
+  height: 140%;
+  background: linear-gradient(180deg, rgba(254,240,138,0.3) 0%, rgba(42,196,216,0.1) 60%, transparent 100%);
+  filter: blur(24px);
+  pointer-events: none;
+  animation: sunray 8s ease-in-out infinite;
+}
+
+.wave-divider {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
