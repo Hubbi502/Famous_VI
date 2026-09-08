@@ -27,12 +27,12 @@ export default function About() {
       {/* Coral reef bottom separator → to mid ocean */}
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, pointerEvents: 'none', zIndex: 1 }}>
         <svg viewBox="0 0 1440 80" style={{ width: '100%', display: 'block' }} preserveAspectRatio="none">
-          <path d="M0,80 L0,40 Q200,10 400,30 Q600,50 800,20 Q1000,-5 1200,18 Q1320,30 1440,15 L1440,80Z" fill="#0b2d5e" />
-          <ellipse cx="80" cy="78" rx="28" ry="14" fill="rgba(251,113,133,0.6)" />
-          <ellipse cx="280" cy="79" rx="18" ry="9" fill="rgba(42,196,216,0.5)" />
-          <ellipse cx="600" cy="78" rx="22" ry="11" fill="rgba(232,76,30,0.5)" />
-          <ellipse cx="960" cy="79" rx="20" ry="10" fill="rgba(168,85,247,0.5)" />
-          <ellipse cx="1280" cy="78" rx="24" ry="12" fill="rgba(251,113,133,0.5)" />
+          <path d="M0,80 L0,40 Q200,10 400,30 Q600,50 800,20 Q1000,-5 1200,18 Q1320,30 1440,15 L1440,80Z" fill="#0e7a9a" />
+          <ellipse cx="80" cy="78" rx="28" ry="14" fill="rgba(251,113,133,0.4)" />
+          <ellipse cx="280" cy="79" rx="18" ry="9" fill="rgba(42,196,216,0.35)" />
+          <ellipse cx="600" cy="78" rx="22" ry="11" fill="rgba(232,76,30,0.35)" />
+          <ellipse cx="960" cy="79" rx="20" ry="10" fill="rgba(168,85,247,0.35)" />
+          <ellipse cx="1280" cy="78" rx="24" ry="12" fill="rgba(251,113,133,0.35)" />
         </svg>
       </div>
 

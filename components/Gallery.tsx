@@ -70,22 +70,22 @@ export default function Gallery() {
   const thumbnails = galleryImages.slice(1);
 
   return (
-    <section id="gallery" className="py-20 lg:py-28" style={{ backgroundColor: 'var(--color-white)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050312 0%, #070418 50%, #03020c 100%)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <span
-            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase mb-4"
-            style={{ color: 'var(--color-orange)' }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase mb-4 cloud-badge-cyan poster-shadow-cyan"
+            style={{ color: '#0284c7' }}
           >
-            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
-            Photo Gallery
-            <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
+            ✦ Photo Gallery
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--color-navy)' }}>
+          <h2 className="poster-font text-3xl sm:text-5xl font-black text-white">
             Galeri Acara{' '}
-            <span style={{ color: 'var(--color-orange)' }}>FAMOUS VI</span>
+            <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #FF8A50 0%, #FFD166 100%)' }}>
+              FAMOUS 6.0
+            </span>
           </h2>
-          <p className="mt-3 text-base max-w-md mx-auto" style={{ color: 'var(--color-muted)' }}>
+          <p className="mt-3 text-base max-w-md mx-auto font-medium" style={{ color: 'rgba(200,225,255,0.7)' }}>
             Sekilas momen berharga dari penyelenggaraan FAMOUS sebelumnya
           </p>
         </div>

@@ -69,7 +69,7 @@ export default function CallingOut() {
   };
 
   return (
-    <section id="partnership" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #2d1b69 0%, #1a0a3d 40%, #0d0a2e 100%)' }}>
+    <section id="partnership" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1e1b4b 0%, #2d1b69 35%, #1a0a3d 70%, #0d0a2e 100%)' }}>
       {/* Bioluminescence ambient glows */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         <div style={{ position: 'absolute', top: '10%', left: '10%', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%)', filter: 'blur(60px)' }} />

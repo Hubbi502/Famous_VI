@@ -3,7 +3,7 @@ export default function PrizePool() {
     <section
       className="py-16 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0b2d5e 0%, #1a1060 50%, #2d1b69 100%)',
+        background: 'linear-gradient(180deg, #581c87 0%, #3b0764 45%, #2e1065 75%, #1e1b4b 100%)',
       }}
     >
       {/* Decorative bubbles */}

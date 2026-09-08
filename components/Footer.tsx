@@ -34,12 +34,12 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(180deg, #071220 0%, #050e1a 100%)' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #020617 0%, #01040d 50%, #000000 100%)' }}>
       {/* Wave top */}
       <div className="w-full overflow-hidden" style={{ marginTop: '-1px' }}>
         <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
           <path d="M0,0 Q360,60 720,20 Q1080,-20 1440,40 L1440,0Z"
-            fill="var(--color-bg-light)" />
+            fill="#020617" />
         </svg>
       </div>
 

@@ -227,7 +227,7 @@ export default function Competitions() {
       id="competitions"
       className="relative py-20 lg:py-28 overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0e7a9a 0%, #0284c7 25%, #312e81 60%, #581c87 100%)',
+        background: 'linear-gradient(180deg, #0e7a9a 0%, #0284c7 20%, #312e81 60%, #581c87 100%)',
       }}
     >
       {/* ── Ocean decorative bubbles ── */}
@@ -236,22 +236,15 @@ export default function Competitions() {
       {/* ── Coral reef bottom ── */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ zIndex: 1 }}>
         <svg viewBox="0 0 1440 120" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          <path d="M0,120 L0,80 Q80,50 160,70 Q240,90 320,55 Q400,20 480,50 Q560,80 640,45 Q720,10 800,40 Q880,70 960,35 Q1040,0 1120,30 Q1200,60 1280,30 Q1360,0 1440,40 L1440,120Z" fill="rgba(251,113,133,0.35)" />
-          <path d="M0,120 L0,95 Q100,70 200,88 Q300,105 400,78 Q500,50 600,75 Q700,98 800,68 Q900,38 1000,60 Q1100,82 1200,60 Q1300,38 1440,70 L1440,120Z" fill="rgba(42,196,216,0.25)" />
+          <path d="M0,120 L0,80 Q80,50 160,70 Q240,90 320,55 Q400,20 480,50 Q560,80 640,45 Q720,10 800,40 Q880,70 960,35 Q1040,0 1120,30 Q1200,60 1280,30 Q1360,0 1440,40 L1440,120Z" fill="rgba(251,113,133,0.25)" />
+          <path d="M0,120 L0,95 Q100,70 200,88 Q300,105 400,78 Q500,50 600,75 Q700,98 800,68 Q900,38 1000,60 Q1100,82 1200,60 Q1300,38 1440,70 L1440,120Z" fill="rgba(42,196,216,0.18)" />
           {/* Mini corals */}
-          <ellipse cx="80" cy="118" rx="22" ry="12" fill="rgba(251,113,133,0.6)" />
-          <ellipse cx="220" cy="119" rx="16" ry="9" fill="rgba(42,196,216,0.5)" />
-          <ellipse cx="520" cy="118" rx="20" ry="11" fill="rgba(232,76,30,0.5)" />
-          <ellipse cx="800" cy="117" rx="18" ry="10" fill="rgba(168,85,247,0.5)" />
-          <ellipse cx="1100" cy="119" rx="22" ry="12" fill="rgba(251,113,133,0.5)" />
-          <ellipse cx="1380" cy="118" rx="16" ry="9" fill="rgba(42,196,216,0.4)" />
-        </svg>
-      </div>
-
-      {/* ── White wave top (separator from above section) ── */}
-      <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ zIndex: 1 }}>
-        <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          <path d="M0,0 L1440,0 L1440,30 Q1260,60 1080,30 Q900,0 720,30 Q540,60 360,30 Q180,0 0,30Z" fill="white" />
+          <ellipse cx="80" cy="118" rx="22" ry="12" fill="rgba(251,113,133,0.5)" />
+          <ellipse cx="220" cy="119" rx="16" ry="9" fill="rgba(42,196,216,0.4)" />
+          <ellipse cx="520" cy="118" rx="20" ry="11" fill="rgba(232,76,30,0.4)" />
+          <ellipse cx="800" cy="117" rx="18" ry="10" fill="rgba(168,85,247,0.4)" />
+          <ellipse cx="1100" cy="119" rx="22" ry="12" fill="rgba(251,113,133,0.4)" />
+          <ellipse cx="1380" cy="118" rx="16" ry="9" fill="rgba(42,196,216,0.3)" />
         </svg>
       </div>
 
