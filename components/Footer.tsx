@@ -43,72 +43,51 @@ export default function Footer() {
   return (
     <footer style={{ background: 'linear-gradient(180deg, #04000f 0%, #060216 35%, #08031d 70%, #040112 100%)', position: 'relative', overflow: 'hidden' }}>
 
-      {/* ── Deep Ocean Subtle Bioluminescent Light & Water Ambience ── */}
+      {/* ── Deep Ocean Subtle Bioluminescent Light & Ambient Background ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
-        
         {/* Soft atmospheric light beams (Deep sea caustics / god rays) */}
         <div
-          className="absolute top-0 left-1/4 w-[320px] h-[600px] opacity-20 transform -rotate-12 pointer-events-none"
+          className="absolute top-0 left-1/4 w-[320px] h-[500px] opacity-15 transform -rotate-12 pointer-events-none"
           style={{
-            background: 'linear-gradient(180deg, rgba(56,189,248,0.35) 0%, rgba(14,116,144,0.18) 50%, transparent 100%)',
-            filter: 'blur(40px)',
+            background: 'linear-gradient(180deg, rgba(56,189,248,0.3) 0%, rgba(14,116,144,0.1) 50%, transparent 100%)',
+            filter: 'blur(50px)',
           }}
         />
         <div
-          className="absolute top-0 right-1/4 w-[280px] h-[550px] opacity-15 transform rotate-12 pointer-events-none"
+          className="absolute top-0 right-1/4 w-[280px] h-[450px] opacity-10 transform rotate-12 pointer-events-none"
           style={{
-            background: 'linear-gradient(180deg, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.12) 50%, transparent 100%)',
-            filter: 'blur(35px)',
+            background: 'linear-gradient(180deg, rgba(168,85,247,0.25) 0%, rgba(99,102,241,0.08) 50%, transparent 100%)',
+            filter: 'blur(45px)',
           }}
         />
 
-        {/* Ambient Bioluminescent Deep Glows illuminating the water layers */}
+        {/* Ambient Bioluminescent Deep Glows */}
         <div
           className="absolute bottom-28 left-1/6 w-[450px] h-[250px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.18) 0%, rgba(147,51,234,0.08) 50%, transparent 75%)', filter: 'blur(55px)' }}
+          style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(147,51,234,0.06) 50%, transparent 75%)', filter: 'blur(60px)' }}
         />
         <div
-          className="absolute bottom-24 right-1/6 w-[420px] h-[230px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(126,34,206,0.06) 50%, transparent 75%)', filter: 'blur(50px)' }}
-        />
-        <div
-          className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[600px] h-[180px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.16) 0%, transparent 70%)', filter: 'blur(45px)' }}
+          className="absolute bottom-20 right-1/6 w-[420px] h-[230px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.12) 0%, rgba(126,34,206,0.05) 50%, transparent 75%)', filter: 'blur(55px)' }}
         />
 
-        {/* Bioluminescent Jellyfish cruising in mid water */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '5%', left: '4%', animationDuration: '7s', opacity: 0.85 }}>
-          <Jellyfish size={46} color="rgba(139,92,246,0.85)" glowColor="#38bdf8" />
+        {/* Bioluminescent Creatures - positioned discreetly at the margins/background so they NEVER overlap text */}
+        <div className="anim-jelly hidden md:block" style={{ position: 'absolute', top: '40px', right: '3%', animationDuration: '9s', opacity: 0.65 }}>
+          <Jellyfish size={38} color="rgba(139,92,246,0.7)" glowColor="#38bdf8" />
         </div>
-        <div className="anim-jelly" style={{ position: 'absolute', top: '15%', left: '13%', animationDuration: '9s', animationDelay: '3s', opacity: 0.7 }}>
-          <Jellyfish size={34} color="rgba(56,189,248,0.8)" glowColor="#c084fc" />
-        </div>
-
-        {/* Deep Abyssal Angler Fish with glowing lure */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '16%', right: '5%', animationDuration: '11s', animationDelay: '1s', opacity: 0.85 }}>
-          <AnglerFish size={54} />
-        </div>
-
-        {/* Seahorse bobbing near reef ridge */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '44%', left: '3%', animationDuration: '5.5s', opacity: 0.85 }}>
-          <Seahorse size={42} />
-        </div>
-
-        {/* Little fish swimming across the water column */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '54%', left: 0, animationDuration: '28s', opacity: 0.75 }}>
-          <ClownFish size={28} />
+        <div className="anim-jelly hidden lg:block" style={{ position: 'absolute', top: '180px', left: '1%', animationDuration: '10s', animationDelay: '2s', opacity: 0.55 }}>
+          <Seahorse size={36} />
         </div>
 
         {/* Rising bioluminescent bubbles */}
         {[
-          { left: '10%', delay: '0s',   size: 11 },
-          { left: '25%', delay: '1.4s', size: 8  },
-          { left: '46%', delay: '0.6s', size: 13 },
-          { left: '68%', delay: '2.1s', size: 9  },
-          { left: '84%', delay: '0.9s', size: 11 },
-          { left: '95%', delay: '1.7s', size: 7  },
+          { left: '8%', delay: '0s', size: 9 },
+          { left: '22%', delay: '1.4s', size: 7 },
+          { left: '50%', delay: '0.6s', size: 10 },
+          { left: '76%', delay: '2.1s', size: 8 },
+          { left: '92%', delay: '1.1s', size: 9 },
         ].map((b, i) => (
-          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '260px', left: b.left, animationDelay: b.delay, animationDuration: `${3.5 + i * 0.5}s` }}>
+          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '180px', left: b.left, animationDelay: b.delay, animationDuration: `${4 + i * 0.6}s` }}>
             <Bubble size={b.size} />
           </div>
         ))}
@@ -122,38 +101,38 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           
-          {/* Brand column */}
-          <div className="col-span-2 sm:col-span-2 lg:col-span-1 flex flex-col gap-4">
+          {/* Brand column (Full width on mobile, 4 cols on desktop) */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
             <a
               href="#home"
               onClick={(e) => { e.preventDefault(); scrollTo('#home'); }}
-              className="inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2.5"
               aria-label="FAMOUS VI"
             >
               <FooterKeyIcon />
               <div className="flex flex-col leading-none">
-                <span className="text-xl font-black text-white tracking-tight">
+                <span className="poster-font text-2xl font-black text-white tracking-tight">
                   FAM<span style={{ color: 'var(--color-orange)' }}>O</span>US
                 </span>
-                <span className="text-xs font-bold tracking-wider" style={{ color: 'var(--color-cyan)' }}>VI · 2026</span>
+                <span className="poster-font text-xs font-bold tracking-widest mt-0.5" style={{ color: 'var(--color-cyan)' }}>VI · 2026</span>
               </div>
             </a>
-            <p className="text-xs leading-relaxed text-white/75 font-medium">
-              Festival Al-Fityan Multi Open Sport — kompetisi bergengsi Se-Pulau Jawa.
+            <p className="text-sm leading-relaxed text-white/80 font-normal max-w-sm">
+              Festival Al-Fityan Multi Open Sport — ajang kompetisi bergengsi Se-Pulau Jawa untuk generasi berprestasi.
             </p>
-            <div className="flex gap-2 mt-1">
+            <div className="flex gap-2.5 mt-1">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
                   className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.25)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; }}
+                  style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.25)'; e.currentTarget.style.borderColor = 'var(--color-orange)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; }}
                 >
                   <Icon size={15} />
                 </a>
@@ -161,16 +140,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigasi */}
-          <FooterColumn title="Navigasi" links={footerLinks.navigasi} scrollTo={scrollTo} />
+          {/* Links Column Group (2 columns on mobile/tablet to save vertical space!) */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-6 sm:gap-8">
+            {/* Navigasi */}
+            <FooterColumn title="Navigasi" links={footerLinks.navigasi} scrollTo={scrollTo} />
 
-          {/* Lomba */}
-          <FooterColumn title="Cabang Lomba" links={footerLinks.lomba} scrollTo={scrollTo} />
+            {/* Cabang Lomba */}
+            <FooterColumn title="Cabang Lomba" links={footerLinks.lomba} scrollTo={scrollTo} />
+          </div>
 
-          {/* Kontak + CTA */}
-          <div className="flex flex-col gap-3">
-            <h3 className="poster-font text-sm font-black text-white">Kontak Panitia</h3>
-            <div className="flex flex-col gap-2">
+          {/* Kontak & CTA Column (4 cols on desktop, compact and clean) */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
+            <h3 className="poster-font text-base font-black text-white">Kontak Panitia</h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
               {[
                 { name: 'Diza', phone: '081343059590' },
                 { name: 'Hendra', phone: '081400842090' },
@@ -179,27 +162,39 @@ export default function Footer() {
                 <a
                   key={cp.name}
                   href={`tel:${cp.phone}`}
-                  className="flex items-center gap-2 text-xs text-white/80 font-medium transition-colors duration-150"
+                  className="flex items-center gap-2 text-xs sm:text-sm text-white/85 font-medium transition-colors duration-150 py-0.5"
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.85)')}
                 >
-                  <Phone size={11} className="text-orange-400 flex-shrink-0" />
+                  <Phone size={13} className="text-orange-400 flex-shrink-0" />
                   <span>{cp.phone} <span className="text-white/50">({cp.name})</span></span>
                 </a>
               ))}
-              <div className="flex items-start gap-2 text-xs text-white/70 font-medium mt-1">
-                <MapPin size={11} className="text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span>SMAIT Al-Fityan Boarding School, Bogor</span>
+
+              <div className="flex items-start gap-2 text-xs sm:text-sm text-white/80 font-medium pt-1">
+                <MapPin size={13} className="text-cyan-400 flex-shrink-0 mt-0.5" />
+                <span>SMAIT Al-Fityan Boarding School, Bogor, Jawa Barat</span>
               </div>
             </div>
-            {/* CTA */}
-            <div className="mt-1 p-3 rounded-xl" style={{ backgroundColor: 'rgba(232,76,30,0.16)', border: '1px solid rgba(232,76,30,0.35)' }}>
-              <div className="poster-font text-xs font-black text-white mb-0.5">02 Sep – 10 Okt 2026</div>
+
+            {/* Registration CTA Card - Compact & Polished */}
+            <div 
+              className="mt-1 p-3.5 rounded-xl flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap"
+              style={{ 
+                background: 'linear-gradient(135deg, rgba(232,76,30,0.18) 0%, rgba(147,51,234,0.12) 100%)', 
+                border: '1px solid rgba(232,76,30,0.35)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <div>
+                <div className="poster-font text-[11px] font-bold text-orange-400 uppercase tracking-wider">Open Registration</div>
+                <div className="poster-font text-sm font-black text-white mt-0.5">02 Sep – 10 Okt 2026</div>
+              </div>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9L5-OeVrr1cqmMCkVdMo5ItTQ1X7t9p6-0Xj8z1uaO_dNuQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="poster-font inline-block mt-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all duration-200"
+                className="poster-font inline-flex items-center text-xs font-bold px-3.5 py-2 rounded-lg transition-all duration-200 flex-shrink-0 shadow-sm"
                 style={{ backgroundColor: 'var(--color-orange)', color: 'white' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange-dark)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-orange)')}
@@ -208,6 +203,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -558,9 +554,9 @@ interface FooterColumnProps {
 
 function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
   return (
-    <div className="flex flex-col gap-3">
-      <h3 className="poster-font text-sm font-black text-white">{title}</h3>
-      <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-5">
+      <h3 className="poster-font text-base font-black text-white">{title}</h3>
+      <div className="flex flex-col gap-2.5">
         {links.map((link) => (
           <a
             key={link.label}
@@ -571,9 +567,9 @@ function FooterColumn({ title, links, scrollTo }: FooterColumnProps) {
                 scrollTo(link.href);
               }
             }}
-            className="text-xs text-white/75 transition-colors duration-150 font-medium"
+            className="text-sm text-white/80 transition-colors duration-150 font-medium"
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-orange-light)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
           >
             {link.label}
           </a>

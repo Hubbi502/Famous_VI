@@ -234,16 +234,6 @@ body {
   50% { opacity: 1; }
 }
 
-@keyframes dash-crawl {
-  to {
-    stroke-dashoffset: -44;
-  }
-}
-
-.anim-dash-crawl {
-  animation: dash-crawl 2s linear infinite;
-}
-
 .bubble {
   position: absolute;
   border-radius: 50%;
