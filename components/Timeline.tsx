@@ -314,7 +314,7 @@ export default function Timeline() {
         <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '1%', opacity: 0.5 }}>
           <Seaweed height={75} color="#9333ea" />
         </div>
-        <div style={{ position: 'absolute', bottom: '5px', left: '5%', opacity: 0.55 }}>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '5px', left: '5%', opacity: 0.55, animationDuration: '4.8s', animationDelay: '0.8s' }}>
           <CoralBranch height={50} color="#38bdf8" />
         </div>
         <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', right: '2%', opacity: 0.45 }}>

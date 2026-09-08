@@ -91,10 +91,10 @@ export default function FAQ() {
         <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '3%', opacity: 0.55 }}>
           <Seaweed height={80} color="#7e22ce" />
         </div>
-        <div style={{ position: 'absolute', bottom: '5px', left: '8%', opacity: 0.6 }}>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '5px', left: '8%', opacity: 0.6, animationDuration: '4.8s' }}>
           <CoralBranch height={50} color="#ec4899" />
         </div>
-        <div style={{ position: 'absolute', bottom: '5px', right: '3%', opacity: 0.6 }}>
+        <div className="anim-starfish" style={{ position: 'absolute', bottom: '5px', right: '3%', opacity: 0.6 }}>
           <Starfish size={24} color="#f59e0b" />
         </div>
 

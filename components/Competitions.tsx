@@ -380,11 +380,11 @@ function OceanBubbles() {
         <Seaweed height={60} color="#15803d" />
       </div>
 
-      {/* Coral branches */}
-      <div style={{ position: 'absolute', bottom: '95px', left: '15%', opacity: 0.4 }}>
+      {/* Coral branches swaying */}
+      <div className="anim-sway" style={{ position: 'absolute', bottom: '95px', left: '15%', opacity: 0.4, animationDuration: '4.8s' }}>
         <CoralBranch height={60} color="#f43f5e" />
       </div>
-      <div style={{ position: 'absolute', bottom: '95px', right: '14%', opacity: 0.38 }}>
+      <div className="anim-sway" style={{ position: 'absolute', bottom: '95px', right: '14%', opacity: 0.38, animationDuration: '5.4s', animationDelay: '1s' }}>
         <CoralBranch height={55} color="#06b6d4" />
       </div>
 

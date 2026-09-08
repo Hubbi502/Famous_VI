@@ -531,22 +531,31 @@ export default function Footer() {
             </g>
           </g>
 
-          {/* Bioluminescent floating plankton spores along the ocean depth */}
+          {/* Bioluminescent floating plankton spores along the ocean depth - animated twinkling */}
           {[
-            { cx: 80, cy: 90, r: 2.5, color: '#38bdf8' },
-            { cx: 180, cy: 135, r: 3, color: '#c084fc' },
-            { cx: 310, cy: 110, r: 2, color: '#f472b6' },
-            { cx: 460, cy: 160, r: 3.5, color: '#38bdf8' },
-            { cx: 590, cy: 95, r: 2, color: '#a855f7' },
-            { cx: 730, cy: 130, r: 3, color: '#fef08a' },
-            { cx: 820, cy: 75, r: 2.5, color: '#38bdf8' },
-            { cx: 940, cy: 150, r: 3, color: '#34d399' },
-            { cx: 1080, cy: 105, r: 3.5, color: '#38bdf8' },
-            { cx: 1220, cy: 165, r: 2, color: '#c084fc' },
-            { cx: 1360, cy: 120, r: 3, color: '#38bdf8' },
-            { cx: 1410, cy: 175, r: 2, color: '#f472b6' },
+            { cx: 80, cy: 90, r: 2.5, color: '#38bdf8', delay: '0s' },
+            { cx: 180, cy: 135, r: 3, color: '#c084fc', delay: '1.2s' },
+            { cx: 310, cy: 110, r: 2, color: '#f472b6', delay: '0.4s' },
+            { cx: 460, cy: 160, r: 3.5, color: '#38bdf8', delay: '1.8s' },
+            { cx: 590, cy: 95, r: 2, color: '#a855f7', delay: '0.9s' },
+            { cx: 730, cy: 130, r: 3, color: '#fef08a', delay: '2.1s' },
+            { cx: 820, cy: 75, r: 2.5, color: '#38bdf8', delay: '0.6s' },
+            { cx: 940, cy: 150, r: 3, color: '#34d399', delay: '1.5s' },
+            { cx: 1080, cy: 105, r: 3.5, color: '#38bdf8', delay: '2.4s' },
+            { cx: 1220, cy: 165, r: 2, color: '#c084fc', delay: '0.3s' },
+            { cx: 1360, cy: 120, r: 3, color: '#38bdf8', delay: '1.7s' },
+            { cx: 1410, cy: 175, r: 2, color: '#f472b6', delay: '1.0s' },
           ].map((s, i) => (
-            <circle key={i} cx={s.cx} cy={s.cy} r={s.r} fill={s.color} filter="drop-shadow(0 0 6px currentColor)" opacity="0.85" />
+            <circle
+              key={i}
+              cx={s.cx}
+              cy={s.cy}
+              r={s.r}
+              fill={s.color}
+              filter="drop-shadow(0 0 6px currentColor)"
+              className="anim-spore"
+              style={{ animationDelay: s.delay, transformOrigin: `${s.cx}px ${s.cy}px` }}
+            />
           ))}
         </svg>
       </div>

@@ -21,18 +21,30 @@ export default function About() {
 
       {/* Marine life decorations - shallow water zone */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
-        {/* Fish school - colorful tropical fish */}
+        {/* Fish school - colorful tropical fish with lively bobbing */}
         {[
-          { top: '20%', left: '5%', size: 24, color: '#FF8A65', flip: false },
-          { top: '55%', left: '88%', size: 18, color: '#FFD54F', flip: true },
-          { top: '35%', left: '78%', size: 20, color: '#4FC3F7', flip: true },
-          { top: '70%', left: '12%', size: 15, color: '#F48FB1', flip: false },
+          { top: '20%', left: '5%', size: 24, color: '#FF8A65', flip: false, delay: '0s' },
+          { top: '55%', left: '88%', size: 18, color: '#FFD54F', flip: true, delay: '1.2s' },
+          { top: '35%', left: '78%', size: 20, color: '#4FC3F7', flip: true, delay: '0.6s' },
+          { top: '70%', left: '12%', size: 15, color: '#F48FB1', flip: false, delay: '1.8s' },
         ].map((f, i) => (
-          <svg key={i} width={f.size * 1.8} height={f.size} viewBox="0 0 36 20" style={{ position: 'absolute', top: f.top, left: f.left, opacity: 0.55, transform: f.flip ? 'scaleX(-1)' : '' }}>
-            <ellipse cx="20" cy="10" rx="13" ry="7" fill={f.color} />
-            <path d="M7 10 L0 3 L0 17Z" fill={f.color} opacity="0.8" />
-            <ellipse cx="25" cy="8" rx="2" ry="1.5" fill="rgba(0,0,0,0.4)" />
-          </svg>
+          <div
+            key={i}
+            className="anim-fish-bob"
+            style={{
+              position: 'absolute',
+              top: f.top,
+              left: f.left,
+              animationDelay: f.delay,
+              transform: f.flip ? 'scaleX(-1)' : undefined,
+            }}
+          >
+            <svg width={f.size * 1.8} height={f.size} viewBox="0 0 36 20" style={{ opacity: 0.65 }}>
+              <ellipse cx="20" cy="10" rx="13" ry="7" fill={f.color} />
+              <path d="M7 10 L0 3 L0 17Z" fill={f.color} opacity="0.8" />
+              <ellipse cx="25" cy="8" rx="2" ry="1.5" fill="rgba(0,0,0,0.4)" />
+            </svg>
+          </div>
         ))}
 
         {/* Sea Turtle swimming right */}
@@ -45,9 +57,11 @@ export default function About() {
           <Seahorse size={38} />
         </div>
 
-        {/* ClownFish swimming */}
+        {/* ClownFish swimming with wiggle */}
         <div className="anim-swim-left" style={{ position: 'absolute', top: '45%', right: '0', animationDuration: '22s', animationDelay: '4s', opacity: 0.75 }}>
-          <ClownFish size={30} />
+          <div className="anim-fish-wiggle">
+            <ClownFish size={30} />
+          </div>
         </div>
 
         {/* Jellyfish floating - top right */}
@@ -55,8 +69,8 @@ export default function About() {
           <Jellyfish size={50} color="rgba(56,189,248,0.7)" />
         </div>
 
-        {/* Starfish on coral */}
-        <div style={{ position: 'absolute', top: '75%', right: '8%', opacity: 0.7 }}>
+        {/* Starfish on coral - breathing wiggle */}
+        <div className="anim-starfish" style={{ position: 'absolute', top: '75%', right: '8%', opacity: 0.7 }}>
           <Starfish size={26} color="#f97316" />
         </div>
 
@@ -68,8 +82,8 @@ export default function About() {
           <Seaweed height={55} color="#16a34a" />
         </div>
 
-        {/* Coral branches */}
-        <div style={{ position: 'absolute', bottom: '80px', left: '6%', opacity: 0.45 }}>
+        {/* Coral branches swaying */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '80px', left: '6%', opacity: 0.45, animationDuration: '5s' }}>
           <CoralBranch height={55} color="#ec4899" />
         </div>
 
