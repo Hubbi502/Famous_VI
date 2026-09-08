@@ -8,8 +8,8 @@ export default function About() {
       {/* Shallow water ambient light */}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.5) 0%, transparent 60%)', pointerEvents: 'none' }} />
 
-      {/* Small tropical fish */}
-      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+      {/* Small tropical fish & Sea Turtle */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
         {[
           { top: '20%', left: '5%', size: 24, color: '#FF8A65', flip: false },
           { top: '55%', left: '88%', size: 18, color: '#FFD54F', flip: true },
@@ -22,6 +22,21 @@ export default function About() {
             <ellipse cx="25" cy="8" rx="2" ry="1.5" fill="rgba(0,0,0,0.4)" />
           </svg>
         ))}
+
+        {/* Swimming Sea Turtle */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '25%', left: '0', animationDuration: '30s', opacity: 0.75 }}>
+          <svg width="60" height="40" viewBox="0 0 60 40">
+            {/* Shell */}
+            <ellipse cx="30" cy="20" rx="18" ry="13" fill="#15803d" stroke="#166534" strokeWidth="2" />
+            <path d="M18 20 Q30 12 42 20 M18 20 Q30 28 42 20 M30 7 L30 33" stroke="#22c55e" strokeWidth="1.5" fill="none" />
+            {/* Flippers */}
+            <path d="M38 12 Q48 4 52 14 Q42 16 38 16" fill="#166534" />
+            <path d="M38 28 Q48 36 52 26 Q42 24 38 24" fill="#166534" />
+            {/* Head & Tail */}
+            <circle cx="52" cy="20" r="5" fill="#15803d" />
+            <path d="M12 20 L5 20" stroke="#15803d" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+        </div>
       </div>
 
       {/* Coral reef bottom separator → to mid ocean */}

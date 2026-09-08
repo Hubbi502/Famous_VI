@@ -323,6 +323,40 @@ function OceanBubbles() {
           }}
         />
       ))}
+
+      {/* Floating Glowing Jellyfish */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '15%', right: '8%', opacity: 0.75 }}>
+        <svg width="50" height="70" viewBox="0 0 50 70">
+          <ellipse cx="25" cy="20" rx="20" ry="16" fill="rgba(192,132,252,0.4)" stroke="rgba(216,180,254,0.85)" strokeWidth="2" />
+          <path d="M12 30 Q16 50 14 68" stroke="rgba(232,121,249,0.7)" strokeWidth="2" fill="none" />
+          <path d="M20 32 Q22 48 24 65" stroke="rgba(192,132,252,0.7)" strokeWidth="2" fill="none" />
+          <path d="M28 32 Q26 48 28 65" stroke="rgba(192,132,252,0.7)" strokeWidth="2" fill="none" />
+          <path d="M36 30 Q34 50 38 68" stroke="rgba(232,121,249,0.7)" strokeWidth="2" fill="none" />
+        </svg>
+      </div>
+
+      {/* Swimming School of Small Yellow & Cyan Fishes */}
+      <div className="anim-swim-right" style={{ position: 'absolute', top: '35%', left: '0', animationDuration: '22s' }}>
+        <svg width="35" height="20" viewBox="0 0 35 20">
+          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#FACC15" />
+          <path d="M7 10 L0 3 L0 17Z" fill="#FACC15" />
+          <circle cx="26" cy="8" r="1.5" fill="#000" />
+        </svg>
+      </div>
+      <div className="anim-swim-right" style={{ position: 'absolute', top: '38%', left: '0', animationDuration: '22s', animationDelay: '0.6s' }}>
+        <svg width="28" height="16" viewBox="0 0 35 20">
+          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#FACC15" />
+          <path d="M7 10 L0 3 L0 17Z" fill="#FACC15" />
+          <circle cx="26" cy="8" r="1.5" fill="#000" />
+        </svg>
+      </div>
+      <div className="anim-swim-left" style={{ position: 'absolute', top: '75%', right: '0', animationDuration: '26s', animationDelay: '3s' }}>
+        <svg width="32" height="18" viewBox="0 0 35 20">
+          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#38BDF8" />
+          <path d="M7 10 L0 3 L0 17Z" fill="#38BDF8" />
+          <circle cx="26" cy="8" r="1.5" fill="#000" />
+        </svg>
+      </div>
     </div>
   );
 }

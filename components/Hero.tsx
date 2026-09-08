@@ -54,41 +54,64 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Palm trees - left */}
-      <div style={{ position: 'absolute', bottom: '18%', left: '-2%', zIndex: 2 }}>
-        <svg width="140" height="240" viewBox="0 0 140 240">
-          <path d="M60,240 Q62,160 58,80" stroke="#5D4037" strokeWidth="10" fill="none" strokeLinecap="round" />
-          <ellipse cx="58" cy="80" rx="55" ry="22" fill="#388E3C" transform="rotate(-20,58,80)" opacity="0.9" />
-          <ellipse cx="58" cy="80" rx="50" ry="18" fill="#43A047" transform="rotate(10,58,80)" opacity="0.85" />
-          <ellipse cx="58" cy="80" rx="48" ry="16" fill="#66BB6A" transform="rotate(-40,58,80)" opacity="0.8" />
-          <ellipse cx="58" cy="80" rx="45" ry="15" fill="#81C784" transform="rotate(35,58,80)" opacity="0.75" />
-        </svg>
-      </div>
-      {/* Palm trees - right */}
-      <div style={{ position: 'absolute', bottom: '20%', right: '-1%', zIndex: 2 }}>
-        <svg width="120" height="210" viewBox="0 0 120 210">
-          <path d="M65,210 Q62,140 68,70" stroke="#5D4037" strokeWidth="9" fill="none" strokeLinecap="round" />
-          <ellipse cx="68" cy="70" rx="48" ry="18" fill="#388E3C" transform="rotate(15,68,70)" opacity="0.9" />
-          <ellipse cx="68" cy="70" rx="44" ry="16" fill="#43A047" transform="rotate(-15,68,70)" opacity="0.85" />
-          <ellipse cx="68" cy="70" rx="42" ry="14" fill="#66BB6A" transform="rotate(38,68,70)" opacity="0.8" />
-        </svg>
-      </div>
-
-      {/* Sandy beach bottom */}
+      {/* ── Sandy beach shore & rooted palm trees ── */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ zIndex: 3 }}>
-        <svg viewBox="0 0 1440 160" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          {/* Sandy ground */}
-          <path d="M0,160 L0,100 Q200,70 400,88 Q600,105 800,75 Q1000,45 1200,68 Q1320,80 1440,72 L1440,160Z" fill="#F4C842" opacity="0.85" />
-          <path d="M0,160 L0,118 Q180,95 360,110 Q540,125 720,100 Q900,75 1080,95 Q1260,115 1440,95 L1440,160Z" fill="#F9D659" opacity="0.7" />
-          {/* Wave on beach */}
-          <path d="M0,105 Q180,88 360,100 Q540,112 720,88 Q900,65 1080,82 Q1260,98 1440,80 L1440,110 Q1260,125 1080,108 Q900,91 720,110 Q540,128 360,115 Q180,103 0,118Z" fill="rgba(90,210,230,0.55)" />
-          {/* Foam */}
-          <path d="M0,102 Q120,95 240,100 Q360,105 480,96 Q600,87 720,95 Q840,103 960,92 Q1080,81 1200,90 Q1320,99 1440,85" stroke="rgba(255,255,255,0.7)" strokeWidth="3" fill="none" />
-          {/* Shells/pebbles */}
-          <ellipse cx="200" cy="150" rx="10" ry="5" fill="rgba(255,255,255,0.6)" />
-          <ellipse cx="500" cy="145" rx="7" ry="4" fill="rgba(251,113,133,0.7)" />
-          <ellipse cx="850" cy="148" rx="9" ry="4" fill="rgba(255,255,255,0.55)" />
-          <ellipse cx="1150" cy="152" rx="8" ry="4" fill="rgba(42,196,216,0.6)" />
+        <svg viewBox="0 0 1440 220" className="w-full h-auto" preserveAspectRatio="none" style={{ display: 'block', minHeight: '160px' }}>
+          <defs>
+            <linearGradient id="sandGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#fde047" />
+              <stop offset="100%" stopColor="#eab308" />
+            </linearGradient>
+            <linearGradient id="sandGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#fef08a" />
+              <stop offset="100%" stopColor="#facc15" />
+            </linearGradient>
+          </defs>
+
+          {/* Background Sand Dunes */}
+          <path d="M0,220 L0,80 Q250,30 500,70 Q750,110 1000,50 Q1250,-10 1440,40 L1440,220Z" fill="url(#sandGradient1)" opacity="0.9" />
+          <path d="M0,220 L0,110 Q200,75 450,105 Q700,135 950,85 Q1200,35 1440,90 L1440,220Z" fill="url(#sandGradient2)" />
+
+          {/* Left Palm Tree - rooted on sand dune */}
+          <g transform="translate(10, 20)">
+            <path d="M50,160 Q45,100 65,30" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
+            <path d="M50,160 Q45,100 65,30" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
+            {/* Coconuts */}
+            <circle cx="62" cy="38" r="6" fill="#451a03" />
+            <circle cx="68" cy="36" r="5.5" fill="#78350f" />
+            {/* Fronds */}
+            <ellipse cx="65" cy="28" rx="55" ry="18" fill="#15803d" transform="rotate(-30 65 28)" />
+            <ellipse cx="65" cy="28" rx="50" ry="16" fill="#16a34a" transform="rotate(15 65 28)" />
+            <ellipse cx="65" cy="28" rx="48" ry="15" fill="#22c55e" transform="rotate(-55 65 28)" />
+            <ellipse cx="65" cy="28" rx="45" ry="14" fill="#4ade80" transform="rotate(45 65 28)" />
+            <ellipse cx="65" cy="28" rx="40" ry="12" fill="#86efac" transform="rotate(-10 65 28)" />
+          </g>
+
+          {/* Right Palm Tree - rooted on sand dune */}
+          <g transform="translate(1330, 10)">
+            <path d="M40,170 Q50,105 30,35" stroke="#78350f" strokeWidth="11" fill="none" strokeLinecap="round" />
+            <path d="M40,170 Q50,105 30,35" stroke="#92400e" strokeWidth="7" fill="none" strokeLinecap="round" />
+            {/* Coconuts */}
+            <circle cx="28" cy="42" r="6" fill="#451a03" />
+            <circle cx="34" cy="40" r="5" fill="#78350f" />
+            {/* Fronds */}
+            <ellipse cx="30" cy="32" rx="50" ry="16" fill="#15803d" transform="rotate(25 30 32)" />
+            <ellipse cx="30" cy="32" rx="46" ry="14" fill="#16a34a" transform="rotate(-20 30 32)" />
+            <ellipse cx="30" cy="32" rx="42" ry="13" fill="#22c55e" transform="rotate(50 30 32)" />
+            <ellipse cx="30" cy="32" rx="38" ry="12" fill="#4ade80" transform="rotate(-45 30 32)" />
+          </g>
+
+          {/* Shoreline water waves crashing on sand */}
+          <path d="M0,150 Q200,130 400,145 Q600,160 800,135 Q1000,110 1200,130 Q1320,145 1440,130 L1440,220 L0,220Z" fill="#38bdf8" opacity="0.8" />
+          <path d="M0,170 Q180,155 360,165 Q540,175 720,155 Q900,135 1080,150 Q1260,165 1440,150 L1440,220 L0,220Z" fill="#0284c7" opacity="0.6" />
+          {/* Wave Foam */}
+          <path d="M0,148 Q150,135 300,142 Q450,150 600,138 Q750,126 900,135 Q1050,144 1200,132 Q1350,120 1440,128" stroke="#ffffff" strokeWidth="4" fill="none" opacity="0.85" strokeLinecap="round" />
+
+          {/* Pebbles & Shells on beach */}
+          <ellipse cx="250" cy="180" rx="9" ry="5" fill="#fef08a" opacity="0.9" />
+          <ellipse cx="550" cy="175" rx="7" ry="4" fill="#f472b6" opacity="0.9" />
+          <ellipse cx="880" cy="182" rx="10" ry="5" fill="#ffffff" opacity="0.85" />
+          <ellipse cx="1180" cy="178" rx="8" ry="4" fill="#38bdf8" opacity="0.9" />
         </svg>
       </div>
 
