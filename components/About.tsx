@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import torchEmblem from '../assets/img/IMG_7270.PNG';
-import { SeaTurtle, ClownFish, Seahorse, Jellyfish, Starfish, Seaweed, CoralBranch } from './MarineBiota';
+import { SeaTurtle, ClownFish, BlueTang, Seahorse, Jellyfish, Starfish, Seaweed, StaghornCoral, SchoolOfFish, Bubble } from './MarineBiota';
 
 export default function About() {
   return (
@@ -16,67 +16,76 @@ export default function About() {
         style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #0e5090 100%)' }}
       />
 
-      {/* Shallow water ambient light */}
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 20%, rgba(56,189,248,0.18) 0%, transparent 60%)', pointerEvents: 'none' }} />
+      {/* Shallow water ambient light & shimmering sun rays */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 20%, rgba(56,189,248,0.22) 0%, transparent 60%)', pointerEvents: 'none' }} />
 
-      {/* Marine life decorations - shallow water zone */}
+      {/* Marine life decorations - vibrant shallow water zone */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
-        {/* Fish school - colorful tropical fish */}
-        {[
-          { top: '20%', left: '5%', size: 24, color: '#FF8A65', flip: false },
-          { top: '55%', left: '88%', size: 18, color: '#FFD54F', flip: true },
-          { top: '35%', left: '78%', size: 20, color: '#4FC3F7', flip: true },
-          { top: '70%', left: '12%', size: 15, color: '#F48FB1', flip: false },
-        ].map((f, i) => (
-          <svg key={i} width={f.size * 1.8} height={f.size} viewBox="0 0 36 20" style={{ position: 'absolute', top: f.top, left: f.left, opacity: 0.55, transform: f.flip ? 'scaleX(-1)' : '' }}>
-            <ellipse cx="20" cy="10" rx="13" ry="7" fill={f.color} />
-            <path d="M7 10 L0 3 L0 17Z" fill={f.color} opacity="0.8" />
-            <ellipse cx="25" cy="8" rx="2" ry="1.5" fill="rgba(0,0,0,0.4)" />
-          </svg>
-        ))}
+        {/* School of Yellow-Cyan Tropical Fish swimming across */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '16%', left: '0', animationDuration: '26s', opacity: 0.8 }}>
+          <SchoolOfFish count={6} color="#38bdf8" accentColor="#facc15" size={18} />
+        </div>
+
+        {/* School of Pink-Orange Fish swimming opposite direction */}
+        <div className="anim-swim-left" style={{ position: 'absolute', top: '68%', right: '0', animationDuration: '22s', animationDelay: '3s', opacity: 0.75 }}>
+          <SchoolOfFish count={5} color="#f472b6" accentColor="#fb923c" size={16} />
+        </div>
 
         {/* Sea Turtle swimming right */}
-        <div className="anim-swim-right" style={{ position: 'absolute', top: '25%', left: '0', animationDuration: '30s', opacity: 0.75 }}>
-          <SeaTurtle size={45} />
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '32%', left: '0', animationDuration: '32s', animationDelay: '2s', opacity: 0.85 }}>
+          <SeaTurtle size={58} />
+        </div>
+
+        {/* Blue Tang & Clownfish duo */}
+        <div className="anim-swim-left" style={{ position: 'absolute', top: '48%', right: '0', animationDuration: '20s', animationDelay: '6s', opacity: 0.85 }}>
+          <div className="flex items-center gap-4">
+            <BlueTang size={36} />
+            <ClownFish size={32} />
+          </div>
         </div>
 
         {/* Seahorse hovering left side */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '60%', left: '2%', opacity: 0.8 }}>
-          <Seahorse size={38} />
-        </div>
-
-        {/* ClownFish swimming */}
-        <div className="anim-swim-left" style={{ position: 'absolute', top: '45%', right: '0', animationDuration: '22s', animationDelay: '4s', opacity: 0.75 }}>
-          <ClownFish size={30} />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '55%', left: '3%', opacity: 0.85 }}>
+          <Seahorse size={44} color="#f97316" />
         </div>
 
         {/* Jellyfish floating - top right */}
-        <div className="anim-jelly" style={{ position: 'absolute', top: '8%', right: '5%', animationDuration: '8s', opacity: 0.65 }}>
-          <Jellyfish size={50} color="rgba(56,189,248,0.7)" />
+        <div className="anim-jelly" style={{ position: 'absolute', top: '8%', right: '6%', animationDuration: '7s', opacity: 0.75 }}>
+          <Jellyfish size={56} color="#38bdf8" glowColor="#ffffff" />
         </div>
 
-        {/* Starfish on coral */}
-        <div style={{ position: 'absolute', top: '75%', right: '8%', opacity: 0.7 }}>
-          <Starfish size={26} color="#f97316" />
+        {/* Starfish resting on bottom right */}
+        <div style={{ position: 'absolute', bottom: '60px', right: '6%', opacity: 0.85 }}>
+          <Starfish size={32} color="#f97316" />
         </div>
 
-        {/* Seaweed swaying */}
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '80px', left: '50%', opacity: 0.4 }}>
-          <Seaweed height={70} color="#22c55e" />
+        {/* Coral and Seaweed Formations */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '20px', left: '4%', opacity: 0.75 }}>
+          <StaghornCoral height={75} color="#ec4899" accentColor="#f472b6" />
         </div>
-        <div className="anim-sway" style={{ position: 'absolute', bottom: '80px', right: '3%', animationDelay: '1s', opacity: 0.35 }}>
-          <Seaweed height={55} color="#16a34a" />
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '20px', left: '8%', animationDelay: '1.2s', opacity: 0.65 }}>
+          <Seaweed height={95} color="#22c55e" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '20px', right: '4%', animationDelay: '0.8s', opacity: 0.65 }}>
+          <Seaweed height={90} color="#16a34a" />
         </div>
 
-        {/* Coral branches */}
-        <div style={{ position: 'absolute', bottom: '80px', left: '6%', opacity: 0.45 }}>
-          <CoralBranch height={55} color="#ec4899" />
-        </div>
+        {/* Rising bubbles */}
+        {[
+          { left: '12%', delay: '0s', size: 14 },
+          { left: '40%', delay: '1.5s', size: 10 },
+          { left: '72%', delay: '0.8s', size: 16 },
+          { left: '88%', delay: '2.2s', size: 12 },
+        ].map((b, i) => (
+          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '20px', left: b.left, animationDelay: b.delay, animationDuration: '4.5s' }}>
+            <Bubble size={b.size} />
+          </div>
+        ))}
 
         {/* Sunlight rays from above */}
-        <div className="sun-ray" style={{ left: '20%', opacity: 0.4 }} />
-        <div className="sun-ray" style={{ left: '50%', opacity: 0.3, animationDelay: '3s' }} />
-        <div className="sun-ray" style={{ left: '75%', opacity: 0.35, animationDelay: '6s' }} />
+        <div className="sun-ray" style={{ left: '18%', opacity: 0.45 }} />
+        <div className="sun-ray" style={{ left: '52%', opacity: 0.35, animationDelay: '3s' }} />
+        <div className="sun-ray" style={{ left: '80%', opacity: 0.4, animationDelay: '6s' }} />
       </div>
 
       {/* Coral reef bottom separator → to mid ocean */}

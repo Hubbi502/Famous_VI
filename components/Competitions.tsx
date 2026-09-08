@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { X, Download, ExternalLink, BookOpen } from 'lucide-react';
-import { BlueTang, MantaRay, ClownFish, Starfish, Seahorse, Jellyfish, AnglerFish, CoralBranch, Seaweed, Octopus } from './MarineBiota';
+import { BlueTang, MantaRay, ClownFish, Starfish, Seahorse, Jellyfish, AnglerFish, Seaweed, SeaTurtle, SchoolOfFish, StaghornCoral, TubeSponges } from './MarineBiota';
 
 /* ── Maskot paths ── */
 const MASKOT_MHQ          = '/assets/img/maskot/Desain tanpa judul - MHQ.png';
@@ -242,23 +242,42 @@ export default function Competitions() {
         style={{ height: '220px', background: 'linear-gradient(180deg, transparent 0%, #581c87 100%)' }}
       />
 
+      {/* ── Ambient Swimming Marine Biota ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Manta Ray soaring across mid-ocean */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '12%', left: 0, animationDuration: '34s', opacity: 0.75 }}>
+          <MantaRay size={75} />
+        </div>
+
+        {/* Sea Turtle swimming opposite */}
+        <div className="anim-swim-left" style={{ position: 'absolute', top: '50%', right: 0, animationDuration: '28s', animationDelay: '5s', opacity: 0.8 }}>
+          <SeaTurtle size={52} />
+        </div>
+
+        {/* School of Fish */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '78%', left: 0, animationDuration: '24s', animationDelay: '2s', opacity: 0.75 }}>
+          <SchoolOfFish count={6} color="#38bdf8" accentColor="#facc15" size={17} />
+        </div>
+
+        {/* Jellyfish drifting */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '22%', right: '4%', animationDuration: '8s', opacity: 0.7 }}>
+          <Jellyfish size={58} color="#c084fc" glowColor="#38bdf8" />
+        </div>
+        <div className="anim-jelly" style={{ position: 'absolute', top: '65%', left: '3%', animationDuration: '9.5s', opacity: 0.65 }}>
+          <Jellyfish size={46} color="#ec4899" glowColor="#f472b6" />
+        </div>
+
+        {/* Coral accents on edges */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '40px', left: '2%', opacity: 0.6 }}>
+          <StaghornCoral height={95} color="#8b5cf6" accentColor="#c084fc" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '40px', right: '3%', animationDelay: '1.5s', opacity: 0.6 }}>
+          <TubeSponges height={90} color="#0284c7" rimColor="#38bdf8" />
+        </div>
+      </div>
+
       {/* ── Ocean decorative bubbles ── */}
       <OceanBubbles />
-
-      {/* ── Coral reef bottom ── */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ zIndex: 1 }}>
-        <svg viewBox="0 0 1440 120" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          <path d="M0,120 L0,80 Q80,50 160,70 Q240,90 320,55 Q400,20 480,50 Q560,80 640,45 Q720,10 800,40 Q880,70 960,35 Q1040,0 1120,30 Q1200,60 1280,30 Q1360,0 1440,40 L1440,120Z" fill="rgba(251,113,133,0.25)" />
-          <path d="M0,120 L0,95 Q100,70 200,88 Q300,105 400,78 Q500,50 600,75 Q700,98 800,68 Q900,38 1000,60 Q1100,82 1200,60 Q1300,38 1440,70 L1440,120Z" fill="rgba(42,196,216,0.18)" />
-          {/* Mini corals */}
-          <ellipse cx="80" cy="118" rx="22" ry="12" fill="rgba(251,113,133,0.5)" />
-          <ellipse cx="220" cy="119" rx="16" ry="9" fill="rgba(42,196,216,0.4)" />
-          <ellipse cx="520" cy="118" rx="20" ry="11" fill="rgba(232,76,30,0.4)" />
-          <ellipse cx="800" cy="117" rx="18" ry="10" fill="rgba(168,85,247,0.4)" />
-          <ellipse cx="1100" cy="119" rx="22" ry="12" fill="rgba(251,113,133,0.4)" />
-          <ellipse cx="1380" cy="118" rx="16" ry="9" fill="rgba(42,196,216,0.3)" />
-        </svg>
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ zIndex: 2 }}>
 

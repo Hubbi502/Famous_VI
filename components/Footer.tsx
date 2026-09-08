@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
-import { Crab, Starfish, Seaweed, Jellyfish, AnglerFish, Seahorse, CoralBranch, Bubble, ClownFish } from './MarineBiota';
+import { Crab, Starfish, Seaweed, Jellyfish, AnglerFish, Seahorse, Bubble, ClownFish, StaghornCoral, TubeSponges, MantaRay } from './MarineBiota';
+import CoralReefLandscape from './CoralReefLandscape';
 
 const socialLinks = [
   { icon: Facebook, label: 'Facebook', href: '#' },
@@ -226,72 +227,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Hadal Sea Floor Coral Reef Bed at bottom of Footer ── */}
-      <div className="relative w-full overflow-hidden pointer-events-none" style={{ marginTop: '20px' }}>
-        <svg viewBox="0 0 1440 180" className="w-full h-auto" preserveAspectRatio="none" style={{ display: 'block', minHeight: '120px' }}>
-          <defs>
-            <linearGradient id="seabedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#0a081a" />
-              <stop offset="100%" stopColor="#020108" />
-            </linearGradient>
-          </defs>
-
-          {/* Seabed Terrain */}
-          <path d="M0,180 L0,90 Q200,60 400,80 Q600,100 800,65 Q1000,30 1200,60 Q1350,75 1440,55 L1440,180Z" fill="url(#seabedGrad)" />
-          <path d="M0,180 L0,110 Q180,85 380,105 Q580,125 780,90 Q980,55 1180,85 Q1330,100 1440,80 L1440,180Z" fill="#03020a" opacity="0.9" />
-
-          {/* ── Left Coral Reef Cluster ── */}
-          <g transform="translate(60, 40)">
-            {/* Tube sponges */}
-            <rect x="20" y="30" width="12" height="50" rx="6" fill="#a855f7" opacity="0.8" />
-            <rect x="36" y="20" width="14" height="60" rx="7" fill="#7e22ce" opacity="0.85" />
-            <rect x="54" y="38" width="10" height="42" rx="5" fill="#c084fc" opacity="0.8" />
-            {/* Brain Coral */}
-            <ellipse cx="100" cy="65" rx="25" ry="18" fill="#ec4899" opacity="0.85" />
-            <path d="M85 60 Q100 70 115 60" stroke="#f472b6" strokeWidth="2" fill="none" />
-            <path d="M88 68 Q100 76 112 68" stroke="#f472b6" strokeWidth="2" fill="none" />
-            {/* Sea anemone tentacles */}
-            {[0, 15, 30, 45, 60].map((rot, i) => (
-              <path key={i} d="M140 70 Q145 40 150 20" stroke="#06b6d4" strokeWidth="4" strokeLinecap="round" fill="none" transform={`rotate(${rot - 30} 140 70)`} />
-            ))}
-          </g>
-
-          {/* ── Middle Coral & Clam Shell ── */}
-          <g transform="translate(620, 50)">
-            {/* Giant Clam with Glowing Pearl */}
-            <path d="M60,65 Q90,35 120,65 Q125,85 90,95 Q55,85 60,65Z" fill="#be185d" stroke="#f472b6" strokeWidth="2" />
-            <circle cx="90" cy="68" r="11" fill="url(#pearlGradient)" filter="drop-shadow(0 0 10px #fff)" />
-            <circle cx="86" cy="64" r="3" fill="#ffffff" opacity="0.9" />
-            {/* Coral Branch */}
-            <path d="M10,80 Q20,40 10,10 M10,50 Q30,30 40,20 M10,60 Q-10,40 -15,30" stroke="#f97316" strokeWidth="6" strokeLinecap="round" fill="none" opacity="0.85" />
-          </g>
-
-          {/* ── Sunken Ship Anchor ── */}
-          <g transform="translate(980, 55)">
-            <path d="M40,10 L40,70 M20,25 L60,25 M15,65 Q40,90 65,65" stroke="#475569" strokeWidth="5" strokeLinecap="round" fill="none" />
-            <circle cx="40" cy="10" r="6" stroke="#475569" strokeWidth="4" fill="none" />
-          </g>
-
-          {/* ── Right Coral Reef Cluster ── */}
-          <g transform="translate(1220, 35)">
-            <ellipse cx="60" cy="70" rx="30" ry="22" fill="#0284c7" opacity="0.85" />
-            <rect x="100" y="25" width="15" height="65" rx="7.5" fill="#f43f5e" opacity="0.8" />
-            <rect x="120" y="40" width="12" height="50" rx="6" fill="#fb7185" opacity="0.85" />
-            {/* Starfish on seabed */}
-            <path d="M10 80 L14 70 L24 70 L16 64 L19 54 L10 60 L1 54 L4 64 L-4 70 L6 70Z" fill="#f59e0b" transform="scale(0.8)" />
-          </g>
-
-          {/* Bioluminescent rising bubbles from seabed */}
-          {[
-            { cx: 120, cy: 40, r: 4 },
-            { cx: 280, cy: 30, r: 6 },
-            { cx: 710, cy: 45, r: 5 },
-            { cx: 1040, cy: 35, r: 4 },
-            { cx: 1350, cy: 50, r: 5 },
-          ].map((b, i) => (
-            <circle key={i} cx={b.cx} cy={b.cy} r={b.r} fill="rgba(56,189,248,0.6)" filter="drop-shadow(0 0 6px #38bdf8)" />
-          ))}
-        </svg>
+      {/* ── Magnificent Coral Reef Ecosystem at the Ocean Floor ── */}
+      <div className="w-full mt-4">
+        <CoralReefLandscape />
       </div>
 
       <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
