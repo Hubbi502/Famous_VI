@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Crab, Starfish, Seaweed, Jellyfish, AnglerFish, Seahorse, CoralBranch, Bubble, ClownFish } from './MarineBiota';
 
 const socialLinks = [
   { icon: Facebook, label: 'Facebook', href: '#' },
@@ -34,16 +35,102 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: 'linear-gradient(180deg, #020617 0%, #01040d 50%, #000000 100%)' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #020617 0%, #01040d 50%, #000000 100%)', position: 'relative', overflow: 'hidden' }}>
+
+      {/* ── Deep ocean ambient creatures ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+
+        {/* Jellyfish cluster - top left */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '5%', left: '4%', animationDuration: '7s', opacity: 0.75 }}>
+          <Jellyfish size={48} color="rgba(139,92,246,0.75)" />
+        </div>
+        <div className="anim-jelly" style={{ position: 'absolute', top: '15%', left: '12%', animationDuration: '9s', animationDelay: '3s', opacity: 0.55 }}>
+          <Jellyfish size={32} color="rgba(56,189,248,0.65)" />
+        </div>
+
+        {/* Angler Fish - right side lurking */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '20%', right: '5%', animationDuration: '11s', animationDelay: '1s', opacity: 0.7 }}>
+          <AnglerFish size={50} />
+        </div>
+
+        {/* Seahorse bobbing - mid left */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '45%', left: '3%', animationDuration: '5.5s', opacity: 0.8 }}>
+          <Seahorse size={42} />
+        </div>
+
+        {/* Clownfish swimming through the abyss */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '55%', left: 0, animationDuration: '30s', opacity: 0.65 }}>
+          <ClownFish size={28} />
+        </div>
+
+        {/* Seaweed on sides - swaying */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '180px', left: '2%', opacity: 0.55 }}>
+          <Seaweed height={90} color="#166534" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '180px', left: '8%', animationDelay: '1.2s', opacity: 0.45 }}>
+          <Seaweed height={70} color="#15803d" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '180px', right: '4%', opacity: 0.5 }}>
+          <Seaweed height={85} color="#14532d" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '180px', right: '10%', animationDelay: '2s', opacity: 0.4 }}>
+          <Seaweed height={65} color="#166534" />
+        </div>
+
+        {/* Coral branches */}
+        <div style={{ position: 'absolute', bottom: '160px', left: '18%', opacity: 0.6 }}>
+          <CoralBranch height={70} color="#be185d" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '160px', left: '30%', opacity: 0.5 }}>
+          <CoralBranch height={55} color="#0284c7" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '160px', right: '18%', opacity: 0.55 }}>
+          <CoralBranch height={65} color="#a855f7" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '160px', right: '28%', opacity: 0.45 }}>
+          <CoralBranch height={50} color="#f97316" />
+        </div>
+
+        {/* Crabs on seabed */}
+        <div style={{ position: 'absolute', bottom: '160px', left: '42%', opacity: 0.8 }}>
+          <Crab size={28} />
+        </div>
+        <div style={{ position: 'absolute', bottom: '162px', right: '38%', opacity: 0.7 }}>
+          <Crab size={22} />
+        </div>
+
+        {/* Starfish on the floor */}
+        <div style={{ position: 'absolute', bottom: '163px', left: '55%', opacity: 0.85 }}>
+          <Starfish size={24} color="#f59e0b" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '162px', left: '68%', opacity: 0.7 }}>
+          <Starfish size={18} color="#f97316" />
+        </div>
+
+        {/* Rising bubble columns */}
+        {[
+          { left: '15%', delay: '0s',   size: 10 },
+          { left: '28%', delay: '1.3s', size: 7  },
+          { left: '50%', delay: '0.6s', size: 12 },
+          { left: '65%', delay: '2s',   size: 8  },
+          { left: '80%', delay: '0.8s', size: 10 },
+          { left: '92%', delay: '1.8s', size: 6  },
+        ].map((b, i) => (
+          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '170px', left: b.left, animationDelay: b.delay, animationDuration: `${3.5 + i * 0.5}s` }}>
+            <Bubble size={b.size} />
+          </div>
+        ))}
+      </div>
+
       {/* Wave top */}
-      <div className="w-full overflow-hidden" style={{ marginTop: '-1px' }}>
+      <div className="w-full overflow-hidden" style={{ marginTop: '-1px', position: 'relative', zIndex: 1 }}>
         <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
           <path d="M0,0 Q360,60 720,20 Q1080,-20 1440,40 L1440,0Z"
             fill="#020617" />
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14" style={{ position: 'relative', zIndex: 2 }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-5">

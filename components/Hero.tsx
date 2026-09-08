@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import mascotImg from '../assets/img/IMG_7254.PNG';
+import { Crab, Starfish, ClownFish } from './MarineBiota';
 
 const bubbles = Array.from({ length: 18 }, (_, i) => ({
   id: i,
@@ -113,6 +114,21 @@ export default function Hero() {
           <ellipse cx="880" cy="182" rx="10" ry="5" fill="#ffffff" opacity="0.85" />
           <ellipse cx="1180" cy="178" rx="8" ry="4" fill="#38bdf8" opacity="0.9" />
         </svg>
+
+        {/* Crab scuttling on sand dune */}
+        <div style={{ position: 'absolute', bottom: '35px', left: '120px', zIndex: 5 }}>
+          <Crab size={32} />
+        </div>
+
+        {/* Starfish resting on sand shore */}
+        <div style={{ position: 'absolute', bottom: '45px', right: '140px', zIndex: 5 }}>
+          <Starfish size={28} color="#f97316" />
+        </div>
+
+        {/* Swimming ClownFish in shoreline water */}
+        <div className="anim-swim-right" style={{ position: 'absolute', bottom: '15px', left: '0', zIndex: 5, animationDuration: '20s' }}>
+          <ClownFish size={24} />
+        </div>
       </div>
 
       {/* Shallow water shimmer */}

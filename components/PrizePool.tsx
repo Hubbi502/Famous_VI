@@ -1,3 +1,5 @@
+import { Octopus, Starfish, Jellyfish, Seahorse, CoralBranch, Seaweed, Bubble, MantaRay } from './MarineBiota';
+
 export default function PrizePool() {
   return (
     <section
@@ -6,7 +8,61 @@ export default function PrizePool() {
         background: 'linear-gradient(180deg, #581c87 0%, #3b0764 45%, #2e1065 75%, #1e1b4b 100%)',
       }}
     >
-      {/* Decorative bubbles */}
+      {/* ── Marine Biota Layer ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
+        {/* Floating Octopus */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '12%', left: '8%', opacity: 0.85 }}>
+          <Octopus size={52} />
+        </div>
+
+        {/* Jellyfish floating right */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '8%', right: '6%', animationDuration: '7s', opacity: 0.75 }}>
+          <Jellyfish size={55} color="rgba(244,63,94,0.7)" />
+        </div>
+        <div className="anim-jelly" style={{ position: 'absolute', top: '28%', right: '18%', animationDuration: '9s', animationDelay: '2s', opacity: 0.55 }}>
+          <Jellyfish size={38} color="rgba(192,132,252,0.65)" />
+        </div>
+
+        {/* Gliding Manta Ray */}
+        <div className="anim-swim-right" style={{ position: 'absolute', top: '55%', left: '0', animationDuration: '35s', opacity: 0.55 }}>
+          <MantaRay size={65} />
+        </div>
+
+        {/* Seahorse */}
+        <div className="anim-jelly" style={{ position: 'absolute', top: '50%', right: '4%', animationDuration: '6s', opacity: 0.8 }}>
+          <Seahorse size={44} />
+        </div>
+
+        {/* Seaweed bottom */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', left: '4%', opacity: 0.45 }}>
+          <Seaweed height={70} color="#166534" />
+        </div>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', right: '5%', animationDelay: '1.5s', opacity: 0.4 }}>
+          <Seaweed height={80} color="#15803d" />
+        </div>
+
+        {/* Coral branches */}
+        <div style={{ position: 'absolute', bottom: '0', left: '20%', opacity: 0.5 }}>
+          <CoralBranch height={60} color="#a855f7" />
+        </div>
+        <div style={{ position: 'absolute', bottom: '0', right: '20%', opacity: 0.45 }}>
+          <CoralBranch height={55} color="#f43f5e" />
+        </div>
+
+        {/* Starfish */}
+        <div style={{ position: 'absolute', bottom: '15%', right: '7%', zIndex: 2 }}>
+          <Starfish size={36} color="#f97316" />
+        </div>
+
+        {/* Rising bubbles */}
+        {[10, 22, 38, 55, 70, 85].map((leftPct, i) => (
+          <div key={i} className="anim-bubble-rise" style={{ position: 'absolute', bottom: '5%', left: `${leftPct}%`, animationDelay: `${i * 0.6}s`, animationDuration: `${3.5 + i * 0.4}s` }}>
+            <Bubble size={8 + (i % 3) * 3} />
+          </div>
+        ))}
+      </div>
+
+      {/* Decorative bubbles bg */}
       {[
         { size: 120, top: '-20px', left: '5%', opacity: 0.06 },
         { size: 80, bottom: '-10px', right: '8%', opacity: 0.06 },

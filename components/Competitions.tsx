@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Download, ExternalLink, BookOpen } from 'lucide-react';
+import { BlueTang, MantaRay, ClownFish, Starfish, Seahorse, Jellyfish, AnglerFish, CoralBranch, Seaweed, Octopus } from './MarineBiota';
 
 /* ── Maskot paths ── */
 const MASKOT_MHQ          = '/assets/img/maskot/Desain tanpa judul - MHQ.png';
@@ -324,38 +325,66 @@ function OceanBubbles() {
         />
       ))}
 
-      {/* Floating Glowing Jellyfish */}
-      <div className="anim-jelly" style={{ position: 'absolute', top: '15%', right: '8%', opacity: 0.75 }}>
-        <svg width="50" height="70" viewBox="0 0 50 70">
-          <ellipse cx="25" cy="20" rx="20" ry="16" fill="rgba(192,132,252,0.4)" stroke="rgba(216,180,254,0.85)" strokeWidth="2" />
-          <path d="M12 30 Q16 50 14 68" stroke="rgba(232,121,249,0.7)" strokeWidth="2" fill="none" />
-          <path d="M20 32 Q22 48 24 65" stroke="rgba(192,132,252,0.7)" strokeWidth="2" fill="none" />
-          <path d="M28 32 Q26 48 28 65" stroke="rgba(192,132,252,0.7)" strokeWidth="2" fill="none" />
-          <path d="M36 30 Q34 50 38 68" stroke="rgba(232,121,249,0.7)" strokeWidth="2" fill="none" />
-        </svg>
+      {/* Floating Glowing Jellyfish cluster */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '12%', right: '8%', opacity: 0.8 }}>
+        <Jellyfish size={55} color="rgba(192,132,252,0.8)" />
+      </div>
+      <div className="anim-jelly" style={{ position: 'absolute', top: '5%', right: '22%', animationDuration: '8s', animationDelay: '2s', opacity: 0.55 }}>
+        <Jellyfish size={35} color="rgba(56,189,248,0.7)" />
       </div>
 
-      {/* Swimming School of Small Yellow & Cyan Fishes */}
+      {/* Lurking AnglerFish */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '68%', left: '2%', animationDuration: '13s', opacity: 0.6 }}>
+        <AnglerFish size={55} />
+      </div>
+
+      {/* Gliding Manta Ray (Ikan Pari) */}
+      <div className="anim-swim-left" style={{ position: 'absolute', top: '18%', right: '0', animationDuration: '28s', opacity: 0.7 }}>
+        <MantaRay size={75} />
+      </div>
+
+      {/* Swimming Blue Tang & ClownFish School */}
       <div className="anim-swim-right" style={{ position: 'absolute', top: '35%', left: '0', animationDuration: '22s' }}>
-        <svg width="35" height="20" viewBox="0 0 35 20">
-          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#FACC15" />
-          <path d="M7 10 L0 3 L0 17Z" fill="#FACC15" />
-          <circle cx="26" cy="8" r="1.5" fill="#000" />
-        </svg>
+        <BlueTang size={36} />
       </div>
-      <div className="anim-swim-right" style={{ position: 'absolute', top: '38%', left: '0', animationDuration: '22s', animationDelay: '0.6s' }}>
-        <svg width="28" height="16" viewBox="0 0 35 20">
-          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#FACC15" />
-          <path d="M7 10 L0 3 L0 17Z" fill="#FACC15" />
-          <circle cx="26" cy="8" r="1.5" fill="#000" />
-        </svg>
+      <div className="anim-swim-right" style={{ position: 'absolute', top: '38%', left: '0', animationDuration: '22s', animationDelay: '0.7s' }}>
+        <ClownFish size={30} />
       </div>
+
+      {/* Floating Seahorse near mid coral */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '55%', left: '4%', opacity: 0.8 }}>
+        <Seahorse size={42} />
+      </div>
+
+      {/* Octopus deep mid */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '42%', right: '6%', animationDuration: '7s', opacity: 0.7 }}>
+        <Octopus size={40} />
+      </div>
+
+      {/* Seaweed at bottom corners */}
+      <div className="anim-sway" style={{ position: 'absolute', bottom: '100px', left: '2%', opacity: 0.45 }}>
+        <Seaweed height={75} color="#166534" />
+      </div>
+      <div className="anim-sway" style={{ position: 'absolute', bottom: '100px', right: '1%', animationDelay: '1.5s', opacity: 0.4 }}>
+        <Seaweed height={60} color="#15803d" />
+      </div>
+
+      {/* Coral branches */}
+      <div style={{ position: 'absolute', bottom: '95px', left: '15%', opacity: 0.4 }}>
+        <CoralBranch height={60} color="#f43f5e" />
+      </div>
+      <div style={{ position: 'absolute', bottom: '95px', right: '14%', opacity: 0.38 }}>
+        <CoralBranch height={55} color="#06b6d4" />
+      </div>
+
+      {/* Swimming Starfish drifting */}
+      <div className="anim-jelly" style={{ position: 'absolute', top: '82%', left: '35%', opacity: 0.7 }}>
+        <Starfish size={22} color="#f97316" />
+      </div>
+
+      {/* Swimming Cyan Fish */}
       <div className="anim-swim-left" style={{ position: 'absolute', top: '75%', right: '0', animationDuration: '26s', animationDelay: '3s' }}>
-        <svg width="32" height="18" viewBox="0 0 35 20">
-          <ellipse cx="18" cy="10" rx="14" ry="7" fill="#38BDF8" />
-          <path d="M7 10 L0 3 L0 17Z" fill="#38BDF8" />
-          <circle cx="26" cy="8" r="1.5" fill="#000" />
-        </svg>
+        <BlueTang size={32} />
       </div>
     </div>
   );
