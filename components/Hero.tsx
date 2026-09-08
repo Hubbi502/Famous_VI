@@ -11,8 +11,30 @@ const bubbles = Array.from({ length: 18 }, (_, i) => ({
   duration: Math.random() * 8 + 6,
 }));
 
+const TARGET = new Date('2026-10-11T00:00:00');
+
+function useCountdown() {
+  const calc = () => {
+    const diff = TARGET.getTime() - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [time, setTime] = useState(calc);
+  useEffect(() => {
+    const id = setInterval(() => setTime(calc()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const countdown = useCountdown();
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80);
@@ -261,6 +283,26 @@ export default function Hero() {
                 <div key={stat.label} className="cloud-badge-purple px-2 py-2 sm:px-4 sm:py-2.5 text-center poster-shadow-purple flex flex-col justify-center items-center">
                   <span className="poster-font text-sm sm:text-lg font-black block leading-tight" style={{ color: '#6b21a8' }}>{stat.value}</span>
                   <span className="text-[10px] sm:text-xs font-bold mt-0.5 leading-tight" style={{ color: '#7e22ce' }}>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Countdown */}
+            <div className="flex items-center gap-2 w-full max-w-md">
+              {[
+                { value: countdown.days, label: 'Hari' },
+                { value: countdown.hours, label: 'Jam' },
+                { value: countdown.minutes, label: 'Menit' },
+                { value: countdown.seconds, label: 'Detik' },
+              ].map((unit, i) => (
+                <div key={unit.label} className="flex items-center gap-2 flex-1">
+                  <div className="flex-1 cloud-badge-cyan text-center py-2 poster-shadow-cyan">
+                    <div className="poster-font text-xl sm:text-2xl font-black leading-none" style={{ color: '#0284c7' }}>
+                      {String(unit.value).padStart(2, '0')}
+                    </div>
+                    <div className="text-[10px] font-bold mt-0.5" style={{ color: '#0369a1' }}>{unit.label}</div>
+                  </div>
+                  {i < 3 && <span className="poster-font text-lg font-black" style={{ color: '#0284c7' }}>:</span>}
                 </div>
               ))}
             </div>
