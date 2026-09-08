@@ -179,7 +179,6 @@ function TimelineCard({ item, idx, visible }: {
           </div>
 
           <p style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: 13, lineHeight: 1.55,
             color: 'rgba(255,255,255,0.75)', margin: 0,
           }}>

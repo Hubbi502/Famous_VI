@@ -98,7 +98,6 @@ export default function Sponsor() {
           </div>
 
           <h2 style={{
-            fontFamily: '"Inter", sans-serif',
             fontSize: 'clamp(28px, 5vw, 44px)',
             fontWeight: 800,
             color: '#ffffff',
@@ -118,7 +117,6 @@ export default function Sponsor() {
           </h2>
 
           <p style={{
-            fontFamily: '"Inter", sans-serif',
             color: 'rgba(255,255,255,0.5)',
             fontSize: '15px',
             maxWidth: '480px',
@@ -140,7 +138,6 @@ export default function Sponsor() {
           }}>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08))' }} />
             <span style={{
-              fontFamily: '"Inter", sans-serif',
               fontSize: '11px',
               fontWeight: 700,
               letterSpacing: '2.5px',
@@ -167,7 +164,6 @@ export default function Sponsor() {
           }}>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08))' }} />
             <span style={{
-              fontFamily: '"Inter", sans-serif',
               fontSize: '11px',
               fontWeight: 700,
               letterSpacing: '2.5px',
@@ -254,7 +250,6 @@ function SponsorCard({ item, large }: { item: typeof sponsors[0]; large: boolean
       {/* Name & label */}
       <div style={{ textAlign: 'center' }}>
         <p style={{
-          fontFamily: '"Inter", sans-serif',
           fontSize: large ? '15px' : '13px',
           fontWeight: 600,
           color: 'rgba(255,255,255,0.9)',
@@ -264,7 +259,6 @@ function SponsorCard({ item, large }: { item: typeof sponsors[0]; large: boolean
           {item.name}
         </p>
         <span style={{
-          fontFamily: '"Inter", sans-serif',
           fontSize: '10px',
           fontWeight: 700,
           letterSpacing: '1.5px',

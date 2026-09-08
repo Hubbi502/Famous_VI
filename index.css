@@ -83,6 +83,7 @@
 }
 
 @theme inline {
+  --font-sans: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
