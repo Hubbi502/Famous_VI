@@ -414,27 +414,25 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
 
   return (
     <div
-      className="flex flex-col items-center gap-0 cursor-pointer select-none"
+      className="flex flex-col items-center justify-between cursor-pointer select-none h-full p-2 rounded-2xl transition-all duration-300"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        transform: hovered ? 'translateY(-8px)' : 'translateY(0)',
-        transition: 'transform 0.38s cubic-bezier(0.34,1.56,0.64,1)',
+        transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
       }}
     >
       {/* ── BUBBLE sphere ── */}
       <div
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center w-full max-w-[210px] mx-auto"
         style={{
-          width: '100%',
           aspectRatio: '1 / 1',
           borderRadius: '50%',
-          background: 'radial-gradient(circle at 32% 28%, rgba(255,255,255,0.38) 0%, rgba(180,230,255,0.18) 35%, rgba(100,190,240,0.10) 65%, rgba(40,120,200,0.08) 100%)',
-          border: '2px solid rgba(255,255,255,0.45)',
+          background: 'radial-gradient(circle at 32% 28%, rgba(255,255,255,0.4) 0%, rgba(180,230,255,0.2) 35%, rgba(100,190,240,0.12) 65%, rgba(40,120,200,0.08) 100%)',
+          border: '2px solid rgba(255,255,255,0.5)',
           boxShadow: hovered
-            ? `0 0 0 4px rgba(255,255,255,0.15), 0 20px 55px rgba(0,0,0,0.35), 0 0 40px ${comp.bubbleColor}`
-            : `0 0 0 1px rgba(255,255,255,0.1),  0 10px 35px rgba(0,0,0,0.28), 0 0 24px ${comp.bubbleColor}`,
-          backdropFilter: 'blur(2px)',
+            ? `0 0 0 4px rgba(255,255,255,0.18), 0 20px 55px rgba(0,0,0,0.4), 0 0 40px ${comp.bubbleColor}`
+            : `0 0 0 1px rgba(255,255,255,0.12), 0 10px 35px rgba(0,0,0,0.3), 0 0 24px ${comp.bubbleColor}`,
+          backdropFilter: 'blur(3px)',
           transition: 'box-shadow 0.38s ease',
           overflow: 'hidden',
         }}
@@ -445,7 +443,7 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
           top: '8%', left: '12%',
           width: '35%', height: '28%',
           borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, transparent 100%)',
+          background: 'radial-gradient(ellipse, rgba(255,255,255,0.6) 0%, transparent 100%)',
           pointerEvents: 'none',
           transform: 'rotate(-20deg)',
         }} />
@@ -465,8 +463,8 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
           src={comp.maskot}
           alt={`Maskot ${comp.name}`}
           style={{
-            width: '85%',
-            height: '85%',
+            width: '82%',
+            height: '82%',
             objectFit: 'contain',
             objectPosition: 'center bottom',
             filter: `drop-shadow(0 8px 20px rgba(0,0,0,0.4)) drop-shadow(0 0 16px ${comp.bubbleColor})`,
@@ -477,81 +475,80 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
           }}
         />
 
-        {/* Price pill — top-right of bubble */}
+        {/* Price pill — comfortably inside top-right */}
         <div style={{
-          position: 'absolute', top: '10%', right: '6%', zIndex: 5,
+          position: 'absolute', top: '11%', right: '9%', zIndex: 5,
           fontSize: '9px', fontWeight: 800,
-          padding: '3px 7px', borderRadius: '99px',
-          backgroundColor: 'rgba(0,0,0,0.45)',
-          color: 'white',
-          border: '1px solid rgba(255,255,255,0.3)',
-          backdropFilter: 'blur(6px)',
+          padding: '3px 8px', borderRadius: '99px',
+          backgroundColor: 'rgba(5, 15, 35, 0.75)',
+          color: '#FFE082',
+          border: '1px solid rgba(255,224,130,0.4)',
+          backdropFilter: 'blur(8px)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
           letterSpacing: '0.02em',
         }}>
           {comp.price}
         </div>
       </div>
 
-      {/* ── Name label below bubble ── */}
-      <div className="text-center mt-3 px-1">
-        <h3
-          className="poster-font"
-          style={{
-            fontWeight: 900,
-            fontSize: '14px',
-            color: 'white',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            textShadow: `0 2px 12px rgba(0,0,0,0.5), 0 0 20px ${comp.glowHex}55`,
-            lineHeight: 1.2,
-          }}
-        >
-          {comp.name}
-        </h3>
-        {comp.fullName !== comp.name && (
-          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.85)', marginTop: '2px', lineHeight: 1.3 }}>
-            {comp.fullName}
+      {/* ── Text Content Area — Fixed Heights for Perfect Horizontal Alignment ── */}
+      <div className="text-center mt-3 px-1 w-full flex flex-col items-center flex-1 justify-between">
+        <div>
+          <h3
+            className="poster-font text-sm sm:text-base font-black text-white uppercase tracking-wider leading-tight"
+            style={{
+              textShadow: `0 2px 10px rgba(0,0,0,0.6), 0 0 18px ${comp.glowHex}55`,
+            }}
+          >
+            {comp.name}
+          </h3>
+          <p className="text-[10px] sm:text-[11px] text-white/75 font-medium mt-0.5 h-4 flex items-center justify-center line-clamp-1">
+            {comp.fullName !== comp.name ? comp.fullName : ''}
           </p>
-        )}
-        {/* Type tag */}
-        <span
-          className="poster-font"
-          style={{
-            display: 'inline-block', marginTop: '5px',
-            fontSize: '9px', fontWeight: 800,
-            padding: '2px 8px', borderRadius: '99px',
-            backgroundColor: comp.bubbleColor,
-            color: comp.glowHex,
-            border: `1px solid ${comp.glowHex}55`,
-            backdropFilter: 'blur(6px)',
-            letterSpacing: '0.04em',
-          }}
-        >
-          {comp.type}
-        </span>
+        </div>
+
+        {/* Type tag — aligned across all cards */}
+        <div className="mt-1.5 mb-1">
+          <span
+            className="poster-font text-[9px] sm:text-[10px] font-extrabold px-2.5 py-0.5 rounded-full inline-block"
+            style={{
+              backgroundColor: comp.bubbleColor,
+              color: comp.glowHex,
+              border: `1px solid ${comp.glowHex}60`,
+              backdropFilter: 'blur(6px)',
+              letterSpacing: '0.03em',
+            }}
+          >
+            {comp.type}
+          </span>
+        </div>
       </div>
 
-      {/* ── Action buttons ── */}
-      <div className="flex gap-2 mt-3 w-full px-2">
+      {/* ── Action buttons — Always aligned at bottom ── */}
+      <div className="flex gap-2 mt-2 w-full px-1">
         <a
           href={comp.registerUrl}
           target="_blank"
           rel="noopener noreferrer"
           id={`register-${comp.id}`}
           onClick={(e) => e.stopPropagation()}
+          className="poster-font"
           style={{
             flex: 1,
             textAlign: 'center',
             padding: '7px 4px',
             borderRadius: '10px',
-            fontSize: '10px',
+            fontSize: '11px',
             fontWeight: 800,
             textDecoration: 'none',
             background: comp.bg,
             color: 'white',
-            border: `1px solid ${comp.glowHex}55`,
+            border: `1px solid ${comp.glowHex}60`,
             boxShadow: `0 4px 14px ${comp.bubbleColor}`,
             letterSpacing: '0.02em',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           Daftar →
@@ -559,19 +556,23 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
         <button
           id={`detail-${comp.id}`}
           onClick={onOpenDetail}
+          className="poster-font"
           style={{
             flex: 1,
             textAlign: 'center',
             padding: '7px 4px',
             borderRadius: '10px',
-            fontSize: '10px',
+            fontSize: '11px',
             fontWeight: 700,
             cursor: 'pointer',
             background: 'rgba(255,255,255,0.1)',
-            color: 'rgba(200,235,255,0.9)',
+            color: 'rgba(255,255,255,0.95)',
             border: '1px solid rgba(255,255,255,0.22)',
             backdropFilter: 'blur(6px)',
             letterSpacing: '0.02em',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           Info ↗
@@ -582,7 +583,7 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
 }
 
 /* ════════════════════════════════════════════
-   MODAL
+   MODAL — Redesigned Modern & Premium
 ════════════════════════════════════════════ */
 interface CompetitionModalProps {
   comp: Competition;
@@ -590,188 +591,223 @@ interface CompetitionModalProps {
 }
 
 function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
+  // Filter out any tag that is identical to comp.type to prevent duplicates like "Individu"
+  const cleanTags = comp.tags.filter(
+    (t) => t.toLowerCase() !== comp.type.toLowerCase() && !comp.type.toLowerCase().includes(t.toLowerCase())
+  );
+
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: 'rgba(3,8,22,0.88)', backdropFilter: 'blur(16px)' }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 animate-fadeIn"
+      style={{ backgroundColor: 'rgba(2, 6, 20, 0.85)', backdropFilter: 'blur(14px)' }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
-        className="relative w-full max-w-md rounded-3xl overflow-hidden flex flex-col"
+        className="relative w-full max-w-lg rounded-3xl overflow-hidden flex flex-col shadow-2xl"
         style={{
-          background: 'linear-gradient(180deg, #071a38 0%, #0b2d5e 45%, #0d4880 100%)',
-          boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 80px ${comp.bubbleColor}, 0 0 0 1px rgba(255,255,255,0.08)`,
-          maxHeight: '92vh',
-          border: '1px solid rgba(255,255,255,0.1)',
+          background: 'linear-gradient(180deg, #07152b 0%, #0a2144 40%, #081830 100%)',
+          boxShadow: `0 25px 60px rgba(0,0,0,0.7), 0 0 60px ${comp.bubbleColor}`,
+          maxHeight: '90vh',
+          border: '1px solid rgba(255,255,255,0.15)',
         }}
       >
-        {/* ── Ambient ocean glow layers ── */}
+        {/* Ambient ocean glow layers */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
-          <div style={{ position: 'absolute', top: '-20%', left: '20%', width: '60%', height: '50%', borderRadius: '50%', background: `radial-gradient(circle, ${comp.bubbleColor} 0%, transparent 70%)`, filter: 'blur(40px)', opacity: 0.7 }} />
-          <div style={{ position: 'absolute', bottom: '0', right: '-10%', width: '50%', height: '40%', borderRadius: '50%', background: 'radial-gradient(circle, rgba(42,196,216,0.15) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+          <div style={{ position: 'absolute', top: '-15%', left: '15%', width: '70%', height: '40%', borderRadius: '50%', background: `radial-gradient(circle, ${comp.bubbleColor} 0%, transparent 70%)`, filter: 'blur(50px)', opacity: 0.8 }} />
+          <div style={{ position: 'absolute', bottom: '0', right: '-10%', width: '50%', height: '35%', borderRadius: '50%', background: 'radial-gradient(circle, rgba(42,196,216,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />
         </div>
 
-        {/* ── HERO area: mascot bubble + title ── */}
-        <div className="relative flex flex-col items-center pt-8 pb-4 px-6" style={{ zIndex: 1 }}>
-
-          {/* Close btn */}
+        {/* ── Modal Header: Mascot + Titles ── */}
+        <div className="relative flex flex-col items-center pt-7 pb-4 px-6 text-center border-b border-white/10" style={{ zIndex: 1 }}>
+          {/* Close button */}
           <button
             onClick={onClose}
             id="modal-close"
-            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
-            style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(200,235,255,0.85)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', cursor: 'pointer' }}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-150"
+            style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', cursor: 'pointer' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
             aria-label="Tutup"
           >
-            <X size={17} />
+            <X size={18} />
           </button>
 
           {/* Big bubble mascot */}
-          <div style={{
-            width: '150px', height: '150px', borderRadius: '50%', position: 'relative',
-            background: 'radial-gradient(circle at 30% 26%, rgba(255,255,255,0.42) 0%, rgba(180,230,255,0.2) 35%, rgba(100,190,240,0.1) 65%, transparent 100%)',
-            border: '2.5px solid rgba(255,255,255,0.5)',
-            boxShadow: `0 0 0 8px rgba(255,255,255,0.05), 0 16px 48px rgba(0,0,0,0.4), 0 0 50px ${comp.bubbleColor}`,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            overflow: 'hidden',
-            marginBottom: '16px',
-          }}>
-            {/* Bubble shine highlights */}
-            <div style={{ position: 'absolute', top: '7%', left: '13%', width: '36%', height: '28%', borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.62) 0%, transparent 100%)', transform: 'rotate(-20deg)', pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', bottom: '9%', right: '11%', width: '18%', height: '12%', borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 100%)', pointerEvents: 'none' }} />
+          <div
+            className="w-28 h-28 sm:w-32 sm:h-32 rounded-full relative flex items-center justify-center mb-3"
+            style={{
+              background: 'radial-gradient(circle at 30% 26%, rgba(255,255,255,0.45) 0%, rgba(180,230,255,0.22) 35%, rgba(100,190,240,0.12) 65%, transparent 100%)',
+              border: '2.5px solid rgba(255,255,255,0.55)',
+              boxShadow: `0 0 0 6px rgba(255,255,255,0.06), 0 16px 40px rgba(0,0,0,0.4), 0 0 40px ${comp.bubbleColor}`,
+              overflow: 'hidden',
+            }}
+          >
+            {/* Bubble shine highlight */}
+            <div style={{ position: 'absolute', top: '7%', left: '13%', width: '36%', height: '28%', borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.65) 0%, transparent 100%)', transform: 'rotate(-20deg)', pointerEvents: 'none' }} />
             <img
               src={comp.maskot}
               alt={`Maskot ${comp.name}`}
-              style={{ width: '85%', height: '85%', objectFit: 'contain', objectPosition: 'center bottom', filter: `drop-shadow(0 8px 20px rgba(0,0,0,0.45)) drop-shadow(0 0 18px ${comp.bubbleColor})`, position: 'relative', zIndex: 2 }}
+              className="w-[85%] h-[85%] object-contain object-bottom relative z-10"
+              style={{ filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.45)) drop-shadow(0 0 16px ${comp.bubbleColor})` }}
             />
           </div>
 
-          {/* Title */}
-          <p className="poster-font text-xs font-bold uppercase tracking-widest text-cyan-200" style={{ marginBottom: '4px' }}>
+          <span className="poster-font text-xs font-bold uppercase tracking-widest" style={{ color: comp.glowHex }}>
             FAMOUS 6.0 · {comp.level}
-          </p>
-          <h3 className="poster-font text-2xl sm:text-3xl font-black text-white text-center leading-tight">
+          </span>
+          <h3 className="poster-font text-2xl sm:text-3xl font-black text-white leading-tight mt-1">
             {comp.name}
           </h3>
           {comp.fullName !== comp.name && (
-            <p className="text-xs text-white/90 font-medium mt-1 text-center">{comp.fullName}</p>
+            <p className="text-xs text-white/80 font-medium mt-0.5">{comp.fullName}</p>
           )}
 
-          {/* Type + Price pills */}
-          <div className="flex gap-2 flex-wrap justify-center mt-4">
-            <span className="poster-font text-xs font-bold px-3 py-1 rounded-full" style={{ background: comp.bubbleColor, color: comp.glowHex, border: `1px solid ${comp.glowHex}55`, backdropFilter: 'blur(8px)' }}>
+          {/* Badges row: Type + Price + Clean Tags (NO duplicates!) */}
+          <div className="flex gap-2 flex-wrap justify-center mt-3">
+            <span
+              className="poster-font text-xs font-extrabold px-3 py-1 rounded-full"
+              style={{ background: comp.bubbleColor, color: comp.glowHex, border: `1px solid ${comp.glowHex}60` }}
+            >
               {comp.type}
             </span>
-            <span className="poster-font text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'rgba(255,200,80,0.18)', color: '#FFD166', border: '1px solid rgba(255,200,80,0.35)', backdropFilter: 'blur(8px)' }}>
-              {comp.price}
+            <span
+              className="poster-font text-xs font-extrabold px-3 py-1 rounded-full"
+              style={{ background: 'rgba(255,200,80,0.18)', color: '#FFD166', border: '1px solid rgba(255,200,80,0.4)' }}
+            >
+              Biaya: {comp.price}
             </span>
-            {comp.tags.map((tag) => (
-              <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full text-white/90" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)' }}>
+            {cleanTags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-semibold px-2.5 py-1 rounded-full text-white/90"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}
+              >
                 {tag}
               </span>
             ))}
           </div>
         </div>
 
-        {/* ── Coral reef separator ── */}
-        <div style={{ position: 'relative', zIndex: 1, marginTop: '4px', height: '32px', overflow: 'hidden', flexShrink: 0 }}>
-          <svg viewBox="0 0 480 32" style={{ width: '100%', height: '100%', display: 'block' }} preserveAspectRatio="none">
-            <path d="M0,32 L0,20 Q60,6 120,16 Q180,26 240,12 Q300,0 360,14 Q420,26 480,16 L480,32Z" fill="rgba(180,230,255,0.06)" />
-            <ellipse cx="40"  cy="31" rx="16" ry="8" fill="rgba(251,113,133,0.4)" />
-            <ellipse cx="120" cy="32" rx="11" ry="6" fill={`${comp.bubbleColor}`} opacity="0.8" />
-            <ellipse cx="240" cy="31" rx="14" ry="7" fill="rgba(42,196,216,0.35)" />
-            <ellipse cx="360" cy="32" rx="11" ry="6" fill={`${comp.bubbleColor}`} opacity="0.7" />
-            <ellipse cx="450" cy="31" rx="14" ry="7" fill="rgba(168,85,247,0.35)" />
-          </svg>
-        </div>
-
-        {/* ── Body (scrollable) ── */}
-        <div className="overflow-y-auto flex-1 flex flex-col gap-5 px-6 py-5" style={{ zIndex: 1 }}>
-
-          {/* Description glass panel */}
-          <div style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
-            <p className="poster-font" style={{ fontSize: '11px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
-              ✦ Tentang Lomba
-            </p>
-            <p className="text-sm leading-relaxed text-white/95 font-medium">
+        {/* ── Modal Body: Scrollable Content ── */}
+        <div 
+          className="overflow-y-auto flex-1 flex flex-col gap-4 px-5 sm:px-6 py-4"
+          style={{
+            zIndex: 1,
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'rgba(255,255,255,0.2) transparent'
+          }}
+        >
+          {/* Card 1: Tentang Lomba */}
+          <div 
+            className="p-4 rounded-2xl"
+            style={{ 
+              background: 'rgba(255,255,255,0.05)', 
+              border: '1px solid rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(8px)'
+            }}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: comp.glowHex }} />
+              <p className="poster-font text-xs font-bold uppercase tracking-wider" style={{ color: comp.glowHex }}>
+                Tentang Lomba
+              </p>
+            </div>
+            <p className="text-sm leading-relaxed text-white/90 font-normal">
               {comp.description}
             </p>
           </div>
 
-          {/* Detail teknis glass panel */}
-          <div style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)' }}>
-            <p className="poster-font" style={{ fontSize: '11px', fontWeight: 800, color: comp.glowHex, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              ✦ Detail Teknis
-            </p>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {/* Card 2: Detail Teknis */}
+          <div 
+            className="p-4 rounded-2xl"
+            style={{ 
+              background: 'rgba(255,255,255,0.05)', 
+              border: '1px solid rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(8px)'
+            }}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: comp.glowHex }} />
+              <p className="poster-font text-xs font-bold uppercase tracking-wider" style={{ color: comp.glowHex }}>
+                Detail Teknis & Ketentuan
+              </p>
+            </div>
+            <div className="flex flex-col gap-2.5">
               {comp.details.map((d, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                  <div style={{
-                    width: '20px', height: '20px', borderRadius: '50%', flexShrink: 0,
-                    background: comp.bubbleColor,
-                    border: `1px solid ${comp.glowHex}55`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '9px', fontWeight: 900, color: comp.glowHex,
-                    marginTop: '1px',
-                  }}>✓</div>
-                  <span className="text-sm text-white/95 font-medium leading-relaxed">{d}</span>
-                </li>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div
+                    className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold mt-0.5"
+                    style={{
+                      backgroundColor: comp.bubbleColor,
+                      color: comp.glowHex,
+                      border: `1px solid ${comp.glowHex}55`,
+                    }}
+                  >
+                    ✓
+                  </div>
+                  <span className="text-xs sm:text-sm text-white/90 font-medium leading-snug">{d}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Guidebook panel */}
-          <div style={{
-            background: `linear-gradient(135deg, ${comp.bubbleColor}, rgba(255,255,255,0.04))`,
-            border: `1px solid ${comp.glowHex}44`,
-            borderRadius: '16px', padding: '14px 16px',
-            display: 'flex', alignItems: 'center', gap: '14px',
-            backdropFilter: 'blur(8px)',
-          }}>
-            <div style={{
-              width: '42px', height: '42px', borderRadius: '12px', flexShrink: 0,
-              background: comp.bg,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: `0 4px 16px ${comp.bubbleColor}`,
-            }}>
-              <BookOpen size={18} color="white" />
-            </div>
-            <div style={{ flex: 1 }}>
-              <p style={{ fontWeight: 800, fontSize: '12px', color: 'white', margin: 0 }}>Guidebook {comp.name}</p>
-              <p style={{ fontSize: '11px', color: 'rgba(200,235,255,0.55)', margin: '3px 0 0' }}>Peraturan & teknis lomba lengkap</p>
+          {/* Card 3: Guidebook */}
+          <div
+            className="p-3.5 rounded-2xl flex items-center justify-between gap-3"
+            style={{
+              background: `linear-gradient(135deg, ${comp.bubbleColor}, rgba(255,255,255,0.04))`,
+              border: `1px solid ${comp.glowHex}40`,
+              backdropFilter: 'blur(8px)',
+            }}
+          >
+            <div className="flex items-center gap-3">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: comp.bg,
+                  boxShadow: `0 4px 14px ${comp.bubbleColor}`,
+                }}
+              >
+                <BookOpen size={18} color="white" />
+              </div>
+              <div>
+                <p className="poster-font text-xs font-bold text-white">Guidebook {comp.name}</p>
+                <p className="text-[11px] text-white/60">Peraturan & teknis lomba lengkap</p>
+              </div>
             </div>
             <a
               href={comp.guidebookUrl}
               target="_blank"
               rel="noopener noreferrer"
               id={`guidebook-${comp.id}`}
+              className="poster-font inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white transition-opacity duration-150 flex-shrink-0"
               style={{
-                display: 'inline-flex', alignItems: 'center', gap: '5px',
-                padding: '7px 13px', borderRadius: '10px',
-                fontSize: '11px', fontWeight: 800, flexShrink: 0,
-                background: comp.bg, color: 'white', textDecoration: 'none',
+                background: comp.bg,
                 border: `1px solid ${comp.glowHex}55`,
-                boxShadow: `0 4px 14px ${comp.bubbleColor}`,
+                boxShadow: `0 4px 12px ${comp.bubbleColor}`,
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              <Download size={12} />
+              <Download size={13} />
               Unduh
             </a>
           </div>
         </div>
 
-        {/* ── Footer ── */}
-        <div style={{ padding: '12px 20px 20px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '10px', zIndex: 1, position: 'relative' }}>
+        {/* ── Modal Footer: Action Buttons ── */}
+        <div className="p-4 sm:p-5 border-t border-white/10 grid grid-cols-2 gap-3" style={{ zIndex: 1 }}>
           <button
             onClick={onClose}
+            className="poster-font py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-white/80 transition-all duration-150 flex items-center justify-center"
             style={{
-              padding: '12px', borderRadius: '14px', fontSize: '13px', fontWeight: 600,
-              background: 'rgba(255,255,255,0.08)', color: 'rgba(200,235,255,0.6)',
-              border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer',
-              backdropFilter: 'blur(8px)',
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.18)',
+              cursor: 'pointer',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.14)'; e.currentTarget.style.color = 'white'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(200,235,255,0.6)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'white'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; }}
           >
             Tutup
           </button>
@@ -780,16 +816,14 @@ function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
             target="_blank"
             rel="noopener noreferrer"
             id={`modal-register-${comp.id}`}
+            className="poster-font py-3 px-4 rounded-xl text-xs sm:text-sm font-black text-white transition-all duration-150 flex items-center justify-center gap-2 shadow-lg"
             style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-              padding: '12px', borderRadius: '14px', fontSize: '13px', fontWeight: 800,
-              background: comp.bg, color: 'white', textDecoration: 'none',
-              boxShadow: `0 8px 28px ${comp.bubbleColor}`,
-              border: `1px solid ${comp.glowHex}44`,
-              transition: 'opacity 0.15s, transform 0.15s',
+              background: comp.bg,
+              border: `1px solid ${comp.glowHex}60`,
+              boxShadow: `0 6px 20px ${comp.bubbleColor}`,
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = ''; }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
           >
             Daftar Sekarang <ExternalLink size={14} />
           </a>

@@ -251,26 +251,26 @@ export default function Hero() {
               berkompetisi secara sportif.
             </p>
 
-            {/* Stats */}
-            <div className="flex gap-6 flex-wrap">
+            {/* Stats - 3 items in a clean row on mobile & desktop */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-md w-full">
               {[
                 { value: '8 Cabang', label: 'Lomba' },
                 { value: 'Se-Jawa', label: 'Tingkat' },
                 { value: 'Ke-6', label: 'Penyelenggaraan' },
               ].map((stat) => (
-                <div key={stat.label} className="cloud-badge-purple px-4 py-2 text-center poster-shadow-purple">
-                  <span className="poster-font text-lg font-black block" style={{ color: '#6b21a8' }}>{stat.value}</span>
-                  <span className="text-xs font-bold" style={{ color: '#7e22ce' }}>{stat.label}</span>
+                <div key={stat.label} className="cloud-badge-purple px-2 py-2 sm:px-4 sm:py-2.5 text-center poster-shadow-purple flex flex-col justify-center items-center">
+                  <span className="poster-font text-sm sm:text-lg font-black block leading-tight" style={{ color: '#6b21a8' }}>{stat.value}</span>
+                  <span className="text-[10px] sm:text-xs font-bold mt-0.5 leading-tight" style={{ color: '#7e22ce' }}>{stat.label}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mt-2">
+            {/* CTAs - Responsive on mobile */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-1 sm:mt-2 w-full sm:w-auto">
               <a
                 href="#competitions"
                 onClick={(e) => { e.preventDefault(); scrollTo('#competitions'); }}
-                className="poster-font inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-black text-base transition-all duration-200"
+                className="poster-font inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-2xl font-black text-sm sm:text-base transition-all duration-200 w-full sm:w-auto text-center"
                 style={{ background: 'linear-gradient(135deg, #E84C1E 0%, #C43A10 100%)', color: 'white', boxShadow: '0 8px 24px rgba(232,76,30,0.45)', border: '2px solid #ffffff' }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,76,30,0.6)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 8px 24px rgba(232,76,30,0.45)'; }}
@@ -280,7 +280,7 @@ export default function Hero() {
               <a
                 href="#about"
                 onClick={(e) => { e.preventDefault(); scrollTo('#about'); }}
-                className="poster-font inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-base transition-all duration-200 cloud-badge-pink poster-shadow-pink"
+                className="poster-font inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 cloud-badge-pink poster-shadow-pink w-full sm:w-auto text-center"
                 style={{ color: '#9d174d' }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
@@ -290,42 +290,42 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right - Mascot visual & Clam Shell */}
+          {/* Right - Mascot visual & Floating Badges */}
           <div
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end mt-4 lg:mt-0"
             style={{
               opacity: loaded ? 1 : 0,
               transform: loaded ? 'translateY(0)' : 'translateY(24px)',
               transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
             }}
           >
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center w-full max-w-[340px]">
               {/* Glow behind mascot */}
-              <div className="absolute w-80 h-80 rounded-full" style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.3) 0%, transparent 70%)', filter: 'blur(36px)' }} />
-              <div className="absolute w-64 h-64 rounded-full" style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+              <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full" style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.3) 0%, transparent 70%)', filter: 'blur(36px)' }} />
+              <div className="absolute w-52 h-52 sm:w-64 sm:h-64 rounded-full" style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
 
-              {/* Mascot container */}
-              <div className="relative float-anim flex items-center justify-center" style={{ width: 340, height: 440 }}>
+              {/* Mascot container - responsive size */}
+              <div className="relative float-anim flex items-center justify-center w-[250px] h-[330px] sm:w-[320px] sm:h-[420px] lg:w-[340px] lg:h-[440px]">
                 <img
                   src={mascotImg}
                   alt="FAMOUS VI Mascot"
-                  className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+                  className="w-full h-full object-contain filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.35)]"
                 />
               </div>
 
-              {/* Floating Cloud Badges (Poster 1 style) */}
+              {/* Floating Cloud Badges (Poster 1 style) - positioned safely within bounds */}
               <div
-                className="cloud-badge-pink absolute top-4 -left-4 px-4 py-2.5 text-center z-10 poster-shadow-pink"
+                className="cloud-badge-pink absolute top-1 -left-2 sm:top-4 sm:-left-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-pink"
               >
-                <div className="text-xs font-bold" style={{ color: '#be185d' }}>Hadiah Total</div>
-                <div className="poster-font text-lg font-black" style={{ color: '#9d174d' }}>Puluhan Juta</div>
+                <div className="text-[10px] sm:text-xs font-bold leading-tight" style={{ color: '#be185d' }}>Hadiah Total</div>
+                <div className="poster-font text-sm sm:text-lg font-black leading-tight mt-0.5" style={{ color: '#9d174d' }}>Puluhan Juta</div>
               </div>
 
               <div
-                className="cloud-badge-cyan absolute bottom-10 -right-4 px-4 py-2.5 text-center z-10 poster-shadow-cyan"
+                className="cloud-badge-cyan absolute bottom-4 -right-2 sm:bottom-10 sm:-right-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-cyan"
               >
-                <div className="text-xs font-bold" style={{ color: '#0369a1' }}>02 Sep - 10 Okt</div>
-                <div className="poster-font text-base font-black" style={{ color: '#0284c7' }}>Pendaftaran</div>
+                <div className="text-[10px] sm:text-xs font-bold leading-tight" style={{ color: '#0369a1' }}>02 Sep - 10 Okt</div>
+                <div className="poster-font text-xs sm:text-base font-black leading-tight mt-0.5" style={{ color: '#0284c7' }}>Pendaftaran</div>
               </div>
             </div>
           </div>

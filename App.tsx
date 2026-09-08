@@ -7,6 +7,7 @@ import PrizePool from './components/PrizePool';
 import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
+import Sponsor from './components/Sponsor';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Timeline />
         <Gallery />
         <FAQ />
+        <Sponsor />
       </main>
       <Footer />
     </div>

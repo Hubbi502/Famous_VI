@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone } from 'lucide-react';
+import { Instagram, MapPin, Phone } from 'lucide-react';
 import {
   Jellyfish,
   AnglerFish,
@@ -7,11 +7,10 @@ import {
   Bubble,
 } from './MarineBiota';
 
-const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Twitter, label: 'Twitter / X', href: '#' },
-  { icon: Youtube, label: 'YouTube', href: '#' },
+const instagramAccounts = [
+  { username: '@famous.absb', handle: 'famous.absb', href: 'https://www.instagram.com/famous.absb/' },
+  { username: '@tanwira_sanjaya', handle: 'tanwira_sanjaya', href: 'https://www.instagram.com/tanwira_sanjaya/' },
+  { username: '@osforofficial', handle: 'osforofficial', href: 'https://www.instagram.com/osforofficial/' },
 ];
 
 const footerLinks = {
@@ -123,20 +122,41 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-white/80 font-normal max-w-sm">
               Festival Al-Fityan Multi Open Sport — ajang kompetisi bergengsi Se-Pulau Jawa untuk generasi berprestasi.
             </p>
-            <div className="flex gap-2.5 mt-1">
-              {socialLinks.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(232,76,30,0.25)'; e.currentTarget.style.borderColor = 'var(--color-orange)'; e.currentTarget.style.color = 'var(--color-orange-light)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; }}
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
+            <div className="flex flex-col gap-2 mt-1">
+              <span className="poster-font text-xs font-bold text-cyan-300 flex items-center gap-1.5">
+                <Instagram size={14} className="text-pink-400" /> Instagram Resmi:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {instagramAccounts.map(({ username, href }) => (
+                  <a
+                    key={username}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Instagram ${username}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200"
+                    style={{
+                      backgroundColor: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                      color: 'rgba(255,255,255,0.9)',
+                      backdropFilter: 'blur(6px)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(225,48,108,0.22)';
+                      e.currentTarget.style.borderColor = 'rgba(244,63,94,0.5)';
+                      e.currentTarget.style.color = '#fda4af';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)';
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
+                      e.currentTarget.style.color = 'rgba(255,255,255,0.9)';
+                    }}
+                  >
+                    <Instagram size={13} className="text-pink-400 flex-shrink-0" />
+                    <span>{username}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

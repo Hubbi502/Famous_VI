@@ -198,10 +198,26 @@ export default function Gallery() {
 
         <div className="text-center mt-10">
           <button
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-            style={{ border: '1.5px solid var(--color-border)', color: 'var(--color-navy)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-orange)'; e.currentTarget.style.color = 'var(--color-orange)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-navy)'; }}
+            className="poster-font inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl text-sm font-bold text-white transition-all duration-200"
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.08)',
+              border: '1.5px solid rgba(255,255,255,0.25)',
+              backdropFilter: 'blur(8px)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--color-orange)';
+              e.currentTarget.style.borderColor = 'var(--color-orange)';
+              e.currentTarget.style.boxShadow = '0 6px 24px rgba(232,76,30,0.45)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)';
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+              e.currentTarget.style.transform = '';
+            }}
           >
             Lihat Semua Galeri
           </button>
