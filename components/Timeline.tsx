@@ -21,7 +21,7 @@ export default function Timeline() {
     <section
       id="timeline"
       className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #071220 0%, #0a2a50 60%, #071220 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0d0a2e 0%, #08051a 50%, #050312 100%)' }}
     >
       {/* Ocean grid */}
       <div className="absolute inset-0 pointer-events-none">

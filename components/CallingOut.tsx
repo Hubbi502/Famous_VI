@@ -69,44 +69,50 @@ export default function CallingOut() {
   };
 
   return (
-    <section id="partnership" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 40%, #FFFBEB 100%)' }}>
-      {/* Wave top border transition from white */}
-      <div className="absolute top-0 left-0 right-0 pointer-events-none">
-        <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none" style={{ display: 'block' }}>
-          <path d="M0,0 L1440,0 L1440,25 Q1080,60 720,25 Q360,-10 0,25 Z" fill="white" />
-        </svg>
+    <section id="partnership" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #2d1b69 0%, #1a0a3d 40%, #0d0a2e 100%)' }}>
+      {/* Bioluminescence ambient glows */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', top: '10%', left: '10%', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        <div style={{ position: 'absolute', bottom: '10%', right: '8%', width: '350px', height: '350px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(2,132,199,0.15) 0%, transparent 70%)', filter: 'blur(70px)' }} />
+        <div style={{ position: 'absolute', top: '50%', left: '50%', width: '200px', height: '200px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,63,94,0.12) 0%, transparent 70%)', filter: 'blur(50px)', transform: 'translate(-50%,-50%)' }} />
       </div>
-
-      {/* Background tropical subtle decor */}
-      <div className="absolute top-12 left-6 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(251,113,133,0.15) 0%, transparent 70%)', filter: 'blur(20px)' }} />
-      <div className="absolute bottom-10 right-8 w-48 h-48 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+      {/* Jellyfish decorations */}
+      {[
+        { top: '8%', left: '2%', size: 60, color: 'rgba(139,92,246,0.35)' },
+        { top: '60%', right: '3%', size: 45, color: 'rgba(244,63,94,0.3)' },
+      ].map((j, i) => (
+        <div key={i} style={{ position: 'absolute', top: j.top, left: (j as any).left, right: (j as any).right, width: j.size, height: j.size * 0.6, borderRadius: '50% 50% 0 0', background: j.color, pointerEvents: 'none', backdropFilter: 'blur(1px)' }}>
+          {[0,1,2,3].map(t => <div key={t} style={{ position: 'absolute', bottom: 0, left: `${20 + t*20}%`, width: '1.5px', height: `${20 + t*5}px`, background: j.color, borderRadius: '99px' }} />)}
+        </div>
+      ))}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header with Poster Style */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3"
-            style={{ backgroundColor: 'rgba(2,132,199,0.12)', color: '#0284C7', border: '1px solid rgba(2,132,199,0.25)' }}>
-            <Sparkles size={14} />
-            Open Collaboration Opportunity
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-3 cloud-badge-purple poster-shadow-purple">
+            <Sparkles size={14} color="#7e22ce" />
+            <span style={{ color: '#6b21a8' }}>Open Partnership & Collaboration</span>
           </div>
 
-          <div className="relative inline-block mt-2">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight"
-              style={{
-                color: '#07152B',
-                fontFamily: 'Inter, sans-serif',
-              }}>
-              Calling <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #0284C7 0%, #2AC4D8 100%)' }}>OUT!</span>
+          <div className="relative inline-block mt-3">
+            <h2 className="poster-font text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight"
+              style={{ lineHeight: 1.1 }}>
+              <span className="text-stroke-white" style={{ background: 'linear-gradient(180deg, #38bdf8 0%, #0284c7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Calling{' '}
+              </span>
+              <span className="text-stroke-white" style={{ background: 'linear-gradient(180deg, #fef08a 0%, #f59e0b 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                OUT!
+              </span>
             </h2>
 
             {/* Cute mascot peeking */}
-            <div className="hidden sm:block absolute -top-10 -right-20 w-16 h-20 float-anim">
-              <img src={mascotImg} alt="FAMOUS VI Mascot" className="w-full h-full object-contain filter drop-shadow-md" />
+            <div className="hidden sm:block absolute -top-12 -right-20 w-20 h-24 float-anim">
+              <img src={mascotImg} alt="FAMOUS VI Mascot" className="w-full h-full object-contain filter drop-shadow-lg" />
             </div>
           </div>
 
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto font-medium" style={{ color: '#475569' }}>
-            Bergabung dan berlayar bersama kami menyukseskan gelombang festival akbar <strong>FAMOUS VI SMAIT Al-Fityan Bogor</strong>.
+          <p className="poster-font text-lg sm:text-xl max-w-2xl mx-auto font-bold mt-4" style={{ color: 'rgba(224,242,254,0.9)' }}>
+            Bergabung dan berlayar bersama kami menyukseskan gelombang festival akbar <strong style={{ color: '#fef08a' }}>FAMOUS 6.0 SMAIT Al-Fityan Bogor</strong>.
           </p>
         </div>
 

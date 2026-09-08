@@ -3,7 +3,39 @@ import torchEmblem from '../assets/img/IMG_7270.PNG';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 lg:py-28" style={{ backgroundColor: 'var(--color-white)' }}>
+    <section id="about" className="py-20 lg:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #e0fafa 0%, #b2f0e8 20%, #42c8c0 50%, #1a9db5 75%, #0e7a9a 100%)' }}>
+
+      {/* Shallow water ambient light */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.5) 0%, transparent 60%)', pointerEvents: 'none' }} />
+
+      {/* Small tropical fish */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+        {[
+          { top: '20%', left: '5%', size: 24, color: '#FF8A65', flip: false },
+          { top: '55%', left: '88%', size: 18, color: '#FFD54F', flip: true },
+          { top: '35%', left: '78%', size: 20, color: '#4FC3F7', flip: true },
+          { top: '70%', left: '12%', size: 15, color: '#F48FB1', flip: false },
+        ].map((f, i) => (
+          <svg key={i} width={f.size * 1.8} height={f.size} viewBox="0 0 36 20" style={{ position: 'absolute', top: f.top, left: f.left, opacity: 0.55, transform: f.flip ? 'scaleX(-1)' : '' }}>
+            <ellipse cx="20" cy="10" rx="13" ry="7" fill={f.color} />
+            <path d="M7 10 L0 3 L0 17Z" fill={f.color} opacity="0.8" />
+            <ellipse cx="25" cy="8" rx="2" ry="1.5" fill="rgba(0,0,0,0.4)" />
+          </svg>
+        ))}
+      </div>
+
+      {/* Coral reef bottom separator → to mid ocean */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, pointerEvents: 'none', zIndex: 1 }}>
+        <svg viewBox="0 0 1440 80" style={{ width: '100%', display: 'block' }} preserveAspectRatio="none">
+          <path d="M0,80 L0,40 Q200,10 400,30 Q600,50 800,20 Q1000,-5 1200,18 Q1320,30 1440,15 L1440,80Z" fill="#0b2d5e" />
+          <ellipse cx="80" cy="78" rx="28" ry="14" fill="rgba(251,113,133,0.6)" />
+          <ellipse cx="280" cy="79" rx="18" ry="9" fill="rgba(42,196,216,0.5)" />
+          <ellipse cx="600" cy="78" rx="22" ry="11" fill="rgba(232,76,30,0.5)" />
+          <ellipse cx="960" cy="79" rx="20" ry="10" fill="rgba(168,85,247,0.5)" />
+          <ellipse cx="1280" cy="78" rx="24" ry="12" fill="rgba(251,113,133,0.5)" />
+        </svg>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Logo visual */}
@@ -68,26 +100,27 @@ export default function About() {
           {/* Right - Text */}
           <div className="flex flex-col gap-6 order-1 lg:order-2">
             <span
-              className="inline-flex w-fit items-center gap-1.5 text-xs font-bold tracking-widest uppercase"
-              style={{ color: 'var(--color-orange)' }}
+              className="inline-flex w-fit items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase cloud-badge-cyan poster-shadow-cyan"
+              style={{ color: '#0284c7' }}
             >
-              <span className="w-5 h-0.5 rounded" style={{ backgroundColor: 'var(--color-orange)' }} />
-              Tentang FAMOUS VI
+              ✦ Tentang FAMOUS 6.0
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-bold leading-tight" style={{ color: 'var(--color-navy)' }}>
+            <h2 className="poster-font text-4xl sm:text-5xl font-black leading-tight" style={{ color: '#0369a1' }}>
               Apa itu{' '}
-              <span style={{ color: 'var(--color-orange)' }}>FAMOUS 6.0?</span>
+              <span className="text-stroke-white text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #E84C1E 0%, #C43A10 100%)' }}>
+                FAMOUS 6.0?
+              </span>
             </h2>
 
-            <p className="text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
-              <strong style={{ color: 'var(--color-navy)' }}>FAMOUS 6.0</strong> merupakan ajang kompetisi antarpelajar yang diselenggarakan oleh
+            <p className="text-base leading-relaxed font-medium" style={{ color: '#0f172a' }}>
+              <strong style={{ color: '#0369a1' }}>FAMOUS 6.0</strong> merupakan ajang kompetisi antarpelajar yang diselenggarakan oleh
               <strong> SMAIT Al-Fityan Boarding School Bogor</strong>. FAMOUS hadir sebagai wadah bagi pelajar untuk
               mengembangkan potensi, menunjukkan kemampuan, membangun kepercayaan diri, serta berkompetisi secara sportif.
             </p>
-            <p className="text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
+            <p className="text-base leading-relaxed font-medium" style={{ color: '#0f172a' }}>
               Memasuki penyelenggaraan ke-6, FAMOUS 6.0 mengangkat tema
-              <em style={{ color: 'var(--color-navy)', fontStyle: 'italic', fontWeight: 600 }}> "Rooted in Legacy, Driven by Excellence"</em>,
+              <em style={{ color: '#0284c7', fontStyle: 'italic', fontWeight: 700 }}> "Rooted in Legacy, Driven by Excellence"</em>,
               yang menggambarkan semangat untuk tetap berpegang pada nilai dan pencapaian yang telah dibangun sebelumnya,
               sekaligus terus berkembang dan memberikan yang terbaik.
             </p>
@@ -100,12 +133,12 @@ export default function About() {
               ].map((point) => (
                 <div key={point} className="flex items-start gap-3">
                   <span
-                    className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5"
-                    style={{ backgroundColor: 'rgba(232,76,30,0.12)', color: 'var(--color-orange)' }}
+                    className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-black mt-0.5"
+                    style={{ backgroundColor: '#E84C1E', color: 'white' }}
                   >
                     ✓
                   </span>
-                  <span className="text-sm" style={{ color: 'var(--color-text)' }}>{point}</span>
+                  <span className="text-sm font-semibold" style={{ color: '#0f172a' }}>{point}</span>
                 </div>
               ))}
             </div>
