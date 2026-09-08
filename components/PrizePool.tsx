@@ -51,11 +51,11 @@ export default function PrizePool() {
           <Seaweed height={80} color="#15803d" />
         </div>
 
-        {/* Coral branches */}
-        <div style={{ position: 'absolute', bottom: '0', left: '20%', opacity: 0.5 }}>
+        {/* Coral branches swaying */}
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', left: '20%', opacity: 0.5, animationDuration: '4.6s' }}>
           <CoralBranch height={60} color="#a855f7" />
         </div>
-        <div style={{ position: 'absolute', bottom: '0', right: '20%', opacity: 0.45 }}>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '0', right: '20%', opacity: 0.45, animationDuration: '5.2s', animationDelay: '1.2s' }}>
           <CoralBranch height={55} color="#f43f5e" />
         </div>
 

@@ -114,7 +114,7 @@ export default function Gallery() {
         <div className="anim-sway" style={{ position: 'absolute', bottom: '10px', left: '2%', opacity: 0.5 }}>
           <Seaweed height={75} color="#0284c7" />
         </div>
-        <div style={{ position: 'absolute', bottom: '5px', right: '5%', opacity: 0.6 }}>
+        <div className="anim-sway" style={{ position: 'absolute', bottom: '5px', right: '5%', opacity: 0.6, animationDuration: '5.2s' }}>
           <CoralBranch height={55} color="#a855f7" />
         </div>
 

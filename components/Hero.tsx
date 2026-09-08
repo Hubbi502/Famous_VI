@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import mascotImg from '../assets/img/IMG_7254.PNG';
-import { Crab, Starfish, ClownFish } from './MarineBiota';
+import { Crab, Starfish, ClownFish, Bubble } from './MarineBiota';
 
 const bubbles = Array.from({ length: 18 }, (_, i) => ({
   id: i,
-  size: Math.random() * 24 + 8,
+  size: Math.random() * 20 + 8,
   left: Math.random() * 100,
-  delay: Math.random() * 8,
-  duration: Math.random() * 8 + 6,
+  delay: Math.random() * 7,
+  duration: Math.random() * 6 + 5,
 }));
 
 export default function Hero() {
@@ -36,25 +36,68 @@ export default function Hero() {
       {/* Navbar readability overlay — subtle dark at top so white text is legible */}
       <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ height: '120px', background: 'linear-gradient(180deg, rgba(0,20,50,0.45) 0%, transparent 100%)', zIndex: 2 }} />
 
-      {/* Sun */}
-      <div style={{ position: 'absolute', top: '8%', right: '15%', width: '90px', height: '90px', borderRadius: '50%', background: 'radial-gradient(circle, #FFF9C4 0%, #FFE082 40%, #FFB300 70%, transparent 100%)', boxShadow: '0 0 60px 20px rgba(255,200,50,0.35), 0 0 120px 50px rgba(255,200,50,0.15)', zIndex: 1 }} />
+      {/* Sun & Rotating Sun Rays */}
+      <div
+        className="anim-sun-pulse"
+        style={{
+          position: 'absolute',
+          top: '8%',
+          right: '15%',
+          width: '90px',
+          height: '90px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, #FFF9C4 0%, #FFE082 40%, #FFB300 70%, transparent 100%)',
+          zIndex: 1,
+        }}
+      />
 
-      {/* Sun rays */}
-      {[0,45,90,135,180,225,270,315].map((deg, i) => (
-        <div key={i} style={{ position: 'absolute', top: 'calc(8% + 45px)', right: 'calc(15% + 45px)', width: '2px', height: '55px', background: 'linear-gradient(to bottom, rgba(255,220,50,0.6), transparent)', transformOrigin: '50% 0%', transform: `rotate(${deg}deg) translateY(-70px)`, zIndex: 1 }} />
-      ))}
+      {/* Rotating Sun rays container */}
+      <div
+        className="anim-sun-spin"
+        style={{
+          position: 'absolute',
+          top: 'calc(8% + 45px)',
+          right: 'calc(15% + 45px)',
+          width: '0',
+          height: '0',
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      >
+        {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: '-1px',
+              width: '2px',
+              height: '55px',
+              background: 'linear-gradient(to bottom, rgba(255,220,50,0.65), transparent)',
+              transformOrigin: '50% 0%',
+              transform: `rotate(${deg}deg) translateY(-72px)`,
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Clouds */}
-      <div style={{ position: 'absolute', top: '10%', left: '5%', zIndex: 1 }}>
+      {/* Clouds Drifting across sky */}
+      <div className="anim-cloud-1" style={{ position: 'absolute', top: '10%', left: '5%', zIndex: 1 }}>
         <div style={{ width: '120px', height: '40px', borderRadius: '40px', background: 'rgba(255,255,255,0.85)', position: 'relative', boxShadow: '0 4px 20px rgba(255,255,255,0.4)' }}>
           <div style={{ position: 'absolute', top: '-20px', left: '20px', width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.9)' }} />
           <div style={{ position: 'absolute', top: '-12px', left: '55px', width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,255,255,0.85)' }} />
         </div>
       </div>
-      <div style={{ position: 'absolute', top: '6%', left: '35%', zIndex: 1, opacity: 0.75 }}>
+      <div className="anim-cloud-2" style={{ position: 'absolute', top: '6%', left: '35%', zIndex: 1, opacity: 0.75 }}>
         <div style={{ width: '90px', height: '30px', borderRadius: '30px', background: 'rgba(255,255,255,0.8)', position: 'relative' }}>
           <div style={{ position: 'absolute', top: '-15px', left: '15px', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.85)' }} />
           <div style={{ position: 'absolute', top: '-10px', left: '42px', width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.8)' }} />
+        </div>
+      </div>
+      <div className="anim-cloud-1" style={{ position: 'absolute', top: '14%', right: '28%', zIndex: 1, opacity: 0.65, animationDelay: '-5s' }}>
+        <div style={{ width: '75px', height: '26px', borderRadius: '26px', background: 'rgba(255,255,255,0.75)', position: 'relative' }}>
+          <div style={{ position: 'absolute', top: '-12px', left: '12px', width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.8)' }} />
+          <div style={{ position: 'absolute', top: '-8px', left: '36px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255,255,255,0.75)' }} />
         </div>
       </div>
 
@@ -76,8 +119,8 @@ export default function Hero() {
           <path d="M0,220 L0,80 Q250,30 500,70 Q750,110 1000,50 Q1250,-10 1440,40 L1440,220Z" fill="url(#sandGradient1)" opacity="0.9" />
           <path d="M0,220 L0,110 Q200,75 450,105 Q700,135 950,85 Q1200,35 1440,90 L1440,220Z" fill="url(#sandGradient2)" />
 
-          {/* Left Palm Tree - rooted on sand dune, curved towards beach */}
-          <g transform="translate(25, 10)">
+          {/* Left Palm Tree - Swaying in sea breeze */}
+          <g transform="translate(25, 10)" className="anim-palm-left">
             <path d="M45,170 Q35,100 65,35" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
             <path d="M45,170 Q35,100 65,35" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
             {/* Trunk rings */}
@@ -96,8 +139,8 @@ export default function Hero() {
             <ellipse cx="65" cy="30" rx="40" ry="12" fill="#86efac" transform="rotate(-15 65 30)" />
           </g>
 
-          {/* Right Palm Tree - rooted on sand dune, gracefully leaning left */}
-          <g transform="translate(1260, 10)">
+          {/* Right Palm Tree - Swaying in sea breeze */}
+          <g transform="translate(1260, 10)" className="anim-palm-right">
             <path d="M60,170 Q65,100 35,35" stroke="#78350f" strokeWidth="12" fill="none" strokeLinecap="round" />
             <path d="M60,170 Q65,100 35,35" stroke="#92400e" strokeWidth="8" fill="none" strokeLinecap="round" />
             {/* Trunk rings */}
@@ -115,9 +158,9 @@ export default function Hero() {
             <ellipse cx="35" cy="30" rx="40" ry="12" fill="#86efac" transform="rotate(15 35 30)" />
           </g>
 
-          {/* Shoreline water waves crashing on sand */}
-          <path d="M0,150 Q200,130 400,145 Q600,160 800,135 Q1000,110 1200,130 Q1320,145 1440,130 L1440,220 L0,220Z" fill="#38bdf8" opacity="0.55" />
-          <path d="M0,170 Q180,155 360,165 Q540,175 720,155 Q900,135 1080,150 Q1260,165 1440,150 L1440,220 L0,220Z" fill="#0e7a9a" opacity="0.7" />
+          {/* Shoreline water waves crashing on sand - with wave motion */}
+          <path className="anim-shore-wave-1" d="M0,150 Q200,130 400,145 Q600,160 800,135 Q1000,110 1200,130 Q1320,145 1440,130 L1440,220 L0,220Z" fill="#38bdf8" opacity="0.55" />
+          <path className="anim-shore-wave-2" d="M0,170 Q180,155 360,165 Q540,175 720,155 Q900,135 1080,150 Q1260,165 1440,150 L1440,220 L0,220Z" fill="#0e7a9a" opacity="0.7" />
           {/* Soft ocean surface overlay to blend into About */}
           <path d="M0,160 Q360,145 720,158 Q1080,171 1440,155 L1440,220 L0,220Z" fill="#0e7a9a" opacity="0.9" />
 
@@ -128,16 +171,16 @@ export default function Hero() {
           <ellipse cx="1180" cy="173" rx="8" ry="4" fill="#38bdf8" opacity="0.7" />
         </svg>
 
-        {/* Clam Shell with Glowing Pearl resting on the beach sand */}
-        <div style={{ position: 'absolute', bottom: '38px', right: '320px', zIndex: 5, pointerEvents: 'none' }}>
+        {/* Clam Shell with Glowing Pearl resting on beach sand - Animated breathing & shine */}
+        <div className="anim-clam" style={{ position: 'absolute', bottom: '38px', right: '320px', zIndex: 5, pointerEvents: 'none' }}>
           <svg width="68" height="56" viewBox="0 0 100 85">
             {/* Clam outer shell */}
             <path d="M10,65 Q50,90 90,65 Q95,40 50,30 Q5,40 10,65Z" fill="url(#clamGradShore)" stroke="#be185d" strokeWidth="2.5" />
             {/* Inner pink shell ridges */}
             <path d="M20,60 Q50,78 80,60" fill="none" stroke="#f472b6" strokeWidth="2" />
             <path d="M30,55 Q50,70 70,55" fill="none" stroke="#f472b6" strokeWidth="2" />
-            {/* Pearl */}
-            <circle cx="50" cy="52" r="13" fill="url(#pearlGradShore)" filter="drop-shadow(0 0 10px #fff)" />
+            {/* Pearl with pulsing shine */}
+            <circle cx="50" cy="52" r="13" fill="url(#pearlGradShore)" className="anim-pearl" />
             <circle cx="46" cy="48" r="3.5" fill="#ffffff" opacity="0.9" />
             <defs>
               <linearGradient id="clamGradShore" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -154,37 +197,69 @@ export default function Hero() {
           </svg>
         </div>
 
-        {/* Crab scuttling on sand dune */}
-        <div style={{ position: 'absolute', bottom: '35px', left: '120px', zIndex: 5 }}>
+        {/* Crab scuttling sideways on sand dune */}
+        <div className="anim-crab" style={{ position: 'absolute', bottom: '35px', left: '120px', zIndex: 5 }}>
           <Crab size={32} />
         </div>
 
-        {/* Starfish resting on sand shore */}
-        <div style={{ position: 'absolute', bottom: '45px', right: '140px', zIndex: 5 }}>
+        {/* Starfish resting on sand shore - breathing wiggle */}
+        <div className="anim-starfish" style={{ position: 'absolute', bottom: '45px', right: '140px', zIndex: 5 }}>
           <Starfish size={28} color="#f97316" />
         </div>
 
-        {/* Swimming ClownFish in shoreline water */}
+        {/* Swimming ClownFish in shoreline water with natural wiggle */}
         <div className="anim-swim-right" style={{ position: 'absolute', bottom: '15px', left: '0', zIndex: 5, animationDuration: '20s' }}>
-          <ClownFish size={24} />
+          <div className="anim-fish-wiggle">
+            <ClownFish size={24} />
+          </div>
         </div>
+
+        {/* Rising bubbles from the shoreline ocean */}
+        {bubbles.map((b) => (
+          <div
+            key={b.id}
+            className="anim-bubble-rise"
+            style={{
+              position: 'absolute',
+              bottom: '15px',
+              left: `${b.left}%`,
+              animationDelay: `${b.delay}s`,
+              animationDuration: `${b.duration}s`,
+              zIndex: 4,
+            }}
+          >
+            <Bubble size={b.size} />
+          </div>
+        ))}
       </div>
 
       {/* Shallow water shimmer */}
       <div style={{ position: 'absolute', bottom: '15%', left: 0, right: 0, height: '60px', background: 'linear-gradient(0deg, rgba(90,210,230,0.4) 0%, transparent 100%)', zIndex: 2 }} />
 
-      {/* Seagulls */}
+      {/* Seagulls flapping & gliding in sky */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
         {[
-          { top: '18%', left: '22%', size: 22 },
-          { top: '14%', left: '30%', size: 16 },
-          { top: '22%', left: '60%', size: 18 },
-          { top: '12%', left: '68%', size: 14 },
+          { top: '18%', left: '22%', size: 22, delay: '0s', dur: '4.2s' },
+          { top: '14%', left: '30%', size: 16, delay: '1.2s', dur: '3.6s' },
+          { top: '22%', left: '60%', size: 18, delay: '0.6s', dur: '4.8s' },
+          { top: '12%', left: '68%', size: 14, delay: '1.8s', dur: '3.9s' },
         ].map((s, i) => (
-          <svg key={i} width={s.size * 2} height={s.size} viewBox="0 0 40 20" style={{ position: 'absolute', top: s.top, left: s.left, opacity: 0.55 }}>
-            <path d="M20,10 Q10,2 0,8" stroke="#1a5276" strokeWidth="2" fill="none" strokeLinecap="round" />
-            <path d="M20,10 Q30,2 40,8" stroke="#1a5276" strokeWidth="2" fill="none" strokeLinecap="round" />
-          </svg>
+          <div
+            key={i}
+            className="anim-seagull"
+            style={{
+              position: 'absolute',
+              top: s.top,
+              left: s.left,
+              animationDelay: s.delay,
+              animationDuration: s.dur,
+            }}
+          >
+            <svg width={s.size * 2} height={s.size} viewBox="0 0 40 20" style={{ opacity: 0.65 }}>
+              <path d="M20,10 Q10,2 0,8" stroke="#1a5276" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+              <path d="M20,10 Q30,2 40,8" stroke="#1a5276" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+            </svg>
+          </div>
         ))}
       </div>
 
@@ -313,16 +388,16 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Cloud Badges (Poster 1 style) - positioned safely within bounds */}
+              {/* Floating Cloud Badges (Poster 1 style) - with gentle floating bob animation */}
               <div
-                className="cloud-badge-pink absolute top-1 -left-2 sm:top-4 sm:-left-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-pink"
+                className="cloud-badge-pink anim-badge-1 absolute top-1 -left-2 sm:top-4 sm:-left-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-pink"
               >
                 <div className="text-[10px] sm:text-xs font-bold leading-tight" style={{ color: '#be185d' }}>Hadiah Total</div>
                 <div className="poster-font text-sm sm:text-lg font-black leading-tight mt-0.5" style={{ color: '#9d174d' }}>Puluhan Juta</div>
               </div>
 
               <div
-                className="cloud-badge-cyan absolute bottom-4 -right-2 sm:bottom-10 sm:-right-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-cyan"
+                className="cloud-badge-cyan anim-badge-2 absolute bottom-4 -right-2 sm:bottom-10 sm:-right-4 px-3 py-1.5 sm:px-4 sm:py-2.5 text-center z-10 poster-shadow-cyan"
               >
                 <div className="text-[10px] sm:text-xs font-bold leading-tight" style={{ color: '#0369a1' }}>02 Sep - 10 Okt</div>
                 <div className="poster-font text-xs sm:text-base font-black leading-tight mt-0.5" style={{ color: '#0284c7' }}>Pendaftaran</div>
