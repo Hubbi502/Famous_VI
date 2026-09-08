@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { X, Download, ExternalLink, BookOpen } from 'lucide-react';
 
+// Maskot images
+const MASKOT_MHQ = '/assets/img/maskot/Desain tanpa judul - MHQ.png';
+const MASKOT_KHITOBAH = '/assets/img/maskot/Desain tanpa judul - KHITOBAH.png';
+const MASKOT_SPEECH = '/assets/img/maskot/Desain tanpa judul - SPEECH.png';
+const MASKOT_STORYTELLING = '/assets/img/maskot/Desain tanpa judul - STORYTELLING.png';
+const MASKOT_LKBB = '/assets/img/maskot/Desain tanpa judul - LKBB.png';
+const MASKOT_FUTSAL = '/assets/img/maskot/Desain tanpa judul - FUTSAL.png';
+const MASKOT_ARCHERY = '/assets/img/maskot/Desain tanpa judul - ARCHERY.png';
+const MASKOT_POSTER = '/assets/img/maskot/Desain tanpa judul - POSTER DIGITAL.png';
+
 const competitions = [
   {
     id: 1,
-    emoji: '📖',
+    maskot: MASKOT_MHQ,
     name: 'MHQ',
     fullName: 'Musabaqah Hifzhil Qur\'an',
     level: 'SMP/MTs Se-Jawa',
@@ -27,7 +37,7 @@ const competitions = [
   },
   {
     id: 2,
-    emoji: '🎙️',
+    maskot: MASKOT_KHITOBAH,
     name: 'Khitobah 3 Bahasa',
     fullName: 'Khitobah 3 Bahasa',
     level: 'SMP/MTs Se-Jawa',
@@ -50,7 +60,7 @@ const competitions = [
   },
   {
     id: 3,
-    emoji: '🎤',
+    maskot: MASKOT_SPEECH,
     name: 'English Speech',
     fullName: 'English Speech',
     level: 'SMP/MTs Se-Jawa',
@@ -73,7 +83,7 @@ const competitions = [
   },
   {
     id: 4,
-    emoji: '📚',
+    maskot: MASKOT_STORYTELLING,
     name: 'Storytelling',
     fullName: 'Storytelling',
     level: 'SMP/MTs Se-Jawa',
@@ -96,7 +106,7 @@ const competitions = [
   },
   {
     id: 5,
-    emoji: '🪖',
+    maskot: MASKOT_LKBB,
     name: 'LKBB',
     fullName: 'Lomba Ketangkasan Baris-Berbaris',
     level: 'SMP/MTs Se-Jawa',
@@ -119,7 +129,7 @@ const competitions = [
   },
   {
     id: 6,
-    emoji: '⚽',
+    maskot: MASKOT_FUTSAL,
     name: 'Futsal',
     fullName: 'Futsal Putra',
     level: 'SMP/MTs Se-Jawa',
@@ -142,7 +152,7 @@ const competitions = [
   },
   {
     id: 7,
-    emoji: '🏹',
+    maskot: MASKOT_ARCHERY,
     name: 'Archery',
     fullName: 'Archery (Panahan)',
     level: 'SMP/MTs Se-Jawa',
@@ -165,7 +175,7 @@ const competitions = [
   },
   {
     id: 8,
-    emoji: '🎨',
+    maskot: MASKOT_POSTER,
     name: 'Poster Digital',
     fullName: 'Desain Poster Digital',
     level: 'SMP/MTs Se-Jawa',
@@ -268,21 +278,16 @@ function CompetitionCard({ comp, onOpenDetail }: CompetitionCardProps) {
       {/* Top gradient band */}
       <div
         className="relative flex items-center justify-center"
-        style={{ height: '120px', background: comp.bg }}
+        style={{ height: '140px', background: comp.bg, overflow: 'hidden' }}
       >
-        <div
-          className="w-20 h-20 rounded-full flex items-center justify-center"
-          style={{
-            background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.35), rgba(255,255,255,0.08))',
-            border: '2px solid rgba(255,255,255,0.3)',
-            backdropFilter: 'blur(4px)',
-            fontSize: '36px',
-          }}
-          role="img"
-          aria-label={comp.name}
-        >
-          {comp.emoji}
-        </div>
+        {/* Glow behind maskot */}
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 110%, rgba(255,255,255,0.18) 0%, transparent 65%)' }} />
+        <img
+          src={comp.maskot}
+          alt={`Maskot ${comp.name}`}
+          className="relative z-10"
+          style={{ height: '130px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))' }}
+        />
         {/* Type badge */}
         <div
           className="absolute top-3 right-3 px-2 py-0.5 rounded-md text-xs font-semibold"
@@ -397,17 +402,20 @@ function CompetitionModal({ comp, onClose }: CompetitionModalProps) {
             <X size={18} />
           </button>
 
-          {/* Emoji */}
+          {/* Maskot */}
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+            className="w-16 h-16 rounded-2xl flex-shrink-0 overflow-hidden"
             style={{
-              background: 'rgba(255,255,255,0.18)',
+              background: 'rgba(255,255,255,0.15)',
               border: '2px solid rgba(255,255,255,0.35)',
               backdropFilter: 'blur(8px)',
-              fontSize: '32px',
             }}
           >
-            {comp.emoji}
+            <img
+              src={comp.maskot}
+              alt={`Maskot ${comp.name}`}
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
           </div>
 
           {/* Title */}
