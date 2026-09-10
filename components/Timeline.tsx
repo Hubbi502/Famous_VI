@@ -17,7 +17,7 @@ const timelineItems = [
     id: 2,
     stepNumber: "02",
     title: "Technical Meeting",
-    date: "11 Oktober 2026",
+    date: "10-11 Oktober 2026",
     desc: "Penjelasan teknis dan pengundian nomor peserta.",
     color: "#a78bfa",
     glow: "rgba(167,139,250,0.5)",
