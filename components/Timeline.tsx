@@ -28,7 +28,7 @@ const timelineItems = [
     stepNumber: "03",
     title: "Competition Day",
     date: "12–17 Oktober 2026",
-    desc: "Tiga hari penuh aksi & kompetisi sengit!",
+    desc: "Enam hari penuh aksi & kompetisi sengit!",
     color: "#fb923c",
     glow: "rgba(251,146,60,0.5)",
     side: "left" as const,
