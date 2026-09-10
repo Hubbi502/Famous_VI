@@ -168,7 +168,7 @@ const competitions = [
     tags: ["Tim", "Olahraga", "Putra"],
     registerUrl: "https://forms.gle/ki54VHFdEccopHjd8",
     guidebookUrl:
-      "https://drive.usercontent.google.com/download?id=11oiWzsiePKjjY8FTCPs_GTXzMnZAxpfr&export=download&authuser=0&confirm=t&uuid=3c9a25ba-3a4e-4b46-8246-0552c2b7055e&at=AMrWOn34Up3LESA-CcsbiXfsh9IK:1789015267889",
+      "https://drive.usercontent.google.com/download?id=1YvlhlXJKXtEQ3BdxZ9vYxhsnT0tzIrCM&export=download&authuser=0&confirm=t&uuid=67ffd07a-150a-40cd-b18b-68096d4807da&at=AMrWOn3bPWvks1167rYmNcsXm3EE:1789032795627",
     accent: "#E84C1E",
     bg: "linear-gradient(135deg, #7B1D1D 0%, #C43A10 100%)",
     bubbleColor: "rgba(220, 80, 30, 0.22)",
@@ -222,7 +222,7 @@ const competitions = [
     tags: ["Seni", "Digital", "Desain"],
     registerUrl: "https://forms.gle/PrJ9HtrrLBG8tSz88",
     guidebookUrl:
-      "https://drive.usercontent.google.com/download?id=193HdWtBWxwAdDYh1cqB5cmpyls5jH6Yi&export=download&authuser=0&confirm=t&uuid=0641447d-60e3-4cd4-bb23-3128fd6b85d0&at=AMrWOn2Mkge0kGYzj-ngqHne4Y5y:1789015498172",
+      "https://drive.usercontent.google.com/download?id=1QUII7c9GKA8PAJJEm-qoKOcFdh0bHXI1&export=download&authuser=0&confirm=t&uuid=1754243e-f8df-40e9-ba55-ecfb99bbc730&at=AMrWOn2Vwitu8BPUWBE8blWtkZ9L:1789032807107",
     accent: "#AD1457",
     bg: "linear-gradient(135deg, #6A0A35 0%, #AD1457 100%)",
     bubbleColor: "rgba(200, 40, 100, 0.22)",
